@@ -1,1 +1,15 @@
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@font-face {
+    font-family: 'gilroyextrabold';
+    src: url('/wp-content/themes/ilestunefois/fonts/gilroy-extrabold-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/ilestunefois/fonts/gilroy-extrabold-webfont.woff') format('woff');
 
+}
+@import "normalize";
+@import "variables";
+@import "typography";
+@import "generic";
+@import "header";
+@import "navigation";

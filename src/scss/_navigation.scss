@@ -1,0 +1,27 @@
+.navbar-brand {
+	width: 12%;
+
+	.cls-1{
+		fill: #fff;
+	}
+
+	.cls-2{
+		fill: #fff;
+	}
+}
+
+.navbar-ilestunefois {
+	.nav-item {
+		padding:0 2em;
+	}
+	.nav-link {
+		color: #FFF!important;
+		text-decoration: none;
+		font-family: $font__title;
+		font-size: 19px;
+
+		&:hover, .active {
+			color: $color__primary!important;
+		}
+	}
+}
