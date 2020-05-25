@@ -2,6 +2,7 @@
 	position: relative;
 	display: block;
 	height: 50vh;
+	margin-top: 15px;
 
 	.header-content {
 		display: flex;
@@ -41,8 +42,19 @@
 	 	}
 	} 
 
+	.mouse {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		bottom:10vh;
+		background: url('../../img/mouse.svg');
+		width:47px;
+		height:81px;
+	}
+
 	@media (min-width: 768px) {
-	    height:80vh;
+	    height:100vh;
 	 }
 }
 

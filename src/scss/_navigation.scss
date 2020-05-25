@@ -1,5 +1,14 @@
+#navbarNav-container {
+	@media (min-width: 992px) {
+		padding-top: 0;
+		padding-right: 0;
+	  	align-items: flex-start;
+	 }
+}
+
 .navbar-brand {
 	width: 12%;
+	
 
 	.cls-1{
 		fill: #fff;
@@ -8,11 +17,19 @@
 	.cls-2{
 		fill: #fff;
 	}
+
+	@media (min-width: 992px) {
+	   padding-top: 15px;
+	   padding-left: 8px;
+	}
 }
 
 .navbar-ilestunefois {
 	.nav-item {
 		padding:0 2em;
+		@media (min-width: 992px) {
+			padding: 2.5rem 3.5em;
+		}
 	}
 	.nav-link {
 		color: #FFF!important;
@@ -20,8 +37,16 @@
 		font-family: $font__title;
 		font-size: 19px;
 
-		&:hover, .active {
+		/* &:hover, .active {
 			color: $color__primary!important;
+		} */
+	}
+
+
+	.menu-btn {
+		text-transform: uppercase;
+		@media (min-width: 992px) {
+			background: $color__primary;
 		}
 	}
 }
