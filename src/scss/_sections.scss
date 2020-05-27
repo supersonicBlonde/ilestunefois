@@ -12,14 +12,23 @@
 	margin: 0 auto;
 	padding: 100px 50px;
 
-	/* img {
-		width:55%;
-	} */
+	img {
+		width:auto;
+		max-width: none;
+		right:0;
+		left:0;
+		margin:0 auto;
+		height: 100%;
+	}
 
 	.bg {
 		background:url(../../img/bg-green.svg);
 		background-repeat: no-repeat;
 		background-size: 68% 72%;
     	background-position: 81% 72%;
+	}
+
+	p {
+		width: 70%;
 	}
 }

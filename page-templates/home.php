@@ -21,11 +21,29 @@ get_header();
 					<a href="">Lorem ipsum dolor sit amet</a>
 					</div>
 				</div>
-				<div class="col-6 text-center">
+				<div class="col-6 text-center position-relative">
 					<div class="bg">
-						<img src="<?php echo get_template_directory_uri().'/img/illustr.png'; ?>">
+						<img src="<?php echo get_template_directory_uri().'/img/illustr.png'; ?>" class="position-absolute">
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="second-section">
+		<div>
+			<div style="display: flex;">
+				<div style="width:70%;margin-left: -200px;">
+					<div class="slider">
+						<div><img src="https://via.placeholder.com/150"></div>
+						<div><img src="https://via.placeholder.com/150"></div>
+						<div><img src="https://via.placeholder.com/150"></div>
+						<div><img src="https://via.placeholder.com/150"></div>
+						<div><img src="https://via.placeholder.com/150"></div>
+						<div><img src="https://via.placeholder.com/150"></div>
+					</div>
+				</div>
+				<div></div>
 			</div>
 		</div>
 	</div>
