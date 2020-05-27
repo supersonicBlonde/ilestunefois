@@ -1,0 +1,25 @@
+/**********************************
+	SECTIONS
+	***********************************/
+
+.home-content {
+	position: relative;
+	top: -40px;
+}
+#first-section {
+	background: $color__background-light-grey;
+	width:90%;
+	margin: 0 auto;
+	padding: 100px 50px;
+
+	/* img {
+		width:55%;
+	} */
+
+	.bg {
+		background:url(../../img/bg-green.svg);
+		background-repeat: no-repeat;
+		background-size: 68% 72%;
+    	background-position: 81% 72%;
+	}
+}
