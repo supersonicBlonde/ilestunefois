@@ -30,23 +30,90 @@ get_header();
 		</div>
 	</div>
 
-	<div id="second-section">
-		<div>
-			<div style="display: flex;">
-				<div style="width:70%;margin-left: -200px;">
-					<div class="slider">
-						<div><img src="https://via.placeholder.com/150"></div>
-						<div><img src="https://via.placeholder.com/150"></div>
-						<div><img src="https://via.placeholder.com/150"></div>
-						<div><img src="https://via.placeholder.com/150"></div>
-						<div><img src="https://via.placeholder.com/150"></div>
-						<div><img src="https://via.placeholder.com/150"></div>
-					</div>
+	<div id="slider-section">
+		<div class="flex">
+			<div class="testimonial-slider-container">
+				<?php if(have_rows('testimonial_slider')): ?>
+
+				<div class="testimonial-slider">
+
+
+				<?php while(have_rows('testimonial_slider')): the_row(); ?>
+						<?php 
+						$img_profil = get_sub_field('image_profil'); 
+						$full_name = get_sub_field('full_name');
+						$review = get_sub_field('review');
+						?>
+						<div style="padding-bottom:1.5em;">
+
+							<div class="testimonial-container">
+						
+								<?php if( !empty( $img_profil ) ): ?>    
+									<div class="testimonial-profil">
+								    	<img class="noresp circle-image" src="<?php echo esc_url($img_profil['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
+									</div>
+								<?php endif; ?>	
+
+								<?php if( !empty( $full_name ) ): ?>    
+									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
+								<?php endif; ?>	
+
+								<?php if( !empty( $review ) ): ?>    
+									<p class="testimonial-review"><?php echo $review; ?></p>
+								<?php endif; ?>	
+
+							</div>
+
+						</div>
+
+					<?php endwhile; ?>
+
+					
 				</div>
-				<div></div>
+				<?php endif; ?>
 			</div>
+			<div class="left-2"><h2>Testimonials</h2></div>
 		</div>
 	</div>
+
+	<div id="logo-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-5 offset-1 column">
+					<div>
+						<?php if(have_rows('logos_clients')): ?>
+							<ul>
+							<?php while(have_rows('logos_clients')):the_row(); 
+								$img_logo = get_sub_field('image_logo'); ?>
+								<?php if( !empty( $img_logo ) ): ?>    
+									<li>
+								    	<img src="<?php echo esc_url($img_logo['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
+									</li>
+								<?php endif; ?>	
+							<?php endwhile; ?>
+							</ul>
+						<?php endif; ?>
+					</div>
+				</div>
+				<div class="col-5 position-relative column">
+					<div>
+						<h2>Nos clients</h2>
+						<p>Lorem ipsum dolor est...</p>
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="flex">
+			<div>
+				<div>
+					
+				</div>
+			</div>
+			<div></div>
+		</div>
+	</div>
+	
 
 </div>
 

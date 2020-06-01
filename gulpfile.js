@@ -1,10 +1,3 @@
-/*function defaultTask(cb) {
-  // place code for your default task here
-  cb();
-}
-
-exports.default = defaultTask*/
-
 // Load Gulp...of course
 const { src, dest, task, watch, series, parallel } = require('gulp');
 
@@ -31,8 +24,8 @@ var options      = require( 'gulp-options' );
 var gulpif       = require( 'gulp-if' );
 
 // Browers related plugins
-/*var browserSync  = require( 'browser-sync' ).create();
-var reload       = browserSync.reload;*/
+var browserSync  = require( 'browser-sync' ).create();
+var reload       = browserSync.reload;
 
 // Project related variables
 var projectURL   = 'http://ilestunefois.localhost';
@@ -49,17 +42,18 @@ var jsAdmin		 = 'scripts.js';
 /*var jsForm       = 'form.js';
 var jsSlider     = 'slider.js';
 var jsAuth       = 'auth.js';*/
+//var jsFiles      = [ jsAdmin , jsForm, jsSlider , jsAuth];
 var jsFiles      = [ jsAdmin ];
 var jsURL        = './dist/js/';
 
 
 var styleWatch   = './src/scss/**/*.scss';
 var jsWatch      = './src/js/**/*.js';
-var phpWatch     = './**/*.php';
+//var phpWatch     = './**/*.php';
 
 // Tasks
 // Tasks
-/*function browser_sync() {
+function browser_sync() {
 	browserSync.init({
 		server: {
 			baseDir: './dist/'
@@ -75,11 +69,11 @@ var phpWatch     = './**/*.php';
 function reload(done) {
 	browserSync.reload();
 	done();
-}*/
+}
 
 function css(done) {
 	//src( [ styleSRC, styleForm, styleSlider, styleAuth ] )
-	src( [ styleSRC ] )
+	  src( [ styleSRC ] )
 		.pipe( sourcemaps.init() )
 		.pipe( sass({
 			errLogToConsole: true,
@@ -88,7 +82,7 @@ function css(done) {
 		.on( 'error', console.error.bind( console ) )
 		.pipe( autoprefixer({ browsersList: [ 'last 2 versions' ] }) )
 		.pipe( rename( { suffix: '.min' } ) )
-		//.pipe( sourcemaps.write( mapURL ) )
+		.pipe( sourcemaps.write( mapURL ) )
 		.pipe( dest( styleURL ) )
 		/*.pipe( browserSync.stream() );*/
 	done();
@@ -128,9 +122,9 @@ function watch_files() {
 	/*watch(styleWatch, series(css , reload));
 	watch(jsWatch, series(js , reload));*/
 	watch(styleWatch, series(css));
-	/*watch(jsWatch, series(js));
+	watch(jsWatch, series(js));
 	src(jsURL + 'scripts.min.js')
-		.pipe( notify({ message: 'Gulp is Watching, Happy Coding!' }) );*/
+		.pipe( notify({ message: 'Gulp is Watching, Happy Coding!' }) );
 }
 
 task("css", css);

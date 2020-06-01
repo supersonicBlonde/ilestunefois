@@ -62,3 +62,11 @@ function ilestunefois_register_nav_menu()
 }
 
 add_action('after_setup_theme' , 'ilestunefois_register_nav_menu');
+
+function add_file_types_to_uploads($file_types){
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes );
+	return $file_types;
+}
+add_filter('upload_mimes', 'add_file_types_to_uploads');
