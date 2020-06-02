@@ -7,6 +7,10 @@
          url('/wp-content/themes/ilestunefois/fonts/gilroy-extrabold-webfont.woff') format('woff');
 
 }
+@import "font-awesome/fontawesome";
+@import "font-awesome/solid.scss";
+@import "font-awesome/brands.scss";
+
 @import "normalize";
 @import "variables";
 @import "typography";
@@ -16,4 +20,5 @@
 @import "navigation";
 @import "sections";
 @import "sliders";
+@import "footer";
  

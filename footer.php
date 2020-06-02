@@ -75,15 +75,15 @@
 						</div>
 					</div>
 				</div>
-				<div class="container-fluid">
+				<div class="container">
 					<div class="row">
 						<div class="col-7 offset-5">
 							<div class="socials">
 								<ul>
-									<li><a href="">Newsletter</a></li>
-									<li><a href="">Instagram</a></li>
-									<li><a href="">Facebook</a></li>
-									<li><a href="">Twitter</a></li>
+									<li class="newsletter"><a href="">Newsletter</a></li>
+									<li class="instagram"><a href="">Instagram</a></li>
+									<li class="facebook"><a href="">Facebook</a></li>
+									<li class="twitter"><a href="">Twitter</a></li>
 								</ul>
 							</div>
 						</div>
