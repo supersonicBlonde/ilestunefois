@@ -17,11 +17,11 @@ body {
 	padding-right: 0;
 }
 
-.section [class*="col"] {
+/* .section [class*="col"] {
 	padding:80px;
 	padding-right: 0;
     padding-left: 0;
-}
+} */
 
 
 .text-img-block {
@@ -36,7 +36,7 @@ body {
 
 .content-container {
 	position: relative;
-	top: -7.8em;
+	margin-top: -7.8em;
 }
 
 
@@ -133,7 +133,7 @@ body {
 		background-position: right;
 
 		div {
-			padding: 2em;
+			padding: 10em 0;
 
 			ul {
 				list-style-type:none;
@@ -164,7 +164,7 @@ body {
 		background-position: left;
 	
 		> div {
-			padding: 2em;
+			padding-left: 4.2em;
 			position:absolute;
 			top: 50%;
 			transform: translateY(-50%);

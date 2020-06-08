@@ -9,17 +9,31 @@ get_header();
 ?>
 <div class="home-content">
 
+	<?php
+		$titre = get_field('title_home_first_section');
+		$paragraphe = get_field('p_home_first_section');
+		$texte_btn = get_field('texte_bouton_home_first_section');
+		$url = get_field('lien_bouton_home_first_section');
+	?>
 	<div id="first-section" class="text-img-block section limited">
 		<div class="container-fluid">
 				<div class="row">
 					<div class="col-6 column">
-						<h3>Consectur adipiscing elit sed do eiusmod</h3>
+						<?php if(!empty($titre)): ?>
+						<h3>
+							<?php echo $titre; ?>
+						</h3>
+						<?php endif; ?>
+						<?php if(!empty($paragraphe)): ?>
 						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+						<?php echo $paragraphe; ?>
 						</p>
+						<?php endif; ?>
+						<?php if(!empty($texte_btn) && !empty($url)): ?>
 						<div class="read-more">
-						<a href="">Lorem ipsum dolor sit amet</a>
+						<a href="<?php echo $url;  ?>"><?php echo $texte_btn; ?></a>
 						</div>
+						<?php endif; ?>
 					</div>
 					<div class="col-6 text-center position-relative column">
 							<img src="<?php echo get_template_directory_uri().'/img/illustr.png'; ?>" class="position-absolute">
@@ -28,6 +42,9 @@ get_header();
 		</div>
 	</div>
 
+	<?php
+		$titre = get_field('title_home_testimonials');
+	?>
 	<div id="slider-section">
 		<div class="flex">
 			<div class="testimonial-slider-container">
@@ -70,10 +87,20 @@ get_header();
 				</div>
 				<?php endif; ?>
 			</div>
-			<div class="left-2"><h3>Testimonials</h3></div>
+			<div class="left-2">
+				<?php if(!empty($titre)): ?>
+				<h3>
+					<?php echo $titre; ?>
+				</h3>
+				<?php endif; ?>
+			</div>
 		</div>
 	</div>
 	
+	<?php
+		$titre = get_field('title_home_logos_clients');
+		$paragraphe = get_field('p_home_logos_clients');
+	?>
 	<div id="logo-section" class="section limited">
 		<div class="container-fluid">
 			<div class="section-container">
@@ -96,8 +123,16 @@ get_header();
 					</div>
 					<div class="col-6 position-relative column">
 						<div>
-							<h3>Nos clients</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<?php if(!empty($titre)): ?>
+							<h3>
+								<?php echo $titre; ?>
+							</h3>
+							<?php endif; ?>
+							<?php if(!empty($paragraphe)): ?>
+							<p>
+								<?php echo $paragraphe; ?>
+							</p>
+							<?php endif; ?>
 							<div class="arrow"></div>
 						</div>
 					</div>
