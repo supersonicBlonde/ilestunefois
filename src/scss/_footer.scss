@@ -10,6 +10,8 @@ footer {
 
 	h3 {
 		color:white;
+		font-size: 1.8em;
+		line-height: 1.3em;
 	}
 
 	ul {
@@ -19,13 +21,14 @@ footer {
 			color: white;
 			text-decoration: none;
 			font-family: $font__title;
+			font-size: 1.25em;
 		}
 	}
 
 	.socials ul{
 		list-style-type: none;
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-between;
 
 		a {
 			font-family: $font__title;
@@ -56,8 +59,9 @@ footer {
 	
 	#logo {
 		fill: white;
-		width: 50%;
-		margin-bottom: 1em;
+		margin-bottom: 1.25em;
+		width: 100px;
+		height: auto;
 	}
 
 	.row:before, .row:after {
@@ -78,7 +82,7 @@ footer {
 		}
 
 		address {
-			margin-botto: 1em;
+			margin-bottom: 2em;
 		}
 
 	}

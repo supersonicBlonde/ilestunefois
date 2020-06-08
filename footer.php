@@ -77,7 +77,7 @@
 					</div>
 					<div class="container">
 						<div class="row">
-							<div class="col-7 offset-5">
+							<div class="col-5 offset-7">
 								<div class="socials">
 									<ul>
 										<li class="newsletter"><a href="">Newsletter</a></li>
