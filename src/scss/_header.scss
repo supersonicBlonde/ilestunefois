@@ -1,45 +1,46 @@
 .header-container {
 	position: relative;
 	display: block;
-	height: 50vh;
-	margin-top: 15px;
+	height: 100vh;
 
 	.header-content {
-		display: flex;
+		/* display: flex;
 		flex-direction: column;
 		justify-content: center;
 		margin: 0 auto;
 		margin-top: -100px;
 		height: inherit;
-		width: 80%; 
+		width: 80%;  */
+		width: 65%;
+		margin: 0 auto;
 		
 
 		h1 {
 			color: #FFFFFF;
-			font-size: 8vw;
-			margin: 5px 0;
+			/* font-size: 8vw; */
 			font-family: $font__title;
+			margin: 0;
 
 			@media (min-width: 768px) {
-	    		font-size: 4vw;
+	    		font-size: 6.25em;
 	 		}
 		}
 
 		h2 {
 			color: #FFFFFF;
 			font-size: 5vw;
-			margin: 5px 0;
+			margin: 10px 0 0 0;
 			font-family: $font__title;
-			line-height: 1;
+			line-height: 1.2;
 
 			@media (min-width: 768px) {
-	    		font-size: 3vw;
+	    		font-size: 4.68em;
 	 		}
 		}
 
-		@media (min-width: 768px) {
-	    	width:50%;
-	 	}
+		/* @media (min-width: 768px) {
+			    	width:50%;
+			 	} */
 	} 
 
 	.mouse {
@@ -47,15 +48,13 @@
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-		bottom:10vh;
+		bottom:30vh;
 		background: url('../../img/mouse.svg');
-		width:47px;
-		height:81px;
+		width:28px;
+		height:48px;
+		background-size:cover;
 	}
 
-	@media (min-width: 768px) {
-	    height:100vh;
-	 }
 }
 
 /* .header-container {

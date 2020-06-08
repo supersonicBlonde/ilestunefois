@@ -46,9 +46,9 @@
 					<div class="header-content">
 						<h1 class="size-title">Il est une fois</h1>
 						<h2 class="site-description"><?php echo bloginfo('description');  ?></h2>
-					</div>.header-content
+					</div><!-- .header-content -->
 					
-					<div class="mouse"></div>.mouse
+					<div class="mouse"></div><!-- .mouse -->
 				
 				</header><!-- .header-container -->
 				
@@ -56,3 +56,5 @@
 		</div><!-- .row -->
 
 	</div><!-- .container-fluid -->
+
+	<div class="content-container">

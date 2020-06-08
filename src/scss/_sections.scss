@@ -2,17 +2,59 @@
 	SECTIONS
 	***********************************/
 
-.home-content {
-	position: relative;
-	top: -40px;
+
+/***********************************
+	GENERIC STYLES
+	***************************************/
+
+
+body {
+	margin: 40px;
+}
+
+.container-fluid, .container {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.section [class*="col"] {
+	padding:80px;
+	padding-right: 0;
+    padding-left: 0;
 }
 
 
+.text-img-block {
+	.container-fluid {
+		padding:12.5em 0 21.5em 0;
+	}
+
+	.column:first-child {
+		padding-left: 10em;
+	}
+}
+
+.content-container {
+	position: relative;
+	top: -7.8em;
+}
+
+
+.section.limited .container-fluid {
+	width: 83%;
+}
+
 #first-section {
-	background: $color__background-light-grey;
-	width:90%;
-	margin: 0 auto;
-	padding: 100px 50px;
+
+	.container-fluid {
+		background: $color__background-light-grey;
+		padding-bottom: 325px;
+	}
+
+	p {
+		width: 70%;
+	}
+	
 
 	img {
 		width:auto;
@@ -23,25 +65,67 @@
 		height: 100%;
 	}
 
-	.bg {
-		background:url(../../img/bg-green.svg);
-		background-repeat: no-repeat;
-		background-size: 68% 72%;
-    	background-position: 81% 72%;
-	}
-
-	p {
+	/* p {
 		width: 70%;
-	}
+	} */
 }
 
 #slider-section {
 	background: #F8EFEC;
-	padding: 5em 0 10em 0;
+	padding: 3.1em 0 11em 0;
 	margin-right:15px;
+
+	.testimonial-slider-container {
+		width:75%;
+		margin-left: -200px;
+		margin-top: -150px;
+	}
+
+
+	.testimonial-container {
+		background: white;
+		padding: 3.2em 0;
+		margin: 0 1em;
+		@include boxshadow;
+		display: flex;
+		flex-direction:column;
+		align-items:center;
+
+
+		> * {
+			margin: 15px 0;
+		}
+
+		.testimonial-fullname {
+			font-family: $font__title;
+			font-size: 1.5em;
+			color: #1B262C;
+		}
+
+		.testimonial-review {
+
+			width:85%;
+			margin-right: auto;
+			margin-left: auto;
+			text-align:center;
+			line-height: 1.8em;
+
+			&:before {
+				content: url('../../img/quote.svg');
+				width:35px;
+				display:block;
+				margin-right: auto;
+				margin-left: auto;
+				margin-bottom: 30px;
+				
+			} 
+		}
+	}
 }
 
 #logo-section {
+	margin-top: -7.1em;
+
 	.column:first-child  {
 		  background-color: #8DAA9D;
  		 background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Calque_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 691.8 1548.7' style='enable-background:new 0 0 691.8 1548.7;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%236F8C7F;%7D%0A%3C/style%3E%3Cpath id='Tracé_3' class='st0' d='M54.9,0l532.7,779.2L0,1548.7h194.9l496.9-636.1V639.5L256.6,0H54.9z'/%3E%3C/svg%3E%0A");
@@ -61,6 +145,10 @@
 				li {
 					width:33%;
 					padding:2em;
+
+					img {
+						width: 80%;
+					}
 				}
 			}
 		}
@@ -81,15 +169,31 @@
 			top: 50%;
 			transform: translateY(-50%);
 
+			h3 {
+				margin-bottom: 3.75rem;
+			}
+
+			p {
+				width:80%;
+				color: #2c241b;
+			}
+
 			.arrow {
 				content: url(../../img/right-arrow.svg);
 			   transform: scaleX(-1);
 			   display: block;
-			   margin-top: 2em;
+			   margin-top: 4.6em;
+			   width: 58px;
 			   padding-left: 0;
 			}
 		}
 	}
 
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1600px;
+	}
 }
 
