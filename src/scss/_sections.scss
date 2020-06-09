@@ -57,7 +57,7 @@ body {
 
 	.container-fluid {
 		background: $color__background-light-grey;
-		padding-bottom: 325px;
+		padding-bottom: 20.3em;
 	}
 
 	p {
@@ -82,12 +82,12 @@ body {
 #slider-section {
 	background: #F8EFEC;
 	padding: 3.1em 0 11em 0;
-	margin-right:15px;
+	position: relative;
 
 	.testimonial-slider-container {
 		width:75%;
-		margin-left: -200px;
-		margin-top: -150px;
+		margin-left: -12em;
+		margin-top: -9.4em;
 	}
 
 
@@ -102,7 +102,7 @@ body {
 
 
 		> * {
-			margin: 15px 0;
+			margin: 1em 0;
 		}
 
 		.testimonial-fullname {
@@ -121,11 +121,11 @@ body {
 
 			&:before {
 				content: url('../../img/quote.svg');
-				width:35px;
+				width:2.1em;
 				display:block;
 				margin-right: auto;
 				margin-left: auto;
-				margin-bottom: 30px;
+				margin-bottom: 1.9em;
 				
 			} 
 		}
@@ -142,7 +142,7 @@ body {
 		background-position: right;
 
 		div {
-			padding: 10em 0;
+			padding: 6em;
 
 			ul {
 				list-style-type:none;
@@ -156,7 +156,7 @@ body {
 					padding:2em;
 
 					img {
-						width: 80%;
+						width: 90%;
 					}
 				}
 			}
@@ -192,7 +192,7 @@ body {
 			   transform: scaleX(-1);
 			   display: block;
 			   margin-top: 4.6em;
-			   width: 58px;
+			   width: 3.6em;
 			   padding-left: 0;
 			}
 		}

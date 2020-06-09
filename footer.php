@@ -74,7 +74,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="container">
+						<div class="container-fluid">
 							<div class="row">
 								<div class="col-5 offset-7">
 									<div class="socials">

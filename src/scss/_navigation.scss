@@ -32,7 +32,7 @@
 	.nav-item {
 		
 		@media (min-width: 992px) {
-			padding: 2.8rem 3.1em;
+			padding: 2.8em 3.1em;
 
 			
 
@@ -46,7 +46,7 @@
 		color: #FFF!important;
 		text-decoration: none;
 		font-family: $font__title;
-		font-size: 19px;
+		font-size: 1.2em;
 		padding: 0;
 
 		/* &:hover, .active {
@@ -69,3 +69,11 @@
 	    padding-left: 0;
 	}
 }
+
+@media (min-width: 2560px) {
+	#logo {
+		width: 188px;
+		height: 95px;
+	}
+}
+

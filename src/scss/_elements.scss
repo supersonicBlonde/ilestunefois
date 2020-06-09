@@ -84,5 +84,29 @@ p {
 } 
 
 
+@media (min-width: 2560px) {
+	body {
+		font-size: 24px;
+	}
+
+	.read-more a:after {
+	    width: 30px;
+	    height: 25px;
+	    background-position-y: 5px;
+	}
+}
+
+@media (min-width: 3600px) {
+	body {
+		font-size: 32px;
+	}
+
+/* 	.read-more a:after {
+    width: 30px;
+    height: 25px;
+    background-position-y: 5px;
+} */
+}
+
 
 
