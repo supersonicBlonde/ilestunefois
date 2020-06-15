@@ -56,8 +56,12 @@ body {
 #first-section {
 
 	.container-fluid {
-		background: $color__background-light-grey;
-		padding-bottom: 20.3em;
+		/* background: $color__background-light-grey, url(../../img/logo_bg.svg); */
+		background: url(../../img/logo_bg.svg),  $color__background-light-grey;
+	    background-repeat: no-repeat;
+	    background-size: 98%, auto;
+	    background-position: 3074% center, 0 0 ;
+	    padding-bottom: 20.3em;
 	}
 
 	p {
