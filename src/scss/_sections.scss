@@ -204,6 +204,20 @@ body {
 
 }
 
+
+.portfolio-content {
+	#first-section {
+		width: 83%;
+		height: 49em;
+		margin: 0 auto;
+	}
+
+	#second-section {
+		text-align: right;
+		margin-top: 3.1em;
+	}
+}
+
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1600px;

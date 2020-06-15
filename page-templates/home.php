@@ -5,7 +5,7 @@
 * @package ilestunefois
 */
 
-get_header();
+get_header('home');
 ?>
 <div class="home-content">
 
