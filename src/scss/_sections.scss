@@ -206,6 +206,7 @@ body {
 
 
 .portfolio-content {
+
 	#first-section {
 		width: 83%;
 		height: 49em;
@@ -216,6 +217,17 @@ body {
 		text-align: right;
 		margin-top: 3.1em;
 	}
+
+	.videos-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.video-item {
+			flex-basis: 45%;
+		}
+	}
+
 }
 
 @media (min-width: 1200px) {
