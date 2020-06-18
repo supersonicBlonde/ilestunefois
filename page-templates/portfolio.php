@@ -9,7 +9,7 @@ get_header();
 ?>
 <div class="portfolio-content">
 
-	<div id="first-section" class="section limited background-image" style="background:url(<?php echo get_field('background_image_header_standard'); ?>)">
+	<div id="first-section" class="section limited background-image" style="background-image:url(<?php echo get_field('background_image_header_standard'); ?>)">
 
 	</div>
 
