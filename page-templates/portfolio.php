@@ -82,57 +82,106 @@ get_header();
 		</div>
 
 
-		<div class="container-fluid">
-			<div class="videos-container">
-				
-				<?php while($portfolio->have_posts()): $portfolio->the_post(); ?>
+	<style type="text/css">
+		.wrapper {
+			display: flex;
+			align-content: center;
+			justify-content: space-around;
+			margin-bottom: 3vw;
+		}
 
-					<?php
+		iframe {
+			width: 30vw;
+			height: 16.5vw;
+		}
+	</style>
 
-					// Load value.
-					$iframe = get_field('embed_code_portfolio_video');
+	
+<script>
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-					// Use preg_match to find iframe src.
-					preg_match('/src="(.+?)"/', $iframe, $matches);
-					$src = $matches[1];
+var playerInfoList = [{
+  id: 'player1',
+  videoId: 'dOy7vPwEtCw'
+}, {
+  id: 'player2',
+  videoId: 'QWtsV50_-p4'
+}, {
+  id: 'player3',
+  videoId: 'y-JqH1M4Ya8'
+}, {
+  id: 'player4',
+  videoId: 'gH7dMBcg-gE'
+}, {
+  id: 'player5',
+  videoId: '7wL9NUZRZ4I'
+}, {
+  id: 'player6',
+  videoId: 'S4R8HTIgHUU'
+}];
 
-					// Add extra parameters to src and replcae HTML.
-					$params = array(
-					    'height'  => 515,
-					);
-					$new_src = add_query_arg($params, $src);
-					$iframe = str_replace($src, $new_src, $iframe);
+function onYouTubeIframeAPIReady() {
+  if (typeof playerInfoList === 'undefined') return;
 
-					// Add extra attributes to iframe HTML.
-					$attributes = 'frameborder="0"';
-					$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+  for (var i = 0; i < playerInfoList.length; i++) {
+    var curplayer = createPlayer(playerInfoList[i]);
+    players[i] = curplayer;
+  }
+}
 
-				
-					?>
+var players = new Array();
 
-					<?php $poster = get_field('poster_gif_portfolio_video'); ?>
+function createPlayer(playerInfo) {
+  return new YT.Player(playerInfo.id, {
+  	events: { 
+    	 'onStateChange': function(event){
+          onPlayerStateChange(event, playerInfo.id);
+        }
+     },
+    videoId: playerInfo.videoId,
+    playerVars: {
+      showinfo: 0,
+    }
+  });
+}
 
-					<div class="video-item">
-						<div class="embed-container">
-							<div class="video-embedded"><?php echo $iframe; ?></div>
-							<!-- <div class="poster"><img src="<?php echo $poster; ?>"></div> -->
-							<div class="poster"><video id="video1" loop="" muted="" playsinline="" poster="<?php echo $poster; ?>"> <source src="http://ilestunefois.localhost/wp-content/uploads/2020/06/CYCLYK.mp4" type="video/mp4"> </video></div>
-						</div>
-						<h3><?php the_title(); ?></h3>
-						<p><?php the_field('paragraphe_portfolio_video'); ?></p>
+function getEvent(event, playerInfo) {       
+    /*if(event.data === 0) {            
+        alert('done');
+    }*/
+}
 
+function onPlayerStateChange(event, player) { 
+  if(event.data === 0) {            
+        console.log(event.target);
+        console.log(player);
+        let playerid = document.getElementById(player);
+        console.log(playerid);
+        playerid.style.display = "none";
+        
+    }
+}
+</script>
+		<div>
+		    <button id="stop">Stop All Videos</button>
+		</div>
+		<div class="wrapper">
+		    <div id="player1"></div>
+		    <div id="player2"></div>
+		    <div id="player3"></div>
+		</div>
 
-					</div>
-				
-
-				<?php endwhile; ?>
-
-
-			</div>
-
+		<div class="wrapper">
+		    <div id="player4"></div>
+		    <div id="player5"></div>
+		    <div id="player6"></div>
 		</div>
 
 	</div>
+
 
 	<?php endif; ?>
 
