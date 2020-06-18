@@ -53,6 +53,35 @@ get_header();
 
 	<div id="portfolio" class="section limited">
 
+		<?php $terms = get_terms( 'videos-category', array('hide_empty' => true) ); ?>
+
+		<div class="container-fluid">
+			
+			<div class="row">
+				
+				<div class="col-12 text-right">
+					
+					<?php if(count($terms) > 0): ?>
+
+						<ul class="videos-categories">
+						
+						<?php foreach($terms as $term): ?>
+
+							<li><a href=""><?php echo $term->name; ?></a></li>
+
+						<?php endforeach;  ?>
+
+						</ul>
+
+					<?php endif; ?>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
 		<div class="container-fluid">
 			<div class="videos-container">
 				
@@ -84,11 +113,12 @@ get_header();
 					<?php $poster = get_field('poster_gif_portfolio_video'); ?>
 
 					<div class="video-item">
-						<h3><?php the_title(); ?></h3>
 						<div class="embed-container">
 							<div class="video-embedded"><?php echo $iframe; ?></div>
-							<div class="poster"><img src="<?php echo $poster; ?>"></div>
+							<!-- <div class="poster"><img src="<?php echo $poster; ?>"></div> -->
+							<div class="poster"><video id="video1" loop="" muted="" playsinline="" poster="<?php echo $poster; ?>"> <source src="http://ilestunefois.localhost/wp-content/uploads/2020/06/CYCLYK.mp4" type="video/mp4"> </video></div>
 						</div>
+						<h3><?php the_title(); ?></h3>
 						<p><?php the_field('paragraphe_portfolio_video'); ?></p>
 
 

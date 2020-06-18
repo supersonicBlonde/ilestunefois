@@ -205,6 +205,10 @@ body {
 }
 
 
+/****************************************
+	PORTFOLIO
+ 	********************************************/
+
 .portfolio-content {
 
 	#first-section {
@@ -226,6 +230,11 @@ body {
 		.video-item {
 			flex-basis: 45%;
 		}
+	}
+
+	.videos-categories {
+		margin-top: 3.75em;
+		margin-bottom: 3.1em;
 	}
 
 }

@@ -38,8 +38,9 @@ function ilestunefois_video() {
 		'show_ui'			=> true,
 		'show_in_menu'		=> true,
 		'capability_type'	=> 'post',
-		'hierarchical'		=> false,
-		'menu_position'		=> 26,
+		'hierarchical'		=> true,
+		'has_archive'		=> true,
+		'menu_position'		=> 10,
 		'menu_icon'			=> 'dashicons-video-alt2',
 		'supports'			=> array( 'title', 'author', 'thumbnail' )
 	);
@@ -63,10 +64,10 @@ function ilestunefois_port_tax() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'category' ),
+		'rewrite'           => array( 'slug' => 'videos-category' ),
 	);
 
-	register_taxonomy( 'category', array( 'portfolio' ), $args );
+	register_taxonomy( 'videos-category', array( 'portfolio' ), $args );
 }
 
 /*function ilestunefois_set_portfolio_columns( $columns ){
