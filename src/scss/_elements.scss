@@ -143,13 +143,16 @@ p {
 
 .portfolio-content h3 {
 	font-size: 3.5em;
+	margin-top: 1.8rem;
 }
 
 #portfolio ul {
 	list-style-type: none;
 	display:flex;
-	justify-content: flex-end;
+}
 
+.videos-categories {
+	justify-content: flex-end;
 
 	li {
 		margin-left: 7.6em;
@@ -159,6 +162,38 @@ p {
 			text-decoration:underline;
 			font-family: $font__primary;
 			font-size: 1.4em;
+		}
+	}
+}
+
+.post-cat {
+	margin-top: 2em;
+
+	li {
+		margin-right: 1.5em;
+
+		a {
+			color: $color__secondary;
+			text-decoration:underline;
+			font-family: $font__primary;
+			font-size: 1.4em;
+		}
+	}
+}
+
+.pagination {
+	
+	justify-content: center;
+
+	.page-numbers {
+		font-family: $font__primary;
+		color: $color__primary;
+		font-size: 3.5em;
+		margin: 0 .5rem;
+		text-decoration: none;
+
+		&.current {
+			text-decoration:underline;
 		}
 	}
 }
