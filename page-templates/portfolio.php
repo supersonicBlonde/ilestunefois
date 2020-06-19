@@ -40,7 +40,7 @@ get_header();
 	<?php
 
 	$args = array(
-		'post_type' => 'portfolio',
+		'post_type' => 'portfoliovideo',
 		'posts_per_page' => 6,
 		'paged' => $paged
 	);
@@ -110,13 +110,16 @@ get_header();
 				
 					?>
 
-					<?php $poster = get_field('poster_gif_portfolio_video'); ?>
+					<?php 
+					$poster = get_field('poster_portfolio_video'); 
+					$cover = get_field('cover_video_portfolio_video');
+					?>
 
 					<div class="video-item">
 						<div class="embed-container">
 							<div class="video-embedded"><?php echo $iframe; ?></div>
 							<!-- <div class="poster"><img src="<?php echo $poster; ?>"></div> -->
-							<div class="poster"><video id="video1" loop="" muted="" playsinline="" poster="<?php echo $poster; ?>"> <source src="http://ilestunefois.localhost/wp-content/uploads/2020/06/CYCLYK.mp4" type="video/mp4"> </video></div>
+							<div class="poster"><video id="video1" loop="" muted="" playsinline="" poster="<?php echo $poster; ?>"> <source src="<?php echo $cover['url']; ?>" type="video/mp4"> </video></div>
 						</div>
 						<h3><?php the_title(); ?></h3>
 						<p><?php the_field('paragraphe_portfolio_video'); ?></p>

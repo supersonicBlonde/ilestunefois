@@ -45,7 +45,7 @@ function ilestunefois_video() {
 		'supports'			=> array( 'title', 'author', 'thumbnail' )
 	);
 	
-	register_post_type( 'portfolio', $args );
+	register_post_type( 'portfoliovideo', $args );
 	
 }
 
@@ -67,7 +67,7 @@ function ilestunefois_port_tax() {
 		'rewrite'           => array( 'slug' => 'videos-category' ),
 	);
 
-	register_taxonomy( 'videos-category', array( 'portfolio' ), $args );
+	register_taxonomy( 'videos-category', array( 'portfoliovideo' ), $args );
 }
 
 /*function ilestunefois_set_portfolio_columns( $columns ){
