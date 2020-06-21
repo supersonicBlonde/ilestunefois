@@ -8,16 +8,42 @@ jQuery('.testimonial-slider').slick({
  
 
 
-let stop = document.getElementById('stop');
+let poster = document.querySelectorAll(".poster");
 
-stop.addEventListener("click", myFunction);
+poster.forEach(function (elem) {
 
-function myFunction() {
-  console.log('ok');
-  players.forEach(function (el) {
-    el.stopVideo();
-  });
-}
+	 elem.addEventListener("mouseover", function(event) {
+	 	
+       let video = event.target;
+     
+		if(video.paused) {
+			video.play();
+		}
+    }, false);
 
+	 elem.addEventListener("mouseout", function(event) {
+       let video = event.target;
+
+			video.load();
+			video.currentTime = 0;
+
+    }, false);
+
+	elem.addEventListener("click", function(event) {
+       let video = event.target;
+        elem.style.display = 'none';
+
+       let  position = elem.dataset.position;
+       players[position].playVideo();
+		//let embed = elem.previousElementSibling;
+		/*console.log(embed);
+		embed.style.display = "block";
+
+		 embed.src += "&autoplay=1";*/
+    	event.preventDefault();
+
+    }, false);
+	
+});
 
 
