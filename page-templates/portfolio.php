@@ -109,83 +109,15 @@ get_header();
 
 					 	playerInfoList.push({id: '<?php echo $id ?>' , videoId: '<?php echo $video_id; ?>'});
 
-					 
-				 	
 				 	 </script>
 
 				  <?php	$count++;
 
+
+
 				 endwhile; ?>	
 
-				 <script>
-				 	
-				 	var tag = document.createElement('script');
-					tag.src = "https://www.youtube.com/iframe_api";
-					var firstScriptTag = document.getElementsByTagName('script')[0];
-					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-					var players = new Array();
-
-					function onPlayerReady(event) {
-					  var embedCode = event.target.getVideoEmbedCode();
-					  event.target.playVideo();
-					  if (document.getElementById('embed-code')) {
-					    document.getElementById('embed-code').innerHTML = embedCode;
-					  }
-					}
-
-					function onYouTubeIframeAPIReady() {
-					  if (typeof playerInfoList === 'undefined') return;
-
-					  for (var i = 0; i < playerInfoList.length; i++) {
-					    var curplayer = createPlayer(playerInfoList[i]);
-					   // console.log(curplayer);
-					    players[i] = curplayer;
-					  }
-					}
-
-
-					function createPlayer(playerInfo) {
-
-					  return new YT.Player(playerInfo.id, {
-					  	events: { 
-					  		'onReady': function(event) {
-					  			onPlayerReady(event, playerInfo.id);
-					  		},
-					    	 'onStateChange': function(event){
-					          onPlayerStateChange(event, playerInfo.id);
-					        }
-					     },
-					    videoId: playerInfo.videoId,
-					    playerVars: {
-					      showinfo: 0,
-					    }
-					  });
-					}
-
-
-					function onPlayerReady(event, player) { 
-						        
-							let playerid = document.getElementById(player);
-							let poster = playerid.nextElementSibling;
-					        poster.style.display = "block";
-					        playerid.display = "block";
-					    
-					}
-
-					function onPlayerStateChange(event, player) { 
-					   
-					  if(event.data === 0 || event.data === 2) {            
-							let playerid = document.getElementById(player);
-							let poster = playerid.nextElementSibling;
-					        poster.style.display = "block";
-					    }
-
-					}
-
-
-
-				 </script>
 				<div class="section limited">
 					<div class="container-fluid">
 						<div class="row">	
@@ -205,16 +137,89 @@ get_header();
 											<?php 
 												echo ilesunefois_echo_cpt_taxonomies(get_the_ID(), array('videos-category')); 
 											?>
-											</div><!-- .post-cat -->
-										</div><!-- .video-item -->
+											</div>
+										</div>
 
-									<?php if($count == 2 || $count == 5): ?></div><!-- .col-6 --><?php endif; ?>
+									<?php if($count == 2 || $count == 5): ?></div><?php endif; ?>
 					
 							<?php $count++; endforeach; ?>
 
-						</div><!-- .row -->
-					</div><!-- .container-fluid -->
-				</div><!-- .limited -->
+										 <script>
+				 	
+
+				 	var tag = document.createElement('script');
+					tag.src = "https://www.youtube.com/iframe_api";
+					var firstScriptTag = document.getElementsByTagName('script')[0];
+					firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+					var players = new Array();
+
+					function onPlayerReady(event) {
+					  var embedCode = event.target.getVideoEmbedCode();
+					  event.target.playVideo();
+					  if (document.getElementById('embed-code')) {
+					    document.getElementById('embed-code').innerHTML = embedCode;
+					  }
+					}
+
+					function onYouTubeIframeAPIReady() {
+					  if (typeof playerInfoList === 'undefined') return;
+					
+					  for (var i = 0; i < playerInfoList.length; i++) {
+					  	console.log(playerInfoList[i]);
+					    var curplayer = createPlayer(playerInfoList[i]);
+					    console.log(curplayer);
+					    players[i] = curplayer;	
+
+					  }
+					}
+
+
+					function createPlayer(playerInfo) {
+
+					  return new YT.Player(playerInfo.id, {
+					  	events: { 
+					  		'onReady': function(event) {
+					  			onPlayerReady(event, playerInfo.id);
+					  		},
+					    	 'onStateChange': function(event){
+					          onPlayerStateChange(event, playerInfo.id);
+					        }
+					     },
+
+					    videoId: playerInfo.videoId,
+					    playerVars: {
+					      showinfo: 0,
+					    }
+					  });
+					}
+
+
+					function onPlayerReady(event, player) { 
+						        
+							let playerid = document.getElementById(player);
+							let poster = playerid.nextElementSibling;
+					        poster.style.display = "block";
+					        playerid.display = "block";
+					    
+					}
+
+					function onPlayerStateChange(event, player) { 
+					  console.log(event.data);
+					  if(event.data === 0) {            
+							let playerid = document.getElementById(player);
+							let poster = playerid.nextElementSibling;
+					        poster.style.display = "block";
+					    }
+
+					}
+
+
+
+				 </script>
+						</div>
+					</div>
+				</div>
 
 				<div class="pagination">
 			    <?php 
