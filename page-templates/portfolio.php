@@ -124,7 +124,7 @@ get_header();
 
 							<?php  $count = 0; foreach($playerList as $player): ?>
 
-									<?php if($count == 0 || $count == 3): ?><div class="col-6"><?php endif; ?>
+									<?php if($count == 0 || $count == 3): ?><div class="col-6 column"><?php endif; ?>
 						 	
 										<div class="video-item">
 											<div class="embed-container">
@@ -205,7 +205,7 @@ get_header();
 					}
 
 					function onPlayerStateChange(event, player) { 
-					  console.log(event.data);
+					   
 					  if(event.data === 0) {            
 							let playerid = document.getElementById(player);
 							let poster = playerid.nextElementSibling;
