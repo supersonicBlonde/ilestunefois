@@ -6,21 +6,23 @@ jQuery('.testimonial-slider').slick({
 });
 
  
+
+
 let poster = document.querySelectorAll(".poster");
 
 poster.forEach(function (elem) {
 
-
-
 	 elem.addEventListener("mouseover", function(event) {
-       let video = event.target.querySelector('video');
+	 	
+       let video = event.target;
+     
 		if(video.paused) {
 			video.play();
 		}
     }, false);
 
 	 elem.addEventListener("mouseout", function(event) {
-       let video = event.target.querySelector('video');
+       let video = event.target;
 
 			video.load();
 			video.currentTime = 0;
@@ -28,51 +30,23 @@ poster.forEach(function (elem) {
     }, false);
 
 	elem.addEventListener("click", function(event) {
-       let video = event.target.querySelector('video');
+
+		players.forEach(function (el) {
+		    el.stopVideo();
+		  });
+	    poster.forEach(function (el) {
+	    	el.style.display = "block";
+	    });
+       let video = event.target;
         elem.style.display = 'none';
-		let embed = elem.previousElementSibling;
-		embed.style.display = "block";
-		let iframe = embed.querySelector('iframe');
-		 iframe.src += "&autoplay=1";
+
+       let  position = elem.dataset.position;
+       players[position].playVideo();
+	
     	event.preventDefault();
 
     }, false);
 	
 });
 
-/*for (let i = 0; i < poster.length; i++) {
-     poster[i].addEventListener("mouseover", function(event) {
-       console.log(event.target.querySelector('video'))
-     });
- }
-*/
 
-
-/*function playPause() { 
-  if (myVideo.paused) 
-    myVideo.play(); 
-  else 
-    myVideo.pause(); 
-} 
-
-function makeBig() { 
-    myVideo.width = 560; 
-} 
-
-function makeSmall() { 
-    myVideo.width = 320; 
-} 
-
-function makeNormal() { 
-    myVideo.width = 420; 
-} */
-
-/*var poster = document.getElementById("poster"); 
-*/
-/*poster.addEventListener("mouseover", function( event ) {   
-	console.log(event.target.querySelector('video'))
-  if (myVideo.paused) 
-    myVideo.play(); 
-  else 
-    myVideo.pause(); 
-}, false);*/

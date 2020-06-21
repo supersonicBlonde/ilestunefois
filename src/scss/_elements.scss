@@ -138,6 +138,8 @@ p {
 		left: 0;
 		width:100%;
 		height:100%;
+		z-index: 100;
+		display: none;
 	}
 }
 
@@ -199,3 +201,31 @@ p {
 }
 
 
+	li {
+		margin-right: 1.5em;
+
+		a {
+			color: $color__secondary;
+			text-decoration:underline;
+			font-family: $font__primary;
+			font-size: 1.4em;
+		}
+	}
+}
+
+.pagination {
+	
+	padding-bottom: 6.3em;
+
+	.page-numbers {
+		font-family: $font__primary;
+		color: $color__primary;
+		font-size: 3.5em;
+		margin: 0 .5rem;
+		text-decoration: none;
+
+		&.current {
+			text-decoration:underline;
+		}
+	}
+}

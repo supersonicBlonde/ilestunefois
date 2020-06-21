@@ -222,20 +222,28 @@ body {
 		margin-top: 3.1em;
 	}
 
-	.videos-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
 
-		.video-item {
-			flex-basis: 45%;
-			margin-bottom: 6.25em;
-		}
+	.video-item {
+		padding: 0 .8em;
+		margin-bottom: 6.25em;
 	}
 
 	.videos-categories {
 		margin-top: 3.75em;
-		margin-bottom: 3.1em;
+		margin-bottom: 5.5em;
+	}
+
+	.videos-container {
+
+		background: $color__background-light-grey;
+
+		.column:nth-child(1) {
+			margin-top: -2.75em;
+		}
+
+		.column:nth-child(2) {
+			padding-top: 5.7em;
+		}
 	}
 
 }
