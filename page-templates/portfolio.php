@@ -53,29 +53,33 @@ get_header();
 	if($portfolio->have_posts() ):
 	?>
 
-	<div id="portfolio" class="section limited">
+	<div id="portfolio">
 
 		<?php $terms = get_terms( 'videos-category', array('hide_empty' => true) ); ?>
 
-		<div class="container-fluid">
-			
-			<div class="row">
+		<div class="section limited">
+
+			<div class="container-fluid">
 				
-				<div class="col-12 text-right">
+				<div class="row">
 					
-					<?php if(count($terms) > 0): ?>
-
-						<ul class="videos-categories">
+					<div class="col-12 text-right">
 						
-						<?php foreach($terms as $term): ?>
+						<?php if(count($terms) > 0): ?>
 
-							<li><a href=""><?php echo $term->name; ?></a></li>
+							<ul class="videos-categories">
+							
+							<?php foreach($terms as $term): ?>
 
-						<?php endforeach;  ?>
+								<li><a href=""><?php echo $term->name; ?></a></li>
 
-						</ul>
+							<?php endforeach;  ?>
 
-					<?php endif; ?>
+							</ul>
+
+						<?php endif; ?>
+
+					</div>
 
 				</div>
 
@@ -84,6 +88,7 @@ get_header();
 		</div>
 
 		<script> let playerInfoList = []; </script>
+
 		<div class="container-fluid">
 			
 			<div class="videos-container">
@@ -144,6 +149,9 @@ get_header();
 
 					  return new YT.Player(playerInfo.id, {
 					  	events: { 
+					  		'onReady': function(event) {
+					  			onPlayerReady(event, playerInfo.id);
+					  		},
 					    	 'onStateChange': function(event){
 					          onPlayerStateChange(event, playerInfo.id);
 					        }
@@ -155,64 +163,87 @@ get_header();
 					  });
 					}
 
-					function onPlayerStateChange(event, player) { 
-						
-					  if(event.data === 0) {            
+
+					function onPlayerReady(event, player) { 
+						        
 							let playerid = document.getElementById(player);
-					        playerid.style.display = "none";
-					      let poster = playerid.nextElementSibling;
-					      poster.style.display = "block";
+							let poster = playerid.nextElementSibling;
+					        poster.style.display = "block";
+					        playerid.display = "block";
+					    
+					}
+
+					function onPlayerStateChange(event, player) { 
+					   
+					  if(event.data === 0 || event.data === 2) {            
+							let playerid = document.getElementById(player);
+							let poster = playerid.nextElementSibling;
+					        poster.style.display = "block";
 					    }
+
 					}
 
 
 
 				 </script>
-				<div class="row">	
-					<?php  $count = 0; foreach($playerList as $player): ?>
+				<div class="section limited">
+					<div class="container-fluid">
+						<div class="row">	
 
-							<?php if($count == 0 || $count == 3): ?><div class="col-6"><?php endif; ?>
-				 	
-								<div class="video-item">
-									<div class="embed-container">
-										<div id="<?php echo "player".$count; ?>"></div>
-										<div class="poster" data-position="<?php echo $count; ?>"><video id="video1" loop="" muted="" playsinline="" poster="<?php echo $player['poster']; ?>"> <source src="<?php echo $player['cover']['url']; ?>" type="video/mp4"> </video></div>
-									</div>
-									<h3><?php echo $player['title']; ?></h3>
-									<p><?php echo $player['paragraphe']; ?></p>
-								</div>
+							<?php  $count = 0; foreach($playerList as $player): ?>
 
-							<?php if($count == 2 || $count == 5): ?></div><!-- .col-6 --><?php endif; ?>
-			
-					<?php $count++; endforeach; ?>
+									<?php if($count == 0 || $count == 3): ?><div class="col-6"><?php endif; ?>
+						 	
+										<div class="video-item">
+											<div class="embed-container">
+												<div id="<?php echo "player".$count; ?>"></div>
+												<div class="poster" data-position="<?php echo $count; ?>"><video id="video1" loop="" muted="" playsinline="" poster="<?php echo $player['poster']; ?>"> <source src="<?php echo $player['cover']['url']; ?>" type="video/mp4"> </video></div>
+											</div>
+											<h3><?php echo $player['title']; ?></h3>
+											<p><?php echo $player['paragraphe']; ?></p>
+											<div class="post-cat">
+											<?php 
+												echo ilesunefois_echo_cpt_taxonomies(get_the_ID(), array('videos-category')); 
+											?>
+											</div><!-- .post-cat -->
+										</div><!-- .video-item -->
 
-				</div><!-- .row -->
+									<?php if($count == 2 || $count == 5): ?></div><!-- .col-6 --><?php endif; ?>
+					
+							<?php $count++; endforeach; ?>
+
+						</div><!-- .row -->
+					</div><!-- .container-fluid -->
+				</div><!-- .limited -->
+
+				<div class="pagination">
+			    <?php 
+			        echo paginate_links( array(
+			            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+			            'total'        => $portfolio->max_num_pages,
+			            'current'      => max( 1, get_query_var( 'paged' ) ),
+			            'format'       => '?paged=%#%',
+			            'show_all'     => false,
+			            'type'         => 'plain',
+			            'end_size'     => 2,
+			            'mid_size'     => 1,
+			            'prev_next'    => true,
+			            'prev_text'    => sprintf( '<i></i> %1$s', __( '', 'text-domain' ) ),
+			            'next_text'    => sprintf( '%1$s <i></i>', __( '', 'text-domain' ) ),
+			            'add_args'     => false,
+			            'add_fragment' => '',
+			        ) );
+			    ?>
+				</div>
 
 		</div><!-- .videos-container -->
 
-	</div><!-- .container-fluid -->
+
+		</div><!-- .container-fluid-->
+
 
 	<?php endif; ?>
 
-	<div class="pagination">
-	    <?php 
-	        echo paginate_links( array(
-	            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-	            'total'        => $portfolio->max_num_pages,
-	            'current'      => max( 1, get_query_var( 'paged' ) ),
-	            'format'       => '?paged=%#%',
-	            'show_all'     => false,
-	            'type'         => 'plain',
-	            'end_size'     => 2,
-	            'mid_size'     => 1,
-	            'prev_next'    => true,
-	            'prev_text'    => sprintf( '<i></i> %1$s', __( '', 'text-domain' ) ),
-	            'next_text'    => sprintf( '%1$s <i></i>', __( '', 'text-domain' ) ),
-	            'add_args'     => false,
-	            'add_fragment' => '',
-	        ) );
-	    ?>
-	</div>
 
 </div>
 

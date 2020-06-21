@@ -223,10 +223,27 @@ body {
 	}
 
 
+	.video-item {
+		padding: 0 .8em;
+		margin-bottom: 6.25em;
+	}
 
 	.videos-categories {
 		margin-top: 3.75em;
-		margin-bottom: 3.1em;
+		margin-bottom: 5.5em;
+	}
+
+	.videos-container {
+
+		background: $color__background-light-grey;
+
+		.col-6:first-child {
+			margin-top: -2.75em;
+		}
+
+		.col-6:last-child {
+			padding-top: 5.7em;
+		}
 	}
 
 }

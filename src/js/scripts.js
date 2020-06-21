@@ -30,16 +30,19 @@ poster.forEach(function (elem) {
     }, false);
 
 	elem.addEventListener("click", function(event) {
+
+		players.forEach(function (el) {
+		    el.stopVideo();
+		  });
+	    poster.forEach(function (el) {
+	    	el.style.display = "block";
+	    });
        let video = event.target;
         elem.style.display = 'none';
 
        let  position = elem.dataset.position;
        players[position].playVideo();
-		//let embed = elem.previousElementSibling;
-		/*console.log(embed);
-		embed.style.display = "block";
-
-		 embed.src += "&autoplay=1";*/
+	
     	event.preventDefault();
 
     }, false);
