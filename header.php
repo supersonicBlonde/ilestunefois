@@ -23,12 +23,13 @@
 
 <body <?php body_class(); ?>>
 
+	
 	<div class="container-fluid">
 
 		<div class="row">
 			<div class="col-12">
 				
-				<header class="header-pages header-container" style="background-color:#8dab9d;">
+				<header class="header-pages header-container" style="background-color:<?php echo get_field('background_color_header_standard'); ?>">
 					
 					
 					<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="navbarNav-container">

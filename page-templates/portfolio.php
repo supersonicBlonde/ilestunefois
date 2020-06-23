@@ -7,11 +7,9 @@
 
 get_header();
 ?>
-<div class="portfolio-content">
+<div class="portfolio-content page-content">
 
-	<div id="first-section" class="section limited background-image" style="background-image:url(<?php echo get_field('background_image_header_standard'); ?>)">
-
-	</div>
+	<?php get_template_part('template-parts/content-subheader'); ?>
 
 	
 	<?php

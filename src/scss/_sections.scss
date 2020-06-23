@@ -53,7 +53,7 @@ body {
 	width: 83%;
 }
 
-#first-section {
+.home-content #first-section {
 
 	.container-fluid {
 		/* background: $color__background-light-grey, url(../../img/logo_bg.svg); */
@@ -204,6 +204,13 @@ body {
 
 }
 
+.page-content {
+	#first-section {
+		width: 83%;
+		margin: 0 auto;
+	}
+}
+
 
 /****************************************
 	PORTFOLIO
@@ -245,7 +252,44 @@ body {
 			padding-top: 5.7em;
 		}
 	}
+}
 
+
+/***********************************
+		AGENCE
+		***************************/
+
+
+#first-profiles {
+
+	margin-top: 7.3em;
+
+	.column {
+		padding:0;
+		margin:0;
+	}
+
+	.row:first-child {
+		flex-direction: row-reverse;
+	}
+
+	.column-bg {
+		background: $color__secondary;
+		padding: 5.6em;
+
+		.profils-content {
+
+			h4 {
+				color: #FFF;
+				font-size: 3.75em;
+				margin-bottom:1em;
+			}
+
+			p {
+				color: #FFF;
+			}
+		}
+	}
 }
 
 @media (min-width: 1200px) {

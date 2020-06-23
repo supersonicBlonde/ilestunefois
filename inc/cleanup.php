@@ -35,3 +35,6 @@ function ilestunefois_remove_meta_version()
 }
 
 add_filter('the_generator' , 'ilestunefois_remove_meta_version');
+
+// remove empty paragraphs
+remove_filter ('the_content', 'wpautop');
