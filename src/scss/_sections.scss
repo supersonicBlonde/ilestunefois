@@ -259,6 +259,12 @@ body {
 		AGENCE
 		***************************/
 
+.page-template-agency .agence-content {
+	background-image: url(../../img/bg_grey.svg);
+	background-repeat: no-repeat;
+	background-position-y: 7.8em;
+}
+
 
 #first-profiles {
 
@@ -290,6 +296,14 @@ body {
 			}
 		}
 	}
+}
+
+#team-slider {
+	margin-bottom: 9.7em;
+}
+
+.team-title {
+	margin:4.56rem 0;
 }
 
 @media (min-width: 1200px) {

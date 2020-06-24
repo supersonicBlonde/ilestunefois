@@ -152,7 +152,6 @@ p {
 
 		p {
 			color: #FFF;
-			font-size: 1.1rem;
 
 		} 
 	}
@@ -235,7 +234,8 @@ p {
 .pagination {
 	
 	justify-content: center;
-
+	padding-bottom: 6.3em;
+	
 	.page-numbers {
 		font-family: $font__primary;
 		color: $color__primary;
@@ -261,19 +261,34 @@ p {
 	}
 }
 
-.pagination {
-	
-	padding-bottom: 6.3em;
 
-	.page-numbers {
-		font-family: $font__primary;
-		color: $color__primary;
-		font-size: 3.5em;
-		margin: 0 .5rem;
-		text-decoration: none;
 
-		&.current {
-			text-decoration:underline;
-		}
+/********************************
+		TEAM
+		*************************/
+
+#team-slider .column:first-child {
+	padding-left:0;
+}
+
+.team-slider .column:last-child {
+	padding-right:0;
+}
+
+.team_slider-single {
+
+	h4 {
+		color:  $color__primary;
+		font-size:2.2em;
+		margin-top:1em;
+		margin-bottom: 0.5em;
+	}
+
+	h5 {
+		color: $color__secondary;
+	}
+
+	.paragraphe {
+		margin-top: 4em;
 	}
 }

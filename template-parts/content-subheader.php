@@ -7,7 +7,7 @@
 	$paragraphe = get_field('paragraphe_header_standard');
 ?>
 
-	<div id="first-section" class="section limited background-image" style="<?php echo $style_bg; ?>">
+	<div id="first-section" class="sub_header section limited background-image" style="<?php echo $style_bg; ?>">
 
 		<?php if(empty($background_image)): ?>
 		<div class="sub_header_content">

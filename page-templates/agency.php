@@ -51,6 +51,69 @@ get_header();
 		</div><!-- .container-fluid -->
 
 	</div><!-- .section limited -->
+
+
+
+	<div id="team-slider">
+
+		<div class="section limited">
+			
+			<div class="container-fluid">
+
+				<div class="row">
+				
+					<div class="col-12 column">
+						
+						<h2 class="team-title"><?php the_field('title_team_section'); ?></h2>
+					
+					</div>
+				
+				</div>
+
+				<?php
+
+				$args = array(
+					'post_type' => 'team',
+					'posts_per_page' => -1
+				);
+
+				
+				$team  = new WP_Query($args);
+
+				if($team->have_posts() ):
+				?>
+
+						<div class="row team_slider-container justify-content-between">
+
+							<?php while($team->have_posts()): $team->the_post();  ?>
+
+								<?php $profil_image = get_field('image_team'); ?>
+								<div class="col column">
+									<div class="team_slider-single">
+										<div>
+											<img src="<?php echo esc_url($profil_image['url']); ?>" alt="<?php echo esc_attr($profil_image['alt']); ?>" />
+										</div>
+										<h4><?php the_title(); ?></h4>
+										<h5><?php the_field('job_title_team'); ?></h5>
+										<div class="paragraphe">
+											<p><?php the_field('paragraphe_team') ?></p>
+										</div>
+									</div>
+								</div><!-- .col -->
+
+							<?php endwhile; ?>
+							
+						</div><!-- .team_slider-container -->
+
+					
+
+				<?php endif; ?>
+
+			</div><!-- .container-fluid -->
+
+		</div><!-- .section.limited -->
+
+	</div><!-- #team-slider -->
 	
 
 
