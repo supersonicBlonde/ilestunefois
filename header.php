@@ -47,7 +47,7 @@
 					  </div>
 					</nav>
 					<div class="header-content">
-						<h1 class="size-title">Portfolio</h1>
+						<h1 class="size-title"><?php the_title(); ?></h1>
 					</div><!-- .header-content -->
 					
 					<!-- <div class="mouse"></div> --><!-- .mouse -->

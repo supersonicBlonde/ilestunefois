@@ -10,7 +10,7 @@
 */
 
 $options = get_option( 'post_formats' );
-$formats = array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' );
+$formats = array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' , 'post' );
 $output = array();
 foreach ( $formats as $format ){
 	$output[] = ( @$options[$format] == 1 ? $format : '' );
@@ -70,3 +70,6 @@ function add_file_types_to_uploads($file_types){
 	return $file_types;
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+add_theme_support( 'post-thumbnails', array( 'post' , 'page' ) );         
+

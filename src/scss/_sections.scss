@@ -27,7 +27,7 @@ body {
 }
 
 /* .section [class*="col"] {
-	padding:80px;
+	padding:80px; 
 	padding-right: 0;
     padding-left: 0;
 } */
@@ -51,6 +51,10 @@ body {
 
 .section.limited .container-fluid {
 	width: 83%;
+}
+
+.section.limitedext .container-fluid {
+	width: 62.5%;
 }
 
 .home-content #first-section {

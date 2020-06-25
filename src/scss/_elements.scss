@@ -16,6 +16,12 @@ h2 {
 	line-height:1.2em;
 }
 
+h2 a, h2 a:hover, h2 a:visited {
+	font-size: 1em;
+	color: $color__primary;
+	text-decoration: none;
+}
+
 h3 {
 	font-family: $font__title;
 	color: $color__primary;
@@ -197,7 +203,7 @@ p {
 	margin-top: 1.8rem;
 }
 
-#portfolio ul {
+.post-cat ul {
 	list-style-type: none;
 	display:flex;
 }
@@ -218,7 +224,7 @@ p {
 }
 
 .post-cat {
-	margin-top: 2em;
+	padding-top: 2em;
 
 	li {
 		margin-right: 1.5em;
@@ -293,4 +299,63 @@ p {
 		margin-top: 4em;
 		width: 80%;
 	}
+}
+
+
+/**************************************
+          BLOG
+          *****************************/
+
+.standard-featured {
+	width:100%;
+	height:36.8em;
+}
+
+.blog-categories {
+	display: flex;
+	justify-content: flex-start;
+	list-style-type: none;
+	margin-bottom: 2.5em;
+
+	li {
+		margin-right: 7.6em;
+
+		a {
+			color: #FFF;
+			text-decoration:underline;
+			font-family: $font__primary;
+			font-size: 1.4em;
+		}
+	}
+}
+article {
+	margin: 4.3em 0;
+}
+
+article:first-child {
+	margin-top: 0;
+}
+
+article:last-child {
+	margin-bottom:8.75em;
+}
+
+.post-single  {
+	background: white;
+	padding:0 3.5em 3.5em 3.5em;
+	@include boxshadow;
+
+}
+
+.standard-read-more {
+	text-align: right;
+	margin-top: 5.3em;
+
+	a {
+		font-family: $font__primary;
+		color: #1b262c;
+		font-size: 1.4em;
+		text-decoration: underline;
+	}
+
 }
