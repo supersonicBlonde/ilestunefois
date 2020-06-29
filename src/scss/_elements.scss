@@ -9,7 +9,7 @@ h1 {
 
 }
 
-h2 {
+h2, h1.entry-title {
 	font-family: $font__title;
 	font-size: 3.5em;
 	color: $color__primary;
@@ -46,6 +46,14 @@ p {
 	font-size: 1.1em;
 	line-height: 1.8em;
 }
+
+.bg-bottom {
+	position: absolute;
+	bottom:0;
+	width: 100%;
+}
+
+
 
 .read-more {
 	display: inline-block;
@@ -218,7 +226,7 @@ p {
 			color: #1b262c;
 			text-decoration:underline;
 			font-family: $font__primary;
-			font-size: 1.4em;
+			font-size: 1.4em; 
 		}
 	}
 }
@@ -236,6 +244,12 @@ p {
 			font-size: 1.4em;
 		}
 	}
+}
+
+.cat-single {
+	color: $color__secondary;
+	font-family: $font__primary;
+	font-size: 1.4em;
 }
 
 .pagination {
@@ -358,4 +372,55 @@ article:last-child {
 		text-decoration: underline;
 	}
 
+}
+
+.share-container {
+	
+	text-align: center;
+	margin-bottom: 11.5em;
+
+
+	.share {
+		font-size: 1.46em;
+		margin-bottom: 1.5em;
+		color: $color__secondary;
+		font-family: $font__primary;
+	}
+}
+
+.gk-social-buttons {
+	ul {
+		display: flex;
+		list-style-type: none;
+		justify-content: center;
+
+		li {
+			margin: 0 .75em;
+			a {
+				color: $color__primary;
+			}
+		}
+	}
+}
+
+
+
+.related-bg {
+	height: 23.3em;
+ }
+
+ .related-single {
+ 	@include boxshadow;
+ 	background-color: white;
+ 	height: 100%;
+ }
+
+ .related-content {
+ 	background: white;
+	padding: 3em;
+ }
+
+#related-posts .column {
+	display: flex;
+	flex-direction: column;
 }

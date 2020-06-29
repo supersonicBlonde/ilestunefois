@@ -7,6 +7,9 @@
 	GENERIC STYLES
 	***************************************/
 
+html, body {
+	height: 100%
+}
 
 video  { 
   position: absolute;
@@ -43,9 +46,12 @@ body {
 	}
 }
 
-.content-container {
-	position: relative;
-	margin-top: -7.8em;
+.page-template-agency .content-container, .single .content-container, .page-template-blog .content-container {
+	background-color: $color__background-light-grey;
+}
+
+.page-content {
+	position: relative;margin-top: -7.8em;
 }
 
 
@@ -263,12 +269,6 @@ body {
 		AGENCE
 		***************************/
 
-.page-template-agency .agence-content {
-	background-image: url(../../img/bg_grey.svg);
-	background-repeat: no-repeat;
-	background-position-y: 7.8em;
-}
-
 
 #first-profiles {
 
@@ -283,9 +283,20 @@ body {
 		flex-direction: row-reverse;
 	}
 
+	.profil-image {
+			position: relative;	
+			height: 100%;
+
+			/* img {
+				height: 100%;
+				position: absolute;
+			} */
+		}
+
 	.column-bg {
 		background: $color__secondary;
 		padding: 5.6em;
+
 
 		.profils-content {
 
@@ -309,6 +320,31 @@ body {
 .team-title {
 	margin:4.56rem 0;
 }
+
+
+/************************************
+	RELATED POSTS
+	*********************************/
+
+
+#related-posts {
+	position: relative;
+	padding-bottom: 7.8em;
+}
+
+#related-posts .bg-bottom {
+	background: #0e0f14;
+	height:25.6em;
+}
+#related-posts .column:first-child {
+	padding-right:3.5em;
+}
+
+#related-posts .column:last-child {
+	padding-left:3.5em;
+}
+
+
 
 @media (min-width: 1200px) {
 	.container {

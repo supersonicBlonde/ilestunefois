@@ -12,3 +12,4 @@ require get_template_directory() . '/inc/theme-support.php';
 require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 require get_template_directory() . '/inc/custom-post-type.php';
 require get_template_directory() . '/inc/helpers.php';
+
