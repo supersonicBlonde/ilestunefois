@@ -31,7 +31,7 @@
 
 				<?php $bg_color = !empty(get_field('background_color_header_standard'))?get_field('background_color_header_standard'):"#8daa94"; ?>
 				
-				<header class="header-pages header-container" style="background-color:<?php echo $bg_color; ?>">
+				<header class="header-pages header-container" style="background-color:<?php echo $bg_color; ?>" id="header-container">
 					
 					
 					<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="navbarNav-container">

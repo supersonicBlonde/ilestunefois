@@ -39,11 +39,10 @@ var mapURL       = './';
 
 var jsSRC        = './src/js/';
 var jsAdmin		 = 'scripts.js';
-/*var jsForm       = 'form.js';
-var jsSlider     = 'slider.js';
+var jsConnect      = 'connect.js';
+/*var jsSlider     = 'slider.js';
 var jsAuth       = 'auth.js';*/
-//var jsFiles      = [ jsAdmin , jsForm, jsSlider , jsAuth];
-var jsFiles      = [ jsAdmin ];
+var jsFiles      = [  jsAdmin, jsConnect];
 var jsURL        = './dist/js/';
 
 
@@ -104,7 +103,7 @@ function js(done) {
 		.pipe( sourcemaps.init({ loadMaps: true }) )
 		.pipe( uglify() )
 		.pipe( sourcemaps.write( '.' ) )
-		.pipe( dest( jsURL ) )
+		.pipe( dest( jsURL ) )   
 		//.pipe( browserSync.stream() );
 	});
 	done();

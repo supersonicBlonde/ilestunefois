@@ -31,10 +31,10 @@
 					$poster = get_field('poster_header_video');
 				?>
 
-				<header class="header-container text-center background-image" style="background-image:url($poster);">
+				<header class="header-container text-center background-image" id="header-container">
 					
 					<?php if(!empty(get_field('video_mp4_header_video'))): ?>
-						<video poster="$poster" id="bgvid" playsinline autoplay muted loop>
+						<video poster="<?php echo $poster; ?>" id="bgvid" playsinline autoplay muted loop>
 							<?php if(!empty(get_field('video_webm_header_video'))): ?>
 								<source src="<?php the_field('video_webm_header_video') ?>" type="video/webm"> 
 							<?php endif; ?>

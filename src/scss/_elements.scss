@@ -424,3 +424,81 @@ article:last-child {
 	display: flex;
 	flex-direction: column;
 }
+
+.modal-connect {
+	background: $color__primary;
+	width:0;
+	height: 100vh;
+	right: 0;
+	top: 0;
+	position: absolute;
+	z-index: 9999;
+	
+}
+
+
+
+.close-btn {
+	height: 6.8em;
+	width: 6.8em;
+	position:absolute;
+	top:0;
+	left:0;
+	background: $color__primary;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+
+/* .close-shape {
+	color: white;
+	font-size: 2.5em;
+	opacity:0;
+	transition: opacity 0.5s;
+	transition-delay: 2s;
+
+	&.show {
+		opacity: 1;
+	}
+} */
+
+.close-shape {
+    $size: 50px;
+    height: $size;
+    width: $size;
+    position: relative;
+    box-sizing: border-box;
+    line-height: $size;
+    display: inline-block;
+    opacity: 0;
+
+    &:before, &:after {
+        $width: 50px;
+        $height: 10px;
+        transform: rotate(-45deg);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -$height/2;
+        margin-left: -$width/2;
+        display: block;
+        height: $height;
+        width: $width;
+        background-color: #fff;
+        transition: all 0.25s ease-out;
+    }
+
+    &:after {
+        transform: rotate(-135deg);
+    }
+
+    &:hover {
+
+        &:before, &:after {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+
