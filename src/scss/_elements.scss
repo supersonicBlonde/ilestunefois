@@ -1,3 +1,7 @@
+::-webkit-input-placeholder, :-ms-input-placeholder, ::placeholder { 
+  color: #c77c98;
+}
+
 img {
 	max-width:100%;
 	width: 100%;
@@ -433,6 +437,7 @@ article:last-child {
 	top: 0;
 	position: absolute;
 	z-index: 9999;
+	transition: opacity 0.5s;
 	
 }
 
@@ -501,4 +506,58 @@ article:last-child {
     }
 }
 
+/*******************************
+		CONNECT
+		************************/
 
+
+.connect-content {
+	padding: 3.5rem 3.1rem;
+
+	h2 {
+		color: #c77c98;
+		font-size: 3.5em;
+	
+		&:after {
+			content:"";
+			background: #3d041e;
+			height: 3px;
+			display:inline-block;
+			width: 100%;
+			margin: 2.5rem 0;
+		}
+	}
+
+	.social-menu {
+		list-style-type: none;
+
+		li {
+			line-height: 1.1;
+			 a {
+			 	color: #c77c98;
+				font-size: 3.5em;
+				font-family: $font__primary;
+			}
+		}
+	}
+
+	.tel {
+
+		margin-top: 5em;
+
+		a {
+			color: #c77c98;
+			font-size: 3.5em;
+			font-family: $font__primary;
+		}
+	}
+}
+
+
+.show {
+	opacity: 1;
+}
+
+.hide {
+	opacity:0;
+}

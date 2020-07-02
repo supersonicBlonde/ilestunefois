@@ -36,6 +36,11 @@ function ilestunefois_load_scripts(){
 
 
 	wp_enqueue_script( 'js', get_template_directory_uri().'/dist/js/scripts.min.js', array('slickjs','jquery'), '', true );
+
+	wp_localize_script( 'js', 'ajax_js_obj', array(
+                      'ajax_url' => admin_url( 'admin-ajax.php' ),
+                      'the_nonce' => wp_create_nonce('MY_NONCE_VAR')
+     ));
 	
 }
 add_action( 'wp_enqueue_scripts', 'ilestunefois_load_scripts' );
