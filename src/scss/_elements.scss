@@ -429,9 +429,15 @@ article:last-child {
 	flex-direction: column;
 }
 
+
+
+/*******************************
+		CONNECT
+		************************/
+
 .modal-connect {
 	background: $color__primary;
-	width:0;
+	width:60%;
 	height: 100vh;
 	right: 0;
 	top: 0;
@@ -439,6 +445,11 @@ article:last-child {
 	z-index: 9999;
 	transition: opacity 0.5s;
 	
+	&.animate {
+		animation-name: largeur60;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;  
+	}
 }
 
 
@@ -447,25 +458,31 @@ article:last-child {
 	height: 6.8em;
 	width: 6.8em;
 	position:absolute;
-	top:0;
+	top: 2.3em;
 	left:0;
-	background: $color__primary;
+	background: transparent;
 	display: flex;
 	justify-content: center;
 	align-items:center;
+	transform-origin: center right;
+	transition: opacity 0.5s;
+
+	&.animate {
+		animation-name: slide;
+		animation-duration: 1s;
+		animation-delay: 0.5s;
+		animation-fill-mode: forwards;  
+	}
+
+	/* &.animate-backwards {
+		animation-name: slide;
+		animation-duration: 8s;
+		animation-delay: 2s;
+		animation-fill-mode: forwards;  
+		animation-direction: reverse;
+	} */
 }
 
-/* .close-shape {
-	color: white;
-	font-size: 2.5em;
-	opacity:0;
-	transition: opacity 0.5s;
-	transition-delay: 2s;
-
-	&.show {
-		opacity: 1;
-	}
-} */
 
 .close-shape {
     $size: 50px;
@@ -476,6 +493,7 @@ article:last-child {
     line-height: $size;
     display: inline-block;
     opacity: 0;
+    
 
     &:before, &:after {
         $width: 50px;
@@ -494,6 +512,10 @@ article:last-child {
         transition: all 0.25s ease-out;
     }
 
+    &.hide:before, &.hide:after {
+    	opacity: 0;
+    }
+
     &:after {
         transform: rotate(-135deg);
     }
@@ -504,12 +526,21 @@ article:last-child {
             transform: rotate(0deg);
         }
     }
+
+
+
+    &.animate {
+    	animation-name: opacity;
+    	animation-duration: 0.5s;
+		animation-delay: 1s;
+		animation-fill-mode: forwards;  
+    }
+
 }
 
-/*******************************
-		CONNECT
-		************************/
-
+#form-connect {
+	transition: opacity 0.5s;
+}
 
 .connect-content {
 	padding: 3.5rem 3.1rem;

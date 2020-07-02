@@ -31,10 +31,12 @@
 @import "font-awesome/solid.scss";
 @import "font-awesome/brands.scss";
 
+@import "variables";
+@import 'animations';
 @import "generic";
 @import "flaticon";
 @import "normalize";
-@import "variables";
+
 @import "typography";
 @import "elements";
 @import "header";

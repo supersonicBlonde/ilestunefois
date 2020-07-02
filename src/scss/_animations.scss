@@ -1,0 +1,15 @@
+@keyframes largeur60 {
+  from {width: 0;}
+  to {width: '60%';}
+}
+
+@keyframes slide {
+  from {left: 0; background:transparent;}
+  20% {background: $color__primary;}
+  to { left: -6.8em;background: $color__primary;}
+} 
+
+@keyframes opacity {
+  from {opacity: 0;}
+  to  {opacity: 1;}
+} 
