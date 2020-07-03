@@ -1,91 +1,116 @@
 class Modal {
 
-	  constructor(parent) {
-	    this.parent = document.getElementById('header-container');
-	    //this.parent = parent;
-	    this.modal_container = document.createElement('div');
-	  	this.close_btn = document.createElement('div');
-	  	this.close_shape = document.createElement('div');
-	    this.createElements();
-	   
-	  }
+	constructor(parent) {
+		this.parent = document.getElementById('header-container');
+		this.modal_container = document.createElement('div');
+		this.close_btn = document.createElement('div');
+		this.close_shape = document.createElement('div');
+		this.createElements();
+	}
 
 
 	close() {
-	  let parent = this.parentElement;
-	 document.getElementById("form-connect").classList.add('hide');
-	  let close_btn = this;
-	  this.children[0].style.display = "none"
-	  this.classList.add('hide');
-	  let anim = parent.animate([
-		  // keyframes
-		  { width: '60%', opacity: 1}, 
-	  	  { width: 0, opacity:0.5 }
+		let parent = this.parentElement;
+		document.getElementById("form-connect").classList.add('hide');
+		let close_btn = this;
+		this.children[0].style.display = "none"
+		this.classList.add('hide');
+		let anim = parent.animate([
+		// keyframes
+			{ width: '60%', opacity: 1}, 
+			{ width: 0, opacity:0.5 }
 
-		], { 
-		  // timing options
-		  duration: 500,
-		  iterations: 1,
-		  delay: 300,
-		  easing: 'ease-out',
-		  fill: "forwards"
+			], { 
+		// timing options
+			duration: 500,
+			iterations: 1,
+			delay: 300,
+			easing: 'ease-out',
+			fill: "forwards"
 		});
-	  anim.onfinish = function() {
-	  	parent.remove();
-	  }
+		anim.onfinish = function() {
+			parent.remove();
+		}
 	}
 
-	
 
 	createElements() {
-	  /*	this.modal_container = document.createElement('div');
-	  	this.close_btn = document.createElement('div');
-	  	this.close_shape = document.createElement('div');*/
-	  	
-	  	this.parent.appendChild(this.modal_container);
-	  	this.modal_container.appendChild(this.close_btn);
-	  	this.close_btn.appendChild(this.close_shape);
 
-	  	this.modal_container.classList.add('modal-connect');
-	  	this.modal_container.setAttribute('id', 'modal-container');
+		this.parent.appendChild(this.modal_container);
+		this.modal_container.appendChild(this.close_btn);
+		this.close_btn.appendChild(this.close_shape);
 
-	  	this.close_btn.classList.add('close-btn');
+		this.modal_container.classList.add('modal-connect');
+		this.modal_container.setAttribute('id', 'modal-container');
+
+		this.close_btn.classList.add('close-btn');
 		this.close_btn.setAttribute('id', 'close-btn');
 
 		this.close_shape.classList.add('close-shape');
-	 }
+	}
 
-	 animate() {
-	 	this.modal_container.classList.add('animate');
-	 	this.close_btn.classList.add('animate');
-	 	this.close_shape.classList.add('animate');
-	 }
+	animate() {
+		this.modal_container.classList.add('animate');
+		this.close_btn.classList.add('animate');
+		this.close_shape.classList.add('animate');
+	}
 
-	 load_template() {
-	 	jQuery.ajax({
-            url : ajax_js_obj.ajax_url,
-            type : 'post',
-            data : {
-                action : 'load_form', 
-                submitted_nonce : ajax_js_obj.the_nonce,
-            },
-            success : function( response ) {
-				console.log( "success" );
+	load_template() {
+		
+		let form = document.createElement('div');
+		form.setAttribute('id' , "form-connect");
+		let parent = document.getElementById('modal-container');
+		parent.appendChild(form);
+
+		let preloader = document.createElement('div');
+		preloader.setAttribute('id', 'preloader');
+		preloader.innerHTML = '<img src="/wp-content/themes/ilestunefois/img/preloader.svg">';
+		parent.appendChild(preloader);
+
+	/*	fetch(ajax_js_obj.ajax_url , {
+			method: "POST",
+			body: 'action=load_form&submitted_nonce='+ajax_js_obj.the_nonce
+		}).then(res => res.json())
+			.catch(error => {
+				console.log("error");
+			})
+			.then(response => {
+
+				if (response === 0 || response.status === 'error') {
+					console.log( response );
+					return;
+				}
 				let form = document.createElement('div');
-				form.setAttribute('id' , "form-connect");
+				console.log(form);
 				let parent = document.getElementById('modal-container');
 				parent.appendChild(form);
 				form.innerHTML =  response.data;
-            },
-            error : function( response ) {
-                console.log('Error retrieving the information: ' + response.status + ' ' + response.statusText);
-                console.log( response );
-            }
-        });
-		 }
+			});
+		}*/
 
 
-	  }
+		jQuery.ajax({
+			url : ajax_js_obj.ajax_url,
+			type : 'post',
+			data : {
+				action : 'load_form', 
+				submitted_nonce : ajax_js_obj.the_nonce,
+			},
+			
+			success : function( response ) { 
+				document.getElementById('form-connect').innerHTML =  response.data;
+			},
+			complete:function(data){
+		    	document.getElementById('preloader').classList.add('hide');
+		   },
+			error : function( response ) {
+				console.log('Error retrieving the information: ' + response.status + ' ' + response.statusText);
+				console.log( response );
+			}
+		});
+	}
+
+}
 
 window.addEventListener("load", function() {
 
