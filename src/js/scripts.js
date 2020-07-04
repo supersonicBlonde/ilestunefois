@@ -39,13 +39,14 @@ class Modal {
 		let anim = parent.animate([
 		// keyframes
 			{ width: '60%', opacity: 1}, 
-			{ width: 0, opacity:0.5 }
+			{ width: '30%', opacity: 0}, 
+			{ width: 0, opacity:0 }
 
 			], { 
 		// timing options
-			duration: 500,
+			duration: 300,
 			iterations: 1,
-			delay: 300,
+			//delay: 300,
 			easing: 'ease-out',
 			fill: "forwards"
 		});
