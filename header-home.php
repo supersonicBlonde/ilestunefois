@@ -22,7 +22,7 @@
 	</head>
 
 <body <?php body_class(); ?>>
-
+<div class="scale">
 	<div class="container-fluid">
 
 		<div class="row">

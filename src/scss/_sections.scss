@@ -99,8 +99,17 @@ body {
 
 #slider-section {
 	background: #F8EFEC;
-	padding: 3.1em 0 11em 0;
+	padding: 3.1em 0 19em 0;
 	position: relative;
+
+
+	.slick-track {
+		display: flex;
+	}
+
+	.slick-slide {
+		height: inherit;
+	}
 
 	.testimonial-slider-container {
 		width:75%;
@@ -115,11 +124,12 @@ body {
 		margin: 0 1em;
 		@include boxshadow;
 		display: flex;
-		flex-direction:column;
+		flex-direction:column; 
 		align-items:center;
+		height: 100%;
 
 
-		> * {
+		> * { 
 			margin: 1em 0;
 		}
 
@@ -127,6 +137,7 @@ body {
 			font-family: $font__title;
 			font-size: 1.5em;
 			color: #1B262C;
+			text-align: center;
 		}
 
 		.testimonial-review {
@@ -291,10 +302,10 @@ body {
 			position: relative;	
 			height: 100%;
 
-			/* img {
+			 img {
 				height: 100%;
-				position: absolute;
-			} */
+				width:100%
+			} 
 		}
 
 	.column-bg {

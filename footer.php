@@ -94,7 +94,8 @@
 		</div>
 	</footer>
 </div> <!-- .content-container -->
-
+<div id="overlay"></div>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>

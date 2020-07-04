@@ -1,3 +1,4 @@
+
 class Modal {
 
 	constructor(parent) {
@@ -5,13 +6,33 @@ class Modal {
 		this.modal_container = document.createElement('div');
 		this.close_btn = document.createElement('div');
 		this.close_shape = document.createElement('div');
-		this.createElements();
+		this.overlay = document.getElementById('overlay');
+		this.scale = document.querySelector('.scale');
+		this.createElements(); 
+	}
+
+	set_overlay(state) {
+		if(state === true) {
+			this.overlay.classList.add('show');
+			this.overlay.classList.remove('hide');
+			this.scale.classList.add('scaleOut');
+			this.scale.classList.remove('scaleIn');
+		}
+		else {
+			this.overlay.classList.remove('show');
+			this.overlay.classList.add('hide');
+			this.scale.classList.add('scaleIn');
+			this.scale.classList.remove('scaleOut');
+		}
 	}
 
 
 	close() {
 		let parent = this.parentElement;
 		document.getElementById("form-connect").classList.add('hide');
+		document.getElementById('overlay').classList.add('hide');
+		document.getElementById('overlay').classList.remove('show');
+		document.querySelector('.scale').classList.add('scaleIn');
 		let close_btn = this;
 		this.children[0].style.display = "none"
 		this.classList.add('hide');
@@ -34,9 +55,12 @@ class Modal {
 	}
 
 
+
+
 	createElements() {
 
-		this.parent.appendChild(this.modal_container);
+		//this.parent.appendChild(this.modal_container);
+		document.body.appendChild(this.modal_container);
 		this.modal_container.appendChild(this.close_btn);
 		this.close_btn.appendChild(this.close_shape);
 
@@ -47,6 +71,8 @@ class Modal {
 		this.close_btn.setAttribute('id', 'close-btn');
 
 		this.close_shape.classList.add('close-shape');
+
+		this.overlay.setAttribute('id' , 'overlay');
 	}
 
 	animate() {
@@ -121,6 +147,8 @@ window.addEventListener("load", function() {
 	  appendArrows: jQuery('#slider-section')
 	});
 
+	
+
 	/*********************************************************
 			VIDEO SYSTEM PORTFOLIO
 			***************************************************/
@@ -177,9 +205,11 @@ window.addEventListener("load", function() {
 	connect_btn.addEventListener('click' , function(event) {
 
 		event.preventDefault();
+		
 		let modal = new Modal();
 		modal.load_template();
 		modal.animate();
+		modal.set_overlay(true);
 		modal.close_btn.addEventListener('click', modal.close);
 	}); 
 
