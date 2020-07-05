@@ -145,12 +145,16 @@ window.addEventListener("load", function() {
 	  infinite: true,
 	  slidesToShow: 3,
 	  slidesToScroll: 1,
+	   cssEase: 'ease-out',
+	   useTransform: true,
 	  appendArrows: jQuery('#slider-section')
 	});
 
 	jQuery('#slider-logos').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
+	  useTransform: true,
+	   cssEase: 'ease-out',
 	  appendArrows: jQuery('#slider-logo-container')
 	});
 
