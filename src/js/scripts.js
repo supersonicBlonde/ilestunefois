@@ -148,6 +148,12 @@ window.addEventListener("load", function() {
 	  appendArrows: jQuery('#slider-section')
 	});
 
+	jQuery('#slider-logos').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  appendArrows: jQuery('#slider-logo-container')
+	});
+
 	
 
 	/*********************************************************
@@ -213,6 +219,8 @@ window.addEventListener("load", function() {
 		modal.set_overlay(true);
 		modal.close_btn.addEventListener('click', modal.close);
 	}); 
+
+
 
 });
 
