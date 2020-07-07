@@ -17,6 +17,7 @@
 
 .navbar-brand {
 	padding: 1.75em 0 0 1.75em;
+	transition: transform 0.5s;
 
 	.cls-1{
 		fill: #fff;
@@ -63,10 +64,49 @@
 	}
 }
 
+
+/*************************************
+	STICKY
+	**********************************/
+.navbar {
+	transition: all 1s;
+}
+
+.navbar.sticky {
+	position:fixed;
+	top: 0;
+	width:95.8%;
+	background: white;
+	z-index: 8888;
+
+
+	+ .content-container {
+		padding-top: 102px;
+	}
+
+	.menu-item:not(:last-child) a {
+		color:black!important;
+	}
+
+	#logo {
+		filter: invert(1);
+	}
+
+	.navbar-brand {
+		transform: scale(.8);
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+}
 @media (min-width: 992px) {
 	.navbar-expand-lg .navbar-nav .nav-link {
 	    padding-right: 0;
 	    padding-left: 0;
+	}
+
+	.navbar.sticky .nav-item {
+	    padding: 1.7em 3.1em;
 	}
 }
 

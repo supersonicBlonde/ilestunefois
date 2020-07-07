@@ -237,6 +237,7 @@ window.addEventListener("load", function() {
 
 	// Get the header
 	let navbar = document.getElementById("navbarNav-container");
+	let bg = document.querySelector(".bg-sticky");
 
 	// Get the offset position of the navbar
 	var sticky = navbar.offsetTop;
@@ -245,8 +246,10 @@ window.addEventListener("load", function() {
 	function myFunction() {
 	  if (window.pageYOffset > sticky) {
 	    navbar.classList.add("sticky");
+	 
 	  } else {
 	    navbar.classList.remove("sticky");
+	     
 	  }
 	}
 
