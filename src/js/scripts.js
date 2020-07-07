@@ -1,4 +1,8 @@
-
+//import LocomotiveScroll from 'locomotive-scroll';
+ /*const scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true
+});*/
 class Modal {
 
 	constructor(parent) {
@@ -225,7 +229,30 @@ window.addEventListener("load", function() {
 	}); 
 
 
+// When the user scrolls the page, execute myFunction
+	window.onscroll = function() {
+		console.log("ok");
+		myFunction()
+	};
+
+	// Get the header
+	let navbar = document.getElementById("navbarNav-container");
+
+	// Get the offset position of the navbar
+	var sticky = navbar.offsetTop;
+
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function myFunction() {
+	  if (window.pageYOffset > sticky) {
+	    navbar.classList.add("sticky");
+	  } else {
+	    navbar.classList.remove("sticky");
+	  }
+	}
 
 });
+
+
+
 
 

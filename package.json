@@ -39,6 +39,7 @@
 	},
 	"license": "GPL-3.0",
 	"dependencies": {
-		"code-prettify": "^0.1.0"
+		"code-prettify": "^0.1.0",
+		"locomotive-scroll": "^3.5.4"
 	}
 }

@@ -20,7 +20,7 @@ get_header('home');
 				<div class="row">
 					<div class="col-6 column">
 						<?php if(!empty($titre)): ?>
-						<h3>
+						<h3 class="data-scroll">
 							<?php echo $titre; ?>
 						</h3>
 						<?php endif; ?>
