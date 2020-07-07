@@ -16,7 +16,8 @@
 }
 
 .navbar-brand {
-	padding: 1.75em 0 0 1.75em;
+	padding: 0 0 0 1.75em;
+	align-self: center;
 	transition: transform 0.5s;
 
 	.cls-1{
@@ -75,10 +76,13 @@
 .navbar.sticky {
 	position:fixed;
 	top: 0;
-	width:95.8%;
+	width:100%;
 	background: white;
 	z-index: 8888;
 
+	ul {
+		margin-right: 5em;
+	}
 
 	+ .content-container {
 		padding-top: 102px;
@@ -96,6 +100,7 @@
 		transform: scale(.8);
 		padding-top: 0;
 		padding-bottom: 0;
+		
 	}
 
 }
