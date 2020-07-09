@@ -81,12 +81,11 @@ function ilestunefois_port_tax() {
 	);
 
 	$args = array(
-		'hierarchical'      => true,
+		'hierarchical'      => false,
+		'public'			=> true,	
 		'labels'            => $labels,
 		'show_ui'           => true,
 		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'videos-category' ),
 	);
 
 	register_taxonomy( 'videos-category', array( 'portfoliovideo' ), $args );

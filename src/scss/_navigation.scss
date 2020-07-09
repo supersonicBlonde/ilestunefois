@@ -8,12 +8,42 @@
 
 .navbar {
 	padding: 0;
+	background: white;
+	flex-direction: row-reverse;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	transition: all 1s;
+
+	.fi {
+		font-size: 2em;
+	}
+
+	.connect-mobile {
+		
+		background: $color__primary;
+		padding:1em 1.5em;
+
+		.fi {
+			color:white;
+		}
+	}
+
+	.fi {
+		color: black;
+	}
+
+	.menu-item:not(:last-child) a {
+		color:black!important;
+	}
+
+	#logo {
+		filter: invert(1);
+		width: 94px; 
+	}
 }
 
-#logo {
-	width: 144px;
-	height: 73px;
-}
+
 
 .navbar-brand {
 	padding: 0 0 0 1.75em;
@@ -69,9 +99,7 @@
 /*************************************
 	STICKY
 	**********************************/
-.navbar {
-	transition: all 1s;
-}
+
 
 .navbar.sticky {
 	position:fixed;
@@ -104,6 +132,32 @@
 	}
 
 }
+
+@media (min-width: 768px) {
+	.navbar {
+
+		background: transparent;
+		flex-direction: row;
+		position:relative;
+
+		.connect-mobile {
+			display: none;
+		}
+
+		.menu-item:not(:last-child) a {
+			color:white!important;
+		}
+
+		#logo {
+			filter: invert(0);
+			width: 144px;
+			height: 73px;
+		}
+	}
+}
+
+
+
 @media (min-width: 992px) {
 	.navbar-expand-lg .navbar-nav .nav-link {
 	    padding-right: 0;

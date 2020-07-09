@@ -1,56 +1,16 @@
 <?php
-/**
-* Template Name: Portfolio
-*
-* @package ilestunefois
-*/
 
 get_header();
 ?>
 <div class="portfolio-content page-content">
 
-	<?php get_template_part('template-parts/content-subheader'); ?>
-
-	
-	<?php
-
-	// get the 6 videos of portfolio
-	$title = get_field('main_title_portfolio');
-	$paragraphe = get_field('paragraphe_introduction_portfolio');
-	?>
-	<div id="second-section" class="section limited">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-8 offset-4">
-					<?php if(!empty($title)): ?>
-						<h2><?php echo $title; ?></h2>
-					<?php endif; ?>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-6 offset-6">
-					<?php if(!empty($paragraphe)): ?>
-						<p><?php echo $paragraphe; ?></p>
-					<?php endif; ?>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<?php
 
 	$playerList = [];
 
-	$args = array(
-		'post_type' => 'portfoliovideo',
-		'posts_per_page' => 6,
-		'paged' => $paged
-	);
+	
 
-	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-	$portfolio = new WP_Query($args);
-
-	if($portfolio->have_posts() ):
+	if(have_posts() ):
 	?>
 
 	<div id="portfolio">
@@ -60,7 +20,6 @@ get_header();
 		<div class="section limited" id="cat-list">
 
 			<div class="container-fluid" >
-				
 				<div class="row">
 					
 					<div class="col-12 text-right">
@@ -86,7 +45,7 @@ get_header();
 			</div><!-- .container-fluid -->
 
 		</div><!-- #cat-list -->
-
+		
 		<script> let playerInfoList = []; </script>
 
 		<div class="container-fluid">
@@ -98,14 +57,14 @@ get_header();
 				// creating the array of posts in the loop
 				$count = 0;
 
-				while($portfolio->have_posts()): $portfolio->the_post(); 
+				while(have_posts()): the_post(); 
 
 					$id = "player".$count;
 					$video_id = get_field('video_id_portfolio_video');
 					$playerList[$count]["title"] = get_the_title();
-					$playerList[$count]["paragraphe"] = get_field('paragraphe_portfolio_video');
-					$playerList[$count]['poster'] = get_field('poster_portfolio_video'); 
-					$playerList[$count]['cover'] = get_field('cover_video_portfolio_video');
+					$playerList[$count]["paragraphe"] = get_field('paragraphe_portfolio_video', get_the_ID());
+					$playerList[$count]['poster'] = get_field('poster_portfolio_video' , get_the_ID()); 
+					$playerList[$count]['cover'] = get_field('cover_video_portfolio_video' , get_the_ID());
 					?>
 					<script>
 						//transfer the videos id in a js array for Youtube API
@@ -113,6 +72,8 @@ get_header();
 					</script>
 
 				  <?php	$count++;
+
+
 
 				 endwhile; 
 				 /*********************************/
@@ -150,7 +111,7 @@ get_header();
 							/*************************************/
 							?>
 
-																 <script>
+					<script>
 				 	
 
 				 	var tag = document.createElement('script');
@@ -229,7 +190,7 @@ get_header();
 
 					<div class="pagination">
 			    <?php 
-			        echo paginate_links( array(
+			       /* echo paginate_links( array(
 			            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
 			            'total'        => $portfolio->max_num_pages,
 			            'current'      => max( 1, get_query_var( 'paged' ) ),
@@ -243,7 +204,7 @@ get_header();
 			            'next_text'    => sprintf( '%1$s <i></i>', __( '', 'text-domain' ) ),
 			            'add_args'     => false,
 			            'add_fragment' => '',
-			        ) );
+			        ) );*/
 			    ?>
 				</div><!-- .pagination -->
 				</div><!-- .section -->
@@ -260,6 +221,5 @@ get_header();
 
 	</div><!-- #portfolio -->
 
-
-
 <?php get_footer(); ?>
+

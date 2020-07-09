@@ -189,7 +189,16 @@ p {
 	}
 } 
 
+body {
+	font-size:12px;
+}
 
+
+@media (min-width: 768px) {
+	body {
+		font-size: 16px;
+	}
+}
 
 
 @media (min-width: 2560px) {

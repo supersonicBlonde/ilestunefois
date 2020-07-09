@@ -71,5 +71,16 @@ function add_file_types_to_uploads($file_types){
 }
 add_filter('upload_mimes', 'add_file_types_to_uploads');
 
-add_theme_support( 'post-thumbnails', array( 'post' , 'page' ) );         
+add_theme_support( 'post-thumbnails', array( 'post' , 'page' ) );        
+
+
+
+add_action( 'pre_get_posts', 'taxonomy_query' );
+
+function taxonomy_query($query){
+
+    if ( !is_admin() && $query->is_main_query() && $query->is_tax( 'videos-category' ) ) {
+        $query->set( 'post_type',  array('portfoliovideo')  );
+    }
+};
 

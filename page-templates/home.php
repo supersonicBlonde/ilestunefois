@@ -18,9 +18,9 @@ get_header('home');
 	<div id="first-section" class="text-img-block section limited">
 		<div class="container-fluid">
 				<div class="row">
-					<div class="col-6 column">
+					<div class="col-md-6 col-12 column">
 						<?php if(!empty($titre)): ?>
-						<h3 class="data-scroll">
+						<h3>
 							<?php echo $titre; ?>
 						</h3>
 						<?php endif; ?>
@@ -35,12 +35,12 @@ get_header('home');
 						</div>
 						<?php endif; ?>
 					</div>
-					<div class="col-6 text-center position-relative column">
-							<img src="<?php echo get_template_directory_uri().'/img/illustr.png'; ?>" class="position-absolute">
+					<div class="col-md-6 col-12 text-center position-relative column">
+							<img  src="<?php echo get_template_directory_uri().'/img/illustr.png'; ?>">
 					</div>
 				</div>
 		</div>
-	</div>
+	</div> 
 
 	<?php
 		$titre = get_field('title_home_testimonials');
@@ -114,9 +114,9 @@ get_header('home');
 							   		$totalItem = (count($my_fields['value'])); 
 									$totalItemPerLine = 8;
 								
-
-   								
-   								?>
+	
+	   								
+	   								?>
 								<div id="slider-logos">
 									
 										
@@ -126,25 +126,25 @@ get_header('home');
 										$html= "";
 										
 									 endwhile;
-
-
-
+	
+	
+	
 									for($i = 0; $i < $totalItem; $i++)
 									{
 									    if($i % $totalItemPerLine == 0)
 									    {
 									        $html .= '<ul class="slide-logo-container">'; // OPEN ROW
 									    }
-
+	
 									    $html .= '<li><img src="'.esc_url($logos_ar[$i]['sizes']['thumbnail']).'" alt="'.esc_attr($logos_ar[$i]['alt']).'" />
 											</li>';
-
+	
 									    if($i % $totalItemPerLine == ($totalItemPerLine-1))
 									    {
 									        $html .= '</ul>'; // CLOSE ROW
 									    }
 									}
-
+	
 									echo $html;
 									  ?>
 									
@@ -173,14 +173,6 @@ get_header('home');
 				</div>
 			</div>
 		</div>	
-		<div class="flex">
-			<div>
-				<div>
-					
-				</div>
-			</div>
-			<div></div>
-		</div>
 	</div> 
 	
 

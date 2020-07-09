@@ -36,7 +36,7 @@ class Modal {
 		document.getElementById("form-connect").classList.add('hide');
 		document.getElementById('overlay').classList.add('hide');
 		document.getElementById('overlay').classList.remove('show');
-		document.querySelector('.scale').classList.add('scaleIn');
+		document.querySelector('.scale').classList.remove('scaleOut');
 		let close_btn = this;
 		this.children[0].style.display = "none"
 		this.classList.add('hide');
@@ -147,10 +147,20 @@ window.addEventListener("load", function() {
 
 	jQuery('.testimonial-slider').slick({
 	  infinite: true,
-	  slidesToShow: 3,
+	  slidesToShow: 1,
 	  slidesToScroll: 1,
-	   cssEase: 'ease-out',
-	   useTransform: true,
+	  mobileFirst:true,
+	  responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1,
+	      }
+	    }
+	  ],
+	  cssEase: 'ease-out',
+	  useTransform: true,
 	  appendArrows: jQuery('#slider-section')
 	});
 
