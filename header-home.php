@@ -24,14 +24,14 @@
 <body <?php body_class(); ?>>
 	<div class="noise"></div>
 	<div class="scale">
-		<div class="container-fluid">
-
-			<div class="row">
-				<div class="col-12">
+		<div>
+		
+			<div>
+				<div>
 					<?php 
 						$poster = get_field('poster_header_video');
 					?>
-
+		
 					<header class="header-container text-center background-image" id="header-container">
 						
 						<?php if(!empty(get_field('video_mp4_header_video'))): ?>
@@ -64,13 +64,12 @@
 						
 						</div><!-- .header-content -->
 						
-						<!-- <div class="mouse"></div> --><!-- .mouse -->
+						<div class="mouse"></div><!-- .mouse -->
 					
 					</header><!-- .header-container -->
 					
 				</div><!-- .col-xs-12 -->
 			</div><!-- .row -->
-
+		
 		</div><!-- .container-fluid -->
-
 		<div class="content-container">
