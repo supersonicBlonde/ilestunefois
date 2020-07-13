@@ -25,28 +25,51 @@ footer {
 		}
 	}
 
-	.socials ul{
-		list-style-type: none;
-		display: flex;
-		justify-content: space-between;
+	.socials {
 
-		a {
-			font-family: $font__title;
+		padding: 0 1em;
+
+		ul{
+			list-style-type: none;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			a {
+				font-family: $font__title;
+			}
+
+			@media (min-width: 768px) {
+				justify-content: space-between;
+			}
+
+
 		}
-	}
 
-	.follow a {
-		color: #3D041E;
-		text-decoration: underline;
-	}
+		.follow a {
+			color: #3D041E;
+			text-decoration: underline;
+		}
 
-	.subscribe {
-		padding-top:2em;
+		.subscribe {
+			padding-top:2em;
+		}
+
+		
+		@media (min-width:768) {
+			padding: 0;
+		}
 	}
 
 }
 
 .menu-footer {
+
+	text-align: center;
+
+	@media (min-width:768px) {
+		text-align:left;
+	}
 
 	color: white;
 	font-family: $font__title;

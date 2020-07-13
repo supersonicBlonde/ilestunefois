@@ -2,6 +2,8 @@
 /***************************************************/
 
 
+
+
 ::-webkit-input-placeholder, :-ms-input-placeholder, ::placeholder { 
   color: #c77c98;
 }
@@ -113,7 +115,7 @@ p {
   bottom: -50%;
   width: 200%;
   height: 200vh;
- background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation .5s infinite;
   opacity: .9;
@@ -413,6 +415,24 @@ body {
 
 	img {
 		max-width: 100%;
+	}
+}
+
+
+/**************************************
+          LOGOS
+          *****************************/
+
+.hideondesktop .slider-logos {
+	.slick-track {
+		display: flex;
+	}
+	.slick-slide {
+		padding: 0 1em;
+		display: flex;
+		height: auto;
+		align-items: center; //optional
+		justify-content: center; //optional
 	}
 }
 

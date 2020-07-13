@@ -9,10 +9,10 @@
 .navbar {
 	padding: 0;
 	background: white;
-	flex-direction: row-reverse;
-	position: fixed;
+	flex-direction: row-reverse; 
+	/* position: fixed;
 	top: 0;
-	width: 100%;
+	width: 100%; */
 	transition: all 1s;
 
 	.fi {
@@ -26,6 +26,10 @@
 
 		.fi {
 			color:white;
+		}
+
+		@media (min-width:768px) {
+			display: none;
 		}
 	}
 

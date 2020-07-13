@@ -156,19 +156,30 @@ window.addEventListener("load", function() {
 	      settings: {
 	        slidesToShow: 3,
 	        slidesToScroll: 1,
+	        appendArrows: jQuery('#slider-section')
 	      }
 	    }
 	  ],
 	  cssEase: 'ease-out',
 	  useTransform: true,
-	  appendArrows: jQuery('#slider-section')
+	 
 	});
 
-	jQuery('#slider-logos').slick({
-	  slidesToShow: 1,
-	  slidesToScroll: 1,
+	jQuery('.slider-logos').slick({
+	  slidesToShow: 3,
+	  slidesToScroll: 3,
+	  mobileFirst:true,
 	  useTransform: true,
-	   cssEase: 'ease-out',
+	   responsive: [
+	    {
+	      breakpoint: 768,
+	      settings: {
+	        slidesToShow: 1,
+	        slidesToScroll: 1
+	      }
+	    }
+	  ],
+	  cssEase: 'ease-out',
 	  appendArrows: jQuery('#slider-logo-container')
 	});
 

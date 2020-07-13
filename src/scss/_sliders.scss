@@ -20,31 +20,49 @@
 }
 
 
+// TESTIMONIAL SLIDER ARROWS
+//***********************************/
 
 #slider-section {
-    /* Arrows */
-     .slick-prev,
-    .slick-next
+    .slick-prev, .slick-next
     {
-        
-        top: 37%;
-        right: 27%;
-
-      
-
-        padding: 0;
-        margin-top: -10px\9; /* lte IE 8 */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        /* padding: 0;
+        margin-top: -10px\9; lte IE 8
         -webkit-transform: translate(0, -50%);
         -ms-transform: translate(0, -50%);
-        transform: translate(0, -50%);
-
-      
+        transform: translate(0, -50%); */      
     }
 
+    .slick-prev {
+        left:1.2em;
+        right: auto;
+    }
     .slick-next {
-    	right: 23%;
+        right: 0;
     }
+
+    @media (min-width: 768px) {
+         .slick-prev,.slick-next {
+            top: 37%;
+        }
+
+        .slick-prev {
+            right: 27%;
+            left: auto;
+        }
+
+        .slick-next {
+            right: 23%;
+            left: auto;
+        }
+    }
+
 }
+
+
 
 #slider-logo-container {
     /* Arrows */
@@ -54,7 +72,7 @@
        
         top: 46%;
         transform: translateY(-50%);
-        left: 15px;
+        left: 2em;
 
         opacity: 0.3;
         transform: scale(0.9);
@@ -71,6 +89,10 @@
         &:hover {
             opacity: 1;
             transform: scale(1);
+        }
+
+        @media (min-width: 768px) {
+            left: 1em;
         }
     }
 
@@ -120,8 +142,12 @@
 }
 
 .slick-prev:before {
-	content:"";
-	background-image:url(../../img/prev-arrow.svg);
+    content:"";
+    background-image:url(../../img/prev-arrow.svg); 
+    /* content: "\f101";
+    background: $color__primary;
+    font-family: "Flaticon";
+    color: white; */
 
 }
 

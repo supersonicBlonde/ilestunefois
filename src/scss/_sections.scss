@@ -27,35 +27,20 @@ body {
 	padding-right: 0;
 }
 
-/* .section [class*="col"] {
-	padding:80px; 
-	padding-right: 0;
-    padding-left: 0;
-} */
-
-
-
-
+// BACKGROUND GREY ON SOME PAGES
 .page-template-agency .content-container, .single .content-container, .page-template-blog .content-container {
 	background-color: $color__background-light-grey;
 }
 
+// CONTENT THAT HAS TO OVERLAY THE HEADER
 .page-content {
 	position: relative;
 	margin-top: -7.8em;
 }
 
+// WIDTH CONTENT SECTIONS ON DESKTOP ONLY
 
-@media (min-width: 768px) {
-	.text-img-block {
-		.container-fluid {
-			padding:12.5em 0 21.5em 0;
-		}
-
-		.column:first-child {
-			padding-left: 10em;
-		}
-	}
+@media (min-width:768px) {
 
 	.section.limited .container-fluid {
 		width: 83%;
@@ -66,32 +51,60 @@ body {
 	}
 }
 
+// REMOVE MARGINS ON ROWS
+/* .row { 
+	margin: 0;
+} */
 
+
+// PADDING GLOBAL ON SECTION ON MOBILE
+.section  {
+	
+	.column {
+		padding: 3em;
+
+		@media (min-width:768px) {
+			padding: 0;
+		}
+	}
+}
+
+
+
+// FIRST SECTTION OF HOME
+/*********************************************/
 
 .home-content #first-section {
 
-
 	.container-fluid {
 		background: $color__background-light-grey;
-		
-		@media (min-width:768px) {
-			background: url(../../img/logo_bg.svg),  $color__background-light-grey;
-		    background-repeat: no-repeat;
-		    background-size: 98%, auto;
-		    background-position: 3074% center, 0 0 ;
-		    padding-bottom: 20.3em;
-		}
 	}
 
-	p {
-		width: 70%;
-	}
+}
+
+
+@media (min-width:768px) {
 	
+	.home-content #first-section {
 
-	img {
+			.container-fluid {
+				background: url(../../img/logo_bg.svg),  $color__background-light-grey;
+			    background-repeat: no-repeat;
+			    background-size: 98%, auto;
+			    background-position: 3074% center, 0 0 ;
+			    padding:12.5em 0 21.5em 0;
+			}
+
+			.column:first-child {
+				padding-left: 10em;
+			}
+
+			p {
+				width: 70%;
+			}
 		
 
-		@media (min-width:768px) {
+		img {
 			position: absolute;
 			width:auto;
 			max-width: none;
@@ -99,21 +112,25 @@ body {
 			left:0;
 			margin:0 auto;
 			height: 100%;
-			
 		}
 	}
-
 }
 
+
+
+
+// TESTIMONIAL SLIDER
+/**************************************************/
+
+
 #slider-section {
+
 	background: #F8EFEC;
-	padding: 3.1em 0 19em 0;
 	position: relative;
 
 	.flex {
-		@media (min-width: 768px) {
-			display:flex;
-		}
+		display: flex;
+		flex-direction: column-reverse;
 	}
 
 
@@ -125,27 +142,15 @@ body {
 		height: inherit;
 	}
 
-	.testimonial-slider-container {
-		
-
-		@media (min-width: 768px) {
-			width:75%;
-			margin-left: -12em;
-			margin-top: -9.4em;
-		}
-	}
-
-
 	.testimonial-container {
 		background: white;
-		padding: 3.2em 0;
-		margin: 0 1em;
 		@include boxshadow;
 		display: flex;
-		flex-direction:column; 
+		flex-direction: column;
 		align-items:center;
 		height: 100%;
-
+		padding: 3.2em 0;
+		margin: 0 1em;
 
 		> * { 
 			margin: 1em 0;
@@ -179,12 +184,40 @@ body {
 	}
 }
 
+
+
+@media (min-width:768px) {
+
+	#slider-section {
+
+		padding: 3.1em 0 19em 0;
+
+		.flex {
+			display:flex;
+			flex-direction: row;
+		}
+
+		.testimonial-slider-container {
+			width:75%;
+			margin-left: -12em;
+			margin-top: -9.4em;
+		}
+
+	}
+}
+
+
+// LOGOS CLIENTS HOME PAGES
+/*************************************/
 #logo-section {
-	margin-top: -7.1em;
+
+	.row {
+		flex-direction: column-reverse;
+	}
 
 	.column:first-child  {
-		  background-color: #8DAA9D;
- 		 background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Calque_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 691.8 1548.7' style='enable-background:new 0 0 691.8 1548.7;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%236F8C7F;%7D%0A%3C/style%3E%3Cpath id='Tracé_3' class='st0' d='M54.9,0l532.7,779.2L0,1548.7h194.9l496.9-636.1V639.5L256.6,0H54.9z'/%3E%3C/svg%3E%0A");
+		background-color: #8DAA9D;
+ 		background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Calque_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 691.8 1548.7' style='enable-background:new 0 0 691.8 1548.7;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%236F8C7F;%7D%0A%3C/style%3E%3Cpath id='Tracé_3' class='st0' d='M54.9,0l532.7,779.2L0,1548.7h194.9l496.9-636.1V639.5L256.6,0H54.9z'/%3E%3C/svg%3E%0A");
 		background-repeat:no-repeat;
 		background-position: right;
 
@@ -220,37 +253,64 @@ body {
 		background-position: left;
 	
 		> div {
-			padding-left: 4.2em;
-			position:absolute;
-			top: 50%;
-			transform: translateY(-50%);
 
 			h3 {
-				margin-bottom: 3.75rem;
+				margin-bottom: 1.75rem;
+
+				@media (min-width: 768px) {
+					margin-bottom: 3.75rem;
+				}
 			}
 
 			p {
-				width:80%;
 				color: #2c241b;
 			}
 
 			.arrow {
-				content: url(../../img/right-arrow.svg);
-			   transform: scaleX(-1);
-			   display: block;
-			   margin-top: 4.6em;
-			   width: 3.6em;
-			   padding-left: 0;
+				display:none;
+			}
+		}
+	}
+
+	@media (min-width: 768px) {
+		margin-top: -7.1em;
+
+		.row {
+			flex-direction: row;
+		}
+
+		.column:last-child {
+
+			> div {
+				padding-left: 4.2em;
+				position:absolute;
+				top: 50%;
+				transform: translateY(-50%);
+
+				p {
+					width:80%;
+				}
+
+				.arrow {
+					content: url(../../img/right-arrow.svg);
+					transform: scaleX(-1);
+					display: block;
+					margin-top: 4.6em;
+					width: 3.6em;
+					padding-left: 0;
+				}
 			}
 		}
 	}
 
 }
 
+
+
 .page-content {
 	#first-section {
-		width: 83%;
-		margin: 0 auto;
+		/* width: 83%;
+		margin: 0 auto; */
 	}
 }
 
