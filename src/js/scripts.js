@@ -60,8 +60,6 @@ class Modal {
 	}
 
 
-
-
 	createElements() {
 
 		//this.parent.appendChild(this.modal_container);
@@ -143,7 +141,38 @@ class Modal {
 
 }
 
+
+function navbarAnimate(el) {
+	el.animate([
+	  // keyframes
+	  /*{ height: 0, 'opacity': 0 }, 
+	  { height: '80vh', 'opacity': 1 }*/
+	  {  'opacity': 0 }, 
+	  { 'opacity': 1 }
+	], { 
+	  // timing options
+	  duration:800,
+	  easing: 'ease-out',
+	  iterations: 1
+	});
+}
+
+
 window.addEventListener("load", function() {
+
+	let toggler = document.querySelector('.navbar-toggler');
+	let collapse = document.getElementById('navbarNav');
+
+
+	toggler.addEventListener('click' , function(event) {
+		if (collapse.classList.contains('show')) {
+    		collapse.classList.remove('show');
+		}
+		else {
+			collapse.classList.add('show');
+			navbarAnimate(collapse);
+		}
+	})
 
 	jQuery('.testimonial-slider').slick({
 	  infinite: true,

@@ -1,3 +1,27 @@
+.navbar-ilestunefois {
+	height: auto;
+	transition: all 1s;
+	
+	&.show {
+		transition: all 1s;
+		height: 80vh;
+		display: flex; 
+
+		ul {
+			margin-right: auto;
+
+			li {
+
+				margin: 1em 0;
+
+				a {
+					font-size: 2em;
+				}
+			}
+		}
+	}
+}
+
 #navbarNav-container {
 	@media (min-width: 992px) {
 		padding-top: 0;
@@ -8,6 +32,7 @@
 
 .navbar {
 	padding: 0;
+	z-index: 1;
 	background: white;
 	flex-direction: row-reverse; 
 	/* position: fixed;
@@ -113,7 +138,10 @@
 	z-index: 8888;
 
 	ul {
-		margin-right: 5em;
+		
+		@media (min-width: 768px) {
+			margin-right: 5em;
+		}
 	}
 
 	+ .content-container {

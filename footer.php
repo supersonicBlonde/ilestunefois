@@ -23,7 +23,7 @@
 				<div class="menu-footer">
 					<div class="container-fluid">
 						<div class="row justify-content-between">
-							<div class="col-md-4 col-12">
+							<div class="col-md-2  col-12">
 								<ul>
 									<li><a href="#">Lorem Ipsum</a></li>
 									<li><a href="#">Lorem Ipsum</a></li>
@@ -32,7 +32,7 @@
 									<li><a href="#">Lorem Ipsum</a></li>
 								</ul>
 							</div>
-							<div class="col-md-4 col-12">
+							<div class="col-md-2 col-12">
 								<ul>
 									<li><a href="#">Lorem Ipsum</a></li>
 									<li><a href="#">Lorem Ipsum</a></li>
@@ -41,7 +41,7 @@
 									<li><a href="#">Lorem Ipsum</a></li>
 								</ul>
 							</div>
-							<div class="col-md-4 col-12">
+							<div class="col-md-2 col-12">
 								<ul>
 									<li><a href="#">Lorem Ipsum</a></li>
 									<li><a href="#">Lorem Ipsum</a></li>
@@ -50,7 +50,7 @@
 									<li><a href="#">Lorem Ipsum</a></li>
 								</ul>
 							</div>
-							<div class="col-md-4 col-12">
+							<div class="col-md-2 col-12">
 								<ul>
 									<li><a href="#">Lorem Ipsum</a></li>
 									<li><a href="#">Lorem Ipsum</a></li>
