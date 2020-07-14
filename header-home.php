@@ -11,7 +11,7 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<title><?php bloginfo('name'); wp_title(); ?></title>
-		<meta name="description" content="<?php bloginfo('description'); ?>"></meta>
+		<meta name="description" content="<?php bloginfo('description'); ?>">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -25,13 +25,13 @@
 	<div class="noise"></div>
 	<div class="scale">
 		<div>
-		
+
 			<div>
 				<div>
 					<?php 
 						$poster = get_field('poster_header_video');
 					?>
-		
+
 					<header class="header-container text-center background-image" id="header-container">
 						
 						<?php if(!empty(get_field('video_mp4_header_video'))): ?>
@@ -64,12 +64,13 @@
 						
 						</div><!-- .header-content -->
 						
-						<div class="mouse"></div><!-- .mouse -->
+						<!-- <div class="mouse"></div> --><!-- .mouse -->
 					
 					</header><!-- .header-container -->
 					
-				</div><!-- .col-xs-12 -->
+				</div><!-- .col-12 -->
 			</div><!-- .row -->
-		
+
 		</div><!-- .container-fluid -->
+
 		<div class="content-container">

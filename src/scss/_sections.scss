@@ -58,14 +58,14 @@ body {
 
 
 // PADDING GLOBAL ON SECTION ON MOBILE
-.section  {
+.page-content .section  {
 	
 	.column {
 		padding: 3em;
 
 		@media (min-width:768px) {
 			padding: 0;
-		}
+		} 
 	}
 }
 
