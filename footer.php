@@ -12,7 +12,7 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="follow">
-							<h3>Subscribe for updates and inspiration or<br><a href="https://instagram">follow @ilestunefois</a> on Instagram</h3>
+							<h3><?php the_field('intro_texte_footer' , 'options'); ?></h3>
 							</div>
 							<div class="subscribe">
 								<h3>form subscribe</h3>
