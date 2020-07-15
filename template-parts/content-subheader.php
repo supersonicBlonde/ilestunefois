@@ -1,7 +1,7 @@
 <?php
 
 	$background_image =  get_field('background_image_header_standard');
-	$style_bg = !empty($background_image)?"background-image:url(".$background_image.");height: 49em;":"background-color:#251b13";
+	$style_bg = !empty($background_image)?"background-image:url(".$background_image.")":"background-color:#251b13";
 	$title = get_field('title_header_standard');
 	$sub_title = get_field('sous_titre_header_standard');
 	$paragraphe = get_field('paragraphe_header_standard');

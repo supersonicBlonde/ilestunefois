@@ -280,8 +280,12 @@ body {
     max-width: 100%;
    	height: auto;
 
-   	.video-embedded {
+   	/* .video-embedded {
    		display: none;
+   	} */
+
+   	video {
+   		width: 100%;
    	}
 
    	iframe { 
@@ -316,16 +320,23 @@ body {
 .videos-categories {
 	list-style-type: none;
 	display:flex;
-	justify-content: flex-end;
+	justify-content: space-around;
 
 	li {
-		margin-left: 7.6em;
 
 		a {
 			color: #1b262c;
 			text-decoration:underline;
 			font-family: $font__primary;
 			font-size: 1.4em; 
+		}
+	}
+
+	@media (min-width: 768px) {
+		justify-content: flex-end;
+
+		li {
+			margin-left: 7.6em;
 		}
 	}
 }

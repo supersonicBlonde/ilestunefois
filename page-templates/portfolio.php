@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div class="portfolio-content page-content">
+<div class="portfolio-content page-content limitmobile">
 
 	<?php get_template_part('template-parts/content-subheader'); ?>
 
@@ -21,14 +21,14 @@ get_header();
 	<div id="second-section" class="section limited">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-8 offset-4">
+				<div class="col-md-8 offset-md-4 col-12">
 					<?php if(!empty($title)): ?>
 						<h2><?php echo $title; ?></h2>
 					<?php endif; ?>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-6 offset-6">
+				<div class="col-md-6 offset-md-6 col-12">
 					<?php if(!empty($paragraphe)): ?>
 						<p><?php echo $paragraphe; ?></p>
 					<?php endif; ?>
@@ -63,7 +63,7 @@ get_header();
 				
 				<div class="row">
 					
-					<div class="col-12 text-right">
+					<div class="col-12">
 						
 						<?php if(count($terms) > 0): ?>
 
@@ -128,12 +128,12 @@ get_header();
 
 							foreach($playerList as $player): ?>
 
-								<?php if($count == 0 || $count == 3): ?><div class="col-6 column"><?php endif; ?>
+								<?php if($count == 0 || $count == 3): ?><div class="col-md-6 col-12 column"><?php endif; ?>
 				 	
 									<div class="video-item">
 										<div class="embed-container">
 											<div id="<?php echo "player".$count; ?>"></div>
-											<div class="poster" data-position="<?php echo $count; ?>"><video id="video1" loop="" muted="" playsinline="" poster="<?php echo $player['poster']; ?>"> <source src="<?php echo $player['cover']['url']; ?>" type="video/mp4"> </video></div>
+											<div class="poster" data-position="<?php echo $count; ?>"><video  loop="" muted="" playsinline="" poster="<?php echo $player['poster']; ?>"> <source src="<?php echo $player['cover']['url']; ?>" type="video/mp4"> </video></div>
 										</div>
 										<h3><?php echo $player['title']; ?></h3>
 										<p><?php echo $player['paragraphe']; ?></p>
@@ -260,6 +260,6 @@ get_header();
 
 	</div><!-- #portfolio -->
 
-
+</div>
 
 <?php get_footer(); ?>
