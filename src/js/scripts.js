@@ -281,7 +281,7 @@ window.addEventListener("load", function() {
 		modal.close_btn.addEventListener('click', modal.close);
 	}); 
 
-	connect_mobile.addEventListener('click' , function(event) {
+	connect_mobile.addEventListener('touchstart' , function(event) {
 
 		event.preventDefault();
 		
