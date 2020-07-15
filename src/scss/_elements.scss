@@ -192,7 +192,7 @@ p {
 } 
 
 body {
-	font-size:12px;
+	font-size:10px;
 }
 
 
@@ -585,16 +585,27 @@ article:last-child {
 
 .modal-connect {
 	background: $color__primary;
-	width:60%;
-	height: 100vh;
+	width:100%;
+	min-height: 100vh;
 	right: 0;
 	top: 0;
-	position: fixed;
+	position: absolute;
 	z-index: 9999;
 	transition: opacity 0.5s;
+
+	@media (min-width: 768px) {
+		width: 60%; 
+		position: fixed;
+	}
 	
 	&.animate {
-		animation-name: largeur60;
+
+		animation-name: largeur100;
+
+		@media (min-width: 768px) {
+			animation-name: largeur60;
+		}
+
 		animation-duration: 1s;
 		animation-fill-mode: forwards;  
 	}
@@ -606,7 +617,7 @@ article:last-child {
 	height: 6.8em;
 	width: 6.8em;
 	position:absolute;
-	top: 2.3em;
+	top: 0;
 	left:0;
 	background: transparent;
 	display: flex;
@@ -615,8 +626,18 @@ article:last-child {
 	transform-origin: center right;
 	transition: opacity 0.5s;
 
+	@media (min-width: 768px) {
+		top: 2.3em;
+	}
+
 	&.animate {
-		animation-name: slide;
+
+		animation-name: slide_mobile;
+
+		@media (min-width:768px) {
+			animation-name: slide;
+		}
+
 		animation-duration: 1s;
 		animation-delay: 0.5s;
 		animation-fill-mode: forwards;  
@@ -695,7 +716,11 @@ article:last-child {
 
 	h2 {
 		color: #c77c98;
-		font-size: 3.5em;
+		font-size: 2em;
+
+		@media (min-width: 768px) {
+			font-size: 3.5em;
+		}
 	
 		&:after {
 			content:"";
@@ -703,7 +728,11 @@ article:last-child {
 			height: 3px;
 			display:inline-block;
 			width: 100%;
-			margin: 2.5rem 0;
+			margin: 1rem 0 .5rem 0;
+
+			@media (min-width:768px) {
+				margin: 2.5rem 0;	
+			}
 		}
 	}
 

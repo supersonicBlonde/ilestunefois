@@ -88,7 +88,7 @@ get_header();
 					<?php
 					
 					while($related->have_posts()): $related->the_post(); ?>
-						<div class="col-6 column">
+						<div class="col-md-6 col-12 column">
 							<div class="related-single">
 								<?php if( ilestunefois_get_attachment() ): ?>
 									<a class="standard-featured-link" href="<?php the_permalink(); ?>">

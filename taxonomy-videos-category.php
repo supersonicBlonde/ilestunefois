@@ -89,7 +89,7 @@ get_header();
 
 							foreach($playerList as $player): ?>
 
-								<?php if($count == 0 || $count == 3): ?><div class="col-6 column"><?php endif; ?>
+								<?php if($count == 0 || $count == 3): ?><div class="col-md-6 col-12 column"><?php endif; ?>
 				 	
 									<div class="video-item">
 										<div class="embed-container">

@@ -7,10 +7,10 @@
 				</div>
 			</div>
 			<div class="row">	
-				<div class="col-6">	
+				<div class="col-md-6 col-12">	
 					<?php get_template_part('template-parts/connect' , 'form'); ?>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6 col-12">
 					<ul class="social-menu">
 						<li><a href="">Youtube</a></li>
 						<li><a href="">Instagram</a></li>

@@ -84,6 +84,7 @@ class Modal {
 		this.close_shape.classList.add('animate');
 	}
 
+
 	load_template() {
 		
 		let form = document.createElement('div');
@@ -267,6 +268,8 @@ window.addEventListener("load", function() {
 
 	let connect_btn = document.querySelector('.menu-btn');
 
+	let connect_mobile = document.querySelector('.connect-mobile');
+
 	connect_btn.addEventListener('click' , function(event) {
 
 		event.preventDefault();
@@ -275,6 +278,17 @@ window.addEventListener("load", function() {
 		modal.load_template();
 		modal.animate();
 		modal.set_overlay(true);
+		modal.close_btn.addEventListener('click', modal.close);
+	}); 
+
+	connect_mobile.addEventListener('click' , function(event) {
+
+		event.preventDefault();
+		
+		let modal = new Modal();
+		modal.load_template();
+		modal.animate();
+		//modal.set_overlay(true);
 		modal.close_btn.addEventListener('click', modal.close);
 	}); 
 
