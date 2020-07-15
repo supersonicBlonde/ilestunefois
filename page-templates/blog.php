@@ -30,7 +30,7 @@ get_header();
 			<div id="cat-list">
 				<div class="row">
 					
-					<div class="col-12 text-right">
+					<div class="col-12">
 						
 						<?php if(count($terms) > 0): ?>
 
