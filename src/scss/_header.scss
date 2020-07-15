@@ -134,9 +134,14 @@
 	height: 18em;
 	margin: 0 auto;
 
+
 	@media (min-width: 768px) {
 		height: 49em;
 	}
+}
+
+.page-template-agency .sub_header {
+	height: auto;
 }
 
 
