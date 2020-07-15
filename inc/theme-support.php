@@ -74,7 +74,7 @@ add_filter('upload_mimes', 'add_file_types_to_uploads');
 add_theme_support( 'post-thumbnails', array( 'post' , 'page' ) );        
 
 
-
+//  IN ORDER TOC CREATE A TAXONOMY PAGES
 add_action( 'pre_get_posts', 'taxonomy_query' );
 
 function taxonomy_query($query){
@@ -83,4 +83,12 @@ function taxonomy_query($query){
         $query->set( 'post_type',  array('portfoliovideo')  );
     }
 };
+
+
+// OPTIONS PAGE
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}
 
