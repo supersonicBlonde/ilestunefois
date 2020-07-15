@@ -105,11 +105,17 @@
 
 .header-pages.header-container {
 
-	height: 40vh;
+	height:80vh;
 
-	@media (min-width:768px) {
-		height:80vh;
+	ul {
+		text-align:center;
+
+
+		@media (min-width:768px) {
+			text-align:left;
+		}
 	}
+
 
 	.header-content {
 		position: absolute;
