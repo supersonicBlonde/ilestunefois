@@ -248,7 +248,11 @@ body {
 		}
 
 		> div {
-			padding: 6em;
+			padding: 6em 3em;
+			
+			@media (min-width: 768px) {
+				padding: 6em;
+			}
 		}
 
 	}
