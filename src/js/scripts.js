@@ -204,12 +204,13 @@ window.addEventListener("load", function() {
 	      breakpoint: 768,
 	      settings: {
 	        slidesToShow: 1,
-	        slidesToScroll: 1
+	        slidesToScroll: 1,
+	        //appendArrows: jQuery('.hideonmobile')
 	      }
 	    }
 	  ],
 	  cssEase: 'ease-out',
-	  appendArrows: jQuery('#slider-logo-container')
+	 //appendArrows: jQuery('.hideondesktop')
 	});
 
 	

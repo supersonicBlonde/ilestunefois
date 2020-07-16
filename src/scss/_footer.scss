@@ -1,5 +1,6 @@
 footer {
-	margin-top: 65px;
+	margin-top: 1.5em;
+	
 	background:$color__primary;
 
 	padding:6.25em 0 2.8em 0;
@@ -56,9 +57,13 @@ footer {
 		}
 
 		
-		@media (min-width:768) {
+		@media (min-width:768px) {
 			padding: 0;
 		}
+	}
+
+	@media (min-width:768px) {
+		margin-top: 65px;
 	}
 
 }

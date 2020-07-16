@@ -60,7 +60,7 @@ body {
 
 
 // PADDING GLOBAL ON SECTION ON MOBILE
-/* .page-content .section  {
+.page-content .section  {
 	
 	.column {
 		padding: 3em;
@@ -70,7 +70,7 @@ body {
 		} 
 	}
 }
- */
+
 
 
 // FIRST SECTTION OF HOME
@@ -311,8 +311,8 @@ body {
 
 .page-content {
 	#first-section {
-		width: 83%;
-		margin: 0 auto;  
+		/* width: 83%;
+		 margin: 0 auto;  */ 
 	}
 }
 
