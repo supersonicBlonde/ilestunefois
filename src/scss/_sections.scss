@@ -41,6 +41,13 @@ body {
 // WIDTH CONTENT SECTIONS ON DESKTOP ONLY
 
 
+#first-section .container-fluid {
+	width: 90%;
+
+	@media (min-width:768px) {
+		width: 83%;
+	}
+}
 
 @media (min-width:768px) {
 
