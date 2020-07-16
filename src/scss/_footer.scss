@@ -16,6 +16,7 @@ footer {
 	}
 
 	ul {
+		text-align: center;
 		list-style-type: none;
 
 		li a {
@@ -23,6 +24,10 @@ footer {
 			text-decoration: none;
 			font-family: $font__title;
 			font-size: 1.25em;
+		}
+
+		@media (min-width: 768px) {
+			text-align:left;
 		}
 	}
 
