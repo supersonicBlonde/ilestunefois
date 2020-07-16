@@ -29,7 +29,9 @@ get_header();
 
 									<div class="col-md-6 col-12 column">
 								        <div class="profil-image">
-								        	 <?php echo $video; ?>
+								        	<div class="embed-container">
+								        	 	<?php echo $video; ?>
+								        	</div>
 								        </div>
 							    	</div>
 							    	<div class="col-md-6 col-12 column-bg column">

@@ -418,7 +418,9 @@ body {
 
 	.column-bg {
 		background: $color__secondary;
-		padding: 5.6em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 
 		.profils-content {
