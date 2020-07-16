@@ -67,7 +67,7 @@ body {
 
 
 // PADDING GLOBAL ON SECTION ON MOBILE
-.page-content .section  {
+.page-content:not(.portfolio-content) .section  {
 	
 	.column {
 		padding: 3em;
@@ -321,9 +321,9 @@ body {
 
 
 .page-content {
-	#first-section {
-		/* width: 83%;
-		 margin: 0 auto;  */ 
+	#first-section.sub_header {
+		width: 83%;
+		 margin: 0 auto; 
 	}
 }
 
@@ -361,7 +361,11 @@ body {
 
 	.video-item {
 		padding: 0 .8em;
-		margin-bottom: 6.25em;
+		margin-bottom: 3.25em;
+
+		@media (min-width: 768px) {
+			margin-bottom: 6.25em;
+		}
 	}
 
 	.videos-categories {

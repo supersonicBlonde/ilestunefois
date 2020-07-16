@@ -167,9 +167,11 @@ window.addEventListener("load", function() {
 	toggler.addEventListener('click' , function(event) {
 		if (collapse.classList.contains('show')) {
     		collapse.classList.remove('show');
+    		document.getElementById('header-container').classList.remove('open');
 		}
 		else {
 			collapse.classList.add('show');
+			document.getElementById('header-container').classList.add('open');
 			navbarAnimate(collapse);
 		}
 	})

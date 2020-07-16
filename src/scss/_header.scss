@@ -67,7 +67,7 @@
 	.home {
 		.header-container {
 
-			overfloxw: auto;
+			/* overflow: auto; */
 			
 			video {
 				top: 0;
@@ -108,7 +108,11 @@
 
 .header-pages.header-container {
 
-	height:80vh;
+	height: 40vh;
+
+	&.open {
+		height: 100vh;
+	}
 
 	ul {
 		text-align:center;
@@ -129,6 +133,10 @@
 			margin-left: 1.1em;
 		}
 
+	}
+
+	@media (min-width: 768px) {
+		height: 80vh;
 	}
 }
 

@@ -21,9 +21,13 @@ h1 {
 
 h2, h1.entry-title {
 	font-family: $font__title;
-	font-size: 3.5em;
+	font-size: 2.5em;
 	color: $color__primary;
 	line-height:1.2em;
+
+	@media (min-width: 768px) {
+		font-size: 3.5em;
+	}
 }
 
 h2 a, h2 a:hover, h2 a:visited {
@@ -312,8 +316,12 @@ body {
 }
 
 .portfolio-content h3 {
-	font-size: 3.5em;
+	font-size: 2.5em;
 	margin-top: 1.8rem;
+
+	@media (min-width: 768px) {
+		font-size: 3.5em;
+	}
 }
 
 .post-cat ul {
