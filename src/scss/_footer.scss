@@ -1,8 +1,9 @@
 footer {
-	margin-top: 65px;
+	margin-top: 1.5em;
+	
 	background:$color__primary;
 
-	padding:6.25em 0 2.8em 0;
+	padding:3.25em 0 2.8em 0;
 
 	.follow, .subscribe {
 		text-align:center;
@@ -15,6 +16,7 @@ footer {
 	}
 
 	ul {
+		text-align: center;
 		list-style-type: none;
 		text-align: left;
 
@@ -23,6 +25,10 @@ footer {
 			text-decoration: none;
 			font-family: $font__title;
 			font-size: 1.25em;
+		}
+
+		@media (min-width: 768px) {
+			text-align:left;
 		}
 	}
 
@@ -53,9 +59,14 @@ footer {
 		}
 
 		
-		@media (min-width:768) {
+		@media (min-width:768px) {
 			padding: 0;
 		}
+	}
+
+	@media (min-width:768px) {
+		margin-top: 65px;
+		padding-top: 6.25em;
 	}
 
 }

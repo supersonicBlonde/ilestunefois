@@ -1,4 +1,6 @@
 .header-container {
+
+
 	position: relative;
 	overflow: hidden;
 
@@ -30,6 +32,22 @@
 	}
 }
 
+.sub_header {
+	position: relative;
+	overflow: hidden;
+
+	video {
+		position: absolute;
+		height: 100%;
+	    width: 177.77777778vh; /* 100 * 16 / 9 */
+	    min-width: 100%;
+	    min-height: 56.25vw; /* 100 * 9 / 16 */
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50% , -50%);
+	}
+}
+
 .home {
 	.header-container {
 
@@ -37,6 +55,7 @@
 		overflow: hidden;
 
 		video {
+		    filter: brightness(70%);
 			position: absolute;
 			height: 100%;
 		    width: 177.77777778vh; /* 100 * 16 / 9 */
@@ -64,7 +83,7 @@
 	.home {
 		.header-container {
 
-			overfloxw: auto;
+			/* overflow: auto; */
 			
 			video {
 				top: 0;
@@ -105,7 +124,11 @@
 
 .header-pages.header-container {
 
-	height:80vh;
+	height: 40vh;
+
+	&.open {
+		height: 100vh;
+	}
 
 	ul {
 		text-align:center;
@@ -126,6 +149,10 @@
 			margin-left: 1.1em;
 		}
 
+	}
+
+	@media (min-width: 768px) {
+		height: 80vh;
 	}
 }
 

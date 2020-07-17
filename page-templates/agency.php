@@ -23,13 +23,15 @@ get_header();
 
 						    <?php while ( have_rows('profils_first_section_agency') ) : the_row(); ?>
 
-						    	<?php $profil_image = get_sub_field('image_first_section_agency'); ?>
+						    	<?php $video = get_sub_field('video_first_section_agency'); ?>
 
 						    	<div class="row">
 
 									<div class="col-md-6 col-12 column">
 								        <div class="profil-image">
-								        	 <img src="<?php echo esc_url($profil_image['url']); ?>" alt="<?php echo esc_attr($profil_image['alt']); ?>" />
+								        	<div class="embed-container">
+								        	 	<?php echo $video; ?>
+								        	</div>
 								        </div>
 							    	</div>
 							    	<div class="col-md-6 col-12 column-bg column">

@@ -6,7 +6,7 @@
 
 ::-webkit-input-placeholder, :-ms-input-placeholder, ::placeholder { 
   color: #c77c98;
-}
+} 
 
 img:not(.single-post img) {
 	max-width:100%;
@@ -21,9 +21,13 @@ h1 {
 
 h2, h1.entry-title {
 	font-family: $font__title;
-	font-size: 3.5em;
+	font-size: 2.5em;
 	color: $color__primary;
 	line-height:1.2em;
+
+	@media (min-width: 768px) {
+		font-size: 3.5em;
+	}
 }
 
 h2 a, h2 a:hover, h2 a:visited {
@@ -312,8 +316,12 @@ body {
 }
 
 .portfolio-content h3 {
-	font-size: 3.5em;
+	font-size: 2.5em;
 	margin-top: 1.8rem;
+
+	@media (min-width: 768px) {
+		font-size: 3.5em;
+	}
 }
 
 .post-cat ul {
@@ -437,22 +445,6 @@ body {
 }
 
 
-/**************************************
-          LOGOS
-          *****************************/
-
-.hideondesktop .slider-logos {
-	.slick-track {
-		display: flex;
-	}
-	.slick-slide {
-		padding: 0 1em;
-		display: flex;
-		height: auto;
-		align-items: center; //optional
-		justify-content: center; //optional
-	}
-}
 
 
 /**************************************
@@ -586,18 +578,19 @@ article:last-child {
 .modal-connect {
 	background: $color__primary;
 	width:100%;
-	min-height: 100vh;
+	height: 100vh;
 	right: 0;
 	top: 0;
 	position: absolute;
 	z-index: 9999;
 	transition: opacity 0.5s;
 
+
 	@media (min-width: 768px) {
-		width: 60%; 
-		position: fixed;
+		width: 60%;
 	}
-	
+
+
 	&.animate {
 
 		animation-name: largeur100;

@@ -41,6 +41,13 @@ body {
 // WIDTH CONTENT SECTIONS ON DESKTOP ONLY
 
 
+#first-section .container-fluid {
+	width: 90%;
+
+	@media (min-width:768px) {
+		width: 83%;
+	}
+}
 
 @media (min-width:768px) {
 
@@ -60,7 +67,8 @@ body {
 
 
 // PADDING GLOBAL ON SECTION ON MOBILE
-.page-content .section  {
+
+.page-content:not(.portfolio-content) .section  {
 	
 	.column {
 		padding: 3em;
@@ -241,7 +249,11 @@ body {
 		}
 
 		> div {
-			padding: 6em;
+			padding: 6em 3em;
+			
+			@media (min-width: 768px) {
+				padding: 6em;
+			}
 		}
 
 	}
@@ -310,9 +322,11 @@ body {
 
 
 .page-content {
-	#first-section {
-	/* 	width: 83%;
-	  margin: 0 auto; */  
+
+	#first-section.sub_header {
+		width: 83%;
+		 margin: 0 auto; 
+
 	}
 }
 
@@ -350,7 +364,11 @@ body {
 
 	.video-item {
 		padding: 0 .8em;
-		margin-bottom: 6.25em;
+		margin-bottom: 3.25em;
+
+		@media (min-width: 768px) {
+			margin-bottom: 6.25em;
+		}
 	}
 
 	.videos-categories {
@@ -382,10 +400,10 @@ body {
 
 	margin-top: 7.3em;
 
-	.column {
+	/* .column {
 		padding:0;
 		margin:0;
-	}
+	} */
 
 	.row:first-child {
 		flex-direction: row-reverse;
@@ -403,7 +421,14 @@ body {
 
 	.column-bg {
 		background: $color__secondary;
-		padding: 5.6em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: 768px) {
+			padding-right: 2em;
+			padding-left: 2em;
+		}
 
 
 		.profils-content {
@@ -426,9 +451,21 @@ body {
 }
 
 .team-title {
-	margin:4.56rem 0;
+
+	margin:1rem 0;
+
+	@media (min-width: 768px) {
+		margin:4.56rem 0;
+	}
 }
 
+#ilestunefois-connect-form {
+	margin: 4em 0;
+
+	@media (min-width: 768px) {
+		margin-top: 0;
+	}
+}
 
 /************************************
 	RELATED POSTS

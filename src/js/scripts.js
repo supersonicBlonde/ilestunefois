@@ -12,8 +12,8 @@ class Modal {
 		this.close_shape = document.createElement('div');
 		this.overlay = document.getElementById('overlay');
 		this.scale = document.querySelector('.scale');
-		this.createElements(); 
-	}
+		this.createElements();   
+	} 
 
 	set_overlay(state) {
 		if(state === true) {
@@ -84,6 +84,11 @@ class Modal {
 		this.close_shape.classList.add('animate');
 	}
 
+	animate_mobile() {
+		this.modal_container.classList.add('animate');
+		//this.close_btn.classList.add('animate');
+		this.close_shape.classList.add('animate');
+	}
 
 	load_template() {
 		
@@ -168,9 +173,11 @@ window.addEventListener("load", function() {
 	toggler.addEventListener('click' , function(event) {
 		if (collapse.classList.contains('show')) {
     		collapse.classList.remove('show');
+    		document.getElementById('header-container').classList.remove('open');
 		}
 		else {
 			collapse.classList.add('show');
+			document.getElementById('header-container').classList.add('open');
 			navbarAnimate(collapse);
 		}
 	})
@@ -205,12 +212,13 @@ window.addEventListener("load", function() {
 	      breakpoint: 768,
 	      settings: {
 	        slidesToShow: 1,
-	        slidesToScroll: 1
+	        slidesToScroll: 1,
+	        //appendArrows: jQuery('.hideonmobile')
 	      }
 	    }
 	  ],
 	  cssEase: 'ease-out',
-	  appendArrows: jQuery('#slider-logo-container')
+	 //appendArrows: jQuery('.hideondesktop')
 	});
 
 	
@@ -267,7 +275,6 @@ window.addEventListener("load", function() {
 			******************************************/
 
 	let connect_btn = document.querySelector('.menu-btn');
-
 	let connect_mobile = document.querySelector('.connect-mobile');
 
 	connect_btn.addEventListener('click' , function(event) {
@@ -283,20 +290,20 @@ window.addEventListener("load", function() {
 
 	connect_mobile.addEventListener('touchstart' , function(event) {
 
+
 		event.preventDefault();
 		
 		let modal = new Modal();
 		modal.load_template();
-		modal.animate();
-		//modal.set_overlay(true);
+		modal.animate_mobile();
+		modal.set_overlay(true);
 		modal.close_btn.addEventListener('click', modal.close);
 	}); 
 
 
 // When the user scrolls the page, execute myFunction
 	window.onscroll = function() {
-		console.log("ok");
-		myFunction()
+		makeSticky();
 	};
 
 	// Get the header
@@ -307,7 +314,7 @@ window.addEventListener("load", function() {
 	var sticky = navbar.offsetTop;
 
 	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-	function myFunction() {
+	function makeSticky() {
 	  if (window.pageYOffset > sticky) {
 	    navbar.classList.add("sticky");
 	 

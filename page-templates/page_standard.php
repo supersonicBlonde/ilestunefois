@@ -19,6 +19,7 @@ get_header();
 		        // Case: Image text alignment vertical
 		        if( get_row_layout() == 'image_text_alignment_vertical' ):
 		            $bg = get_sub_field('image');
+		            $video = get_sub_field('video');
 		            $title = get_sub_field('title');
 		            $link = empty(get_sub_field('link'))?"#":get_sub_field('link');
 		            $paragraphe = get_sub_field('paragraphe');
@@ -32,8 +33,12 @@ get_header();
 						<div class="row">
 							<div class="col-12">
 								
-								<?php if(!empty($bg)): ?>
+								<?php if(!empty($bg) && empty($video)): ?>
 									<div class="bg" style="background: url(<?php echo $bg; ?>)"></div>
+								<?php elseif(!empty($video)): ?>
+									<div class="bg embed-container">
+										<?php echo $video; ?>
+									</div>
 								<?php endif; ?>
 								<div class="module-content">
 									<?php if(!empty($title)): ?>

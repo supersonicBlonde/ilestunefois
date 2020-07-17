@@ -62,7 +62,9 @@
 
 }
 
-
+/**************************************
+          LOGOS
+          *****************************/
 
 #slider-logo-container {
     /* Arrows */
@@ -72,7 +74,7 @@
        
         top: 46%;
         transform: translateY(-50%);
-        left: 2em;
+       /*  left: 2em; */
 
         opacity: 0.3;
         transform: scale(0.9);
@@ -92,15 +94,60 @@
         }
 
         @media (min-width: 768px) {
-            left: 1em;
+            left: -5em;
         }
     }
 
     .slick-next {
-        right: 0;
+        right: -7em;
         left: auto;
     }
 }
+
+
+
+#logo-section {
+
+    overflow: hidden;
+    
+    .column:first-child {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+} 
+
+
+#slider-logo-container .hideondesktop .slick-arrow {
+    top: 1em;
+}
+
+#slider-logo-container .hideondesktop .slick-next {
+    right: -7.5em;
+}
+
+#slider-logo-container .hideondesktop .slick-prev {
+     left: -5.5em;
+}
+
+
+.hideondesktop {    
+
+    .slider-logos {
+
+        .slick-track {
+            display: flex;
+            margin-top: 8px;
+        }
+        .slick-slide {
+            padding: 0 1em;
+            display: flex;
+            height: auto;
+            align-items: center; //optional
+            justify-content: center; //optional
+        }
+    }
+}
+
 
 
 

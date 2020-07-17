@@ -1,6 +1,16 @@
 <?php
 
 	$background_image =  get_field('background_image_header_standard');
+	$video = get_field('video_header_standard');
+
+	// Image / video
+
+	if(!empty($background_image) && empty($video)) {
+		$style_bg = "background-image:url(".$background_image.")";
+	}
+	else {
+		 $style_bg = "background-color:#251b13";	
+	}
 	$style_bg = !empty($background_image)?"background-image:url(".$background_image.")":"background-color:#251b13";
 	$title = get_field('title_header_standard');
 	$sub_title = get_field('sous_titre_header_standard');
@@ -8,8 +18,12 @@
 ?>
 
 	<div id="first-section" class="sub_header section limited background-image" style="<?php echo $style_bg; ?>">
+		<video poster="<?php echo $background_image; ?>" id="bgvid" playsinline autoplay muted loop>
+			<source src="<?php echo $video; ?>" type="video/mp4">
+			I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+		</video>
 
-		<?php if(empty($background_image)): ?>
+		<?php //if(empty($background_image)): ?>
 		<div class="sub_header_content">
 
 			<?php if(!empty($title)): ?>
@@ -28,6 +42,6 @@
 				</div>
 			<?php endif; ?>
 		</div>
-		<?php endif; ?>
+		<?php //endif; ?>
 
 	</div>
