@@ -397,10 +397,10 @@ body {
 
 	margin-top: 7.3em;
 
-	.column {
+	/* .column {
 		padding:0;
 		margin:0;
-	}
+	} */
 
 	.row:first-child {
 		flex-direction: row-reverse;
@@ -421,7 +421,11 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 0 2em;
+
+		@media (min-width: 768px) {
+			padding-right: 2em;
+			padding-left: 2em;
+		}
 
 
 		.profils-content {
@@ -444,9 +448,21 @@ body {
 }
 
 .team-title {
-	margin:4.56rem 0;
+
+	margin:1rem 0;
+
+	@media (min-width: 768px) {
+		margin:4.56rem 0;
+	}
 }
 
+#ilestunefois-connect-form {
+	margin: 4em 0;
+
+	@media (min-width: 768px) {
+		margin-top: 0;
+	}
+}
 
 /************************************
 	RELATED POSTS

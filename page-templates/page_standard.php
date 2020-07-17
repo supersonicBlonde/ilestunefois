@@ -36,7 +36,7 @@ get_header();
 								<?php if(!empty($bg) && empty($video)): ?>
 									<div class="bg" style="background: url(<?php echo $bg; ?>)"></div>
 								<?php elseif(!empty($video)): ?>
-									<div class="embed-container">
+									<div class="bg embed-container">
 										<?php echo $video; ?>
 									</div>
 								<?php endif; ?>
