@@ -30,9 +30,15 @@ h2, h1.entry-title {
 	}
 }
 
-h2 a, h2 a:hover, h2 a:visited {
+h2 a, h2 a:visited {
 	font-size: 1em;
 	color: $color__primary;
+	text-decoration: none;
+	transition: color .5s;
+}
+
+h2 a:hover {
+	color: $color__secondary;
 	text-decoration: none;
 }
 
@@ -158,9 +164,12 @@ p {
 		font-size: 1.5em;
 		display: inline-block;
 		padding: 0 10px;
+		transition: color 0.5s;
+
 
 		&:hover {
 			text-decoration: none;
+			color: $color__secondary;
 		}
 
 		&:after {
@@ -172,7 +181,11 @@ p {
 			width:23px;
 			height: 19px;
 			background-repeat: no-repeat;
+			transition: background-image 0.5s;
+		}
 
+		&:hover:after {
+			background-image: url(../../img/right-arrow-hover.svg);
 		}
 	}
 
@@ -184,6 +197,11 @@ p {
 		height:0.87em;
 		border: 0.25em solid $color__primary;
 		border-bottom: 0;
+		transition: border 0.5s;
+	}
+
+	&:hover:before, &:hover:after {
+		border-color: $color__secondary;
 	}
 
 	&:before {
@@ -341,6 +359,10 @@ body {
 			text-decoration:underline;
 			font-family: $font__primary;
 			font-size: 1.4em; 
+
+			&:hover {
+				color: $color__primary;
+			}
 		}
 	}
 
@@ -364,6 +386,11 @@ body {
 			text-decoration:underline;
 			font-family: $font__primary;
 			font-size: 1.4em;
+			transition: color .5s;
+
+			&:hover {
+				color: $color__primary;
+			}
 		}
 	}
 }
@@ -385,9 +412,14 @@ body {
 		font-size: 3.5em;
 		margin: 0 .5rem;
 		text-decoration: none;
+		transition: color 0.5s;
 
 		&.current {
 			text-decoration:underline;
+		}
+
+		&:hover {
+			color: $color__secondary;
 		}
 	}
 
@@ -397,7 +429,7 @@ body {
 
 		a {
 			color: $color__secondary;
-			text-decoration:underline;
+			text-decoration: underline;
 			font-family: $font__primary;
 			font-size: 1.4em;
 		}
@@ -476,6 +508,11 @@ body {
 			text-decoration:underline;
 			font-family: $font__primary;
 			font-size: 1.4em;
+			transition: color .5s;
+
+			&:hover {
+				color: $color__primary;
+			}
 		}
 
 		@media (min-width: 768px) {
@@ -514,6 +551,11 @@ article:last-child {
 		color: #1b262c;
 		font-size: 1.4em;
 		text-decoration: underline;
+		transition: color .5s;
+
+		&:hover {
+			color: $color__primary;
+		}
 	}
 
 }

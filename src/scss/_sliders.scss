@@ -7,16 +7,16 @@
 .slick-next
 {
     position: absolute;
-    
-
     display: block;
-
     cursor: pointer;
-
     color: transparent;
     border: none;
     outline: none;
     background: transparent;
+    background-color: $color__primary;
+    border-radius: 50%;
+    width: 4.3em;
+    height: 4.3em;
 }
 
 
@@ -29,6 +29,7 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
+        transition: background 0.5s;
         /* padding: 0;
         margin-top: -10px\9; lte IE 8
         -webkit-transform: translate(0, -50%);
@@ -50,7 +51,7 @@
         }
 
         .slick-prev {
-            right: 27%;
+            right: 29%;
             left: auto;
         }
 
@@ -77,7 +78,7 @@
        /*  left: 2em; */
 
         opacity: 0.3;
-        transform: scale(0.9);
+       /*  transform: scale(0.9); */
 
         display: block;
 
@@ -89,8 +90,8 @@
         transition: all 1s ease-out;
 
         &:hover {
-            opacity: 1;
-            transform: scale(1);
+            /* opacity: 1;
+            transform: scale(1); */
         }
 
         @media (min-width: 768px) {
@@ -99,7 +100,7 @@
     }
 
     .slick-next {
-        right: -7em;
+        right: -5em;
         left: auto;
     }
 }
@@ -159,7 +160,7 @@
 {
     color: transparent;
     outline: none;
-    background: transparent;
+    background: $color__secondary; 
 }
 .slick-prev:hover:before,
 .slick-prev:focus:before,
@@ -167,39 +168,52 @@
 .slick-next:focus:before
 {
     opacity: 1;
+    color: $color__primary;
 
 }
 .slick-prev.slick-disabled:before,
 .slick-next.slick-disabled:before
 {
     opacity: .25;
-}
+} 
 
 .slick-prev:before,
 .slick-next:before
 {
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     display:inline-block;
-    width: 4.3em;
-    height: 4.3em;
+    /* width: 4.3em;
+    height: 4.3em; */
     background-size: cover;
     background-repeat: no-repeat;
-
+    position: absolute;
+  
+    transform: translate(-50%, -50%);
+    content: "\f101";
+    font-family: Flaticon;
+    color: white;
+    font-size: 1.5em;
 }
 
+    
 .slick-prev:before {
-    content:"";
-    background-image:url(../../img/prev-arrow.svg); 
+    left: 30%;
+    top: 32%;
+    /* background-image:url(../../img/prev-arrow.svg);  */
     /* content: "\f101";
     background: $color__primary;
     font-family: "Flaticon";
     color: white; */
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 
 }
 
 .slick-next:before {
-	content:"";
-	background-image:url(../../img/next-arrow.svg);
+    left: 50%;
+    top: 50%;
+    
 }
 

@@ -1,3 +1,95 @@
+// COLORS & HOVERS
+/**********************************/
+.home {
+	.navbar-dark .navbar-nav .nav-link {
+		transition: color 0.5s;
+		color: white;
+
+		&:hover {
+			color: $color__secondary;
+		}
+	}
+
+	.menu-btn a:hover {
+		color: $color__primary!important;
+	}
+
+	.menu-btn {
+		transition: color 0.5s;
+		background: $color__primary;
+
+		&:hover {
+			background: $color__secondary;
+
+			a {
+				color: $color__primary!important;
+			}
+		}
+	}
+}
+
+
+.page-template-portfolio, .page-template-blog, .single {
+	.navbar-dark .navbar-nav .nav-link {
+		transition: color 0.5s;
+		color: white;
+
+		&:hover {
+			color: $color__primary;
+		}
+	}
+
+	.menu-btn a:hover {
+		color: $color__secondary!important;
+	}
+
+	.menu-btn {
+		transition: color 0.5s;
+		background: $color__primary;
+
+		&:hover {
+
+			a {
+				color: $color__secondary!important;
+			}
+		}
+	}	
+}
+
+.page-template-agency {
+	.navbar-dark .navbar-nav .nav-link {
+		transition: color 0.5s;
+		color: white;
+
+		&:hover {
+			color: $color__secondary;
+		}
+	}
+
+	.menu-btn a:hover {
+		color: $color__primary!important;
+	}
+
+	.menu-btn {
+		transition: color 0.5s;
+		background: $color__secondary;
+
+		&:hover {
+
+			a {
+				color: $color__primary!important;
+			}
+		}
+	}	
+}
+
+.navbar.sticky a:hover {
+	color: $color__secondary;
+}
+
+
+
+
 .navbar-ilestunefois {
 	height: auto;
 	transition: all 1s;
@@ -62,9 +154,9 @@
 		color: black;
 	}
 
-	.menu-item:not(:last-child) a {
-		color:black!important;
-	}
+	/* .menu-item:not(:last-child) a {
+		color:black;
+	} */
 
 	#logo {
 		filter: invert(1);
@@ -104,23 +196,16 @@
 		}
 	}
 	.nav-link {
-		color: #FFF!important;
+		color: #FFF;
 		text-decoration: none;
 		font-family: $font__title;
 		font-size: 1.2em;
 		padding: 0;
-
-		/* &:hover, .active {
-			color: $color__primary!important;
-		} */
 	}
 
 
 	.menu-btn {
 		text-transform: uppercase;
-		@media (min-width: 992px) {
-			background: $color__primary;
-		}
 	}
 }
 
@@ -149,7 +234,7 @@
 	}
 
 	.menu-item:not(:last-child) a {
-		color:black!important;
+		color:black;
 	}
 
 	#logo {
@@ -176,8 +261,12 @@
 			display: none;
 		}
 
-		.menu-item:not(:last-child) a {
-			color:white!important;
+		/* .menu-item:not(:last-child) a {
+			color:white;
+		} */
+
+		.menu-item a {
+			color:white;
 		}
 
 		#logo {
