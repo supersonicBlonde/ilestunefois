@@ -14,8 +14,12 @@
 							<div class="follow">
 							<h3><?php the_field('intro_texte_footer' , 'options'); ?></h3>
 							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
 							<div class="subscribe">
-								<h3>form subscribe</h3>
+								<?php get_template_part('template-parts/form' , 'subscribe'); ?>
 							</div>
 						</div>
 					</div>

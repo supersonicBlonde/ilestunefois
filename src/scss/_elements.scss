@@ -190,14 +190,8 @@ p {
 	}
 
 	&:before, &:after {
-		content: "";
-		background: transparent;
-		display:inline-block;
-		width:100%;
-		height:0.87em;
-		border: 0.25em solid $color__primary;
-		border-bottom: 0;
-		transition: border 0.5s;
+		@include border-button;
+		border-color: $color__primary;
 	}
 
 	&:hover:before, &:hover:after {
