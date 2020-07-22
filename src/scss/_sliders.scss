@@ -38,8 +38,7 @@
     }
 
     .slick-prev {
-        left:1.2em;
-        right: auto;
+        left:0;
     }
     .slick-next {
         right: 0;
@@ -47,17 +46,11 @@
 
     @media (min-width: 768px) {
          .slick-prev,.slick-next {
-            top: 37%;
-        }
-
-        .slick-prev {
-            right: 29%;
-            left: auto;
+            top: 11em;
         }
 
         .slick-next {
-            right: 23%;
-            left: auto;
+            right: 55%;
         }
     }
 
@@ -119,15 +112,15 @@
 
 
 #slider-logo-container .hideondesktop .slick-arrow {
-    top: 1em;
+    top: 4em;
 }
 
 #slider-logo-container .hideondesktop .slick-next {
-    right: -7.5em;
+    right: -5em;
 }
 
 #slider-logo-container .hideondesktop .slick-prev {
-     left: -5.5em;
+     left: -5em;
 }
 
 
@@ -163,9 +156,7 @@
     background: $color__secondary; 
 }
 .slick-prev:hover:before,
-.slick-prev:focus:before,
 .slick-next:hover:before,
-.slick-next:focus:before
 {
     opacity: 1;
     color: $color__primary;

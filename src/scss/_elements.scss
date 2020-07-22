@@ -50,6 +50,11 @@ h3 {
 	margin-bottom: 20px;
 }
 
+.single h3 {
+	margin:1.5em 0;
+	font-size: 2.2em;
+}
+
 h4 {
 	font-family: $font__title;
 	font-size: 3.75em;
@@ -252,7 +257,7 @@ body {
 	padding: 4.4em 4.4em 7em 4.4em;
 
 	.sub_header-title {
-		font-size: 3.75em;
+		font-size: 2.5em;
 		color: #fff;
 
 		&:after {
@@ -261,14 +266,27 @@ body {
 			height:6px;
 			width:100%;
 			display: block;
-			margin:3.43rem 0;
+			margin:2rem 0;
 
+			@media (min-width: 768px) {
+				margin:3.43rem 0;
+			}
+
+		}
+
+		@media (min-width: 768px) {
+			font-size: 3.75em;
 		}
 	}
 
 	.sub_header-subtitle {
-		font-size: 2.5em;
+		font-size: 1.5em;
+		line-height: 1.3em;
 		color: #FFF;
+
+		@media (min-width: 768px) {
+			font-size: 2.5em;
+		}
 	}
 
 	.sub_header-paragprahe {
@@ -515,6 +533,14 @@ body {
 	}
 }
 
+.page-template-blog .blog-categories li, .archive .blog-categories li {
+
+	@media (min-width: 768px) {
+			margin-right: 3.6em;
+		}
+
+}
+
 
 
 article {
@@ -617,7 +643,7 @@ article:last-child {
 	height: 100vh;
 	right: 0;
 	top: 0;
-	position: absolute;
+	position: fixed;
 	z-index: 9999;
 	transition: opacity 0.5s;
 
@@ -805,4 +831,13 @@ article:last-child {
 
 .hide {
 	opacity:0;
+}
+
+
+#sortlist_widget img {
+
+	@media (min-width: 768px) {
+		width: 512px;
+		height: 128px;
+	}	
 }

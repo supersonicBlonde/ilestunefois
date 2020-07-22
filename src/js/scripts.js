@@ -193,7 +193,7 @@ window.addEventListener("load", function() {
 	      settings: {
 	        slidesToShow: 3,
 	        slidesToScroll: 1,
-	        appendArrows: jQuery('#slider-section')
+	        appendArrows: jQuery('.left-2')
 	      }
 	    }
 	  ],

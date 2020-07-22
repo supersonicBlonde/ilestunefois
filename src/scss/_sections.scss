@@ -72,6 +72,7 @@ body {
 	
 	.column {
 		padding: 3em;
+		position: relative;
 
 		@media (min-width:768px) {
 			padding: 0;
@@ -132,6 +133,18 @@ body {
 // TESTIMONIAL SLIDER
 /**************************************************/
 
+#sortlist_widget {
+	
+	position: absolute;
+	left: -5.5em;
+	top: 7em;
+	
+	@media (min-width: 768px) {
+		left: -3.5em;
+		top: 16em;
+	}
+	
+}
 
 #slider-section {
 

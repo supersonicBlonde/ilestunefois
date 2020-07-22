@@ -1,9 +1,25 @@
 // COLORS & HOVERS
 /**********************************/
+.nav-item:last-child {
+	display: none;
+
+	@media (min-width: 768px) {
+		display: block;
+	}
+}
+.navbar-dark .navbar-nav .nav-link {
+	transition: color 0.5s;
+	color: #1b262c;
+
+
+	@media (min-width: 768px) {
+		color: white;
+	}
+
+
+}
 .home {
 	.navbar-dark .navbar-nav .nav-link {
-		transition: color 0.5s;
-		color: white;
 
 		&:hover {
 			color: $color__secondary;
@@ -29,10 +45,8 @@
 }
 
 
-.page-template-portfolio, .page-template-blog, .single {
-	.navbar-dark .navbar-nav .nav-link {
-		transition: color 0.5s;
-		color: white;
+.page-template-portfolio, .page-template-blog, .single, .archive {
+	.navbar-dark .navbar-nav .nav-link,   {
 
 		&:hover {
 			color: $color__primary;
@@ -58,8 +72,6 @@
 
 .page-template-agency {
 	.navbar-dark .navbar-nav .nav-link {
-		transition: color 0.5s;
-		color: white;
 
 		&:hover {
 			color: $color__secondary;
@@ -139,7 +151,7 @@
 	.connect-mobile {
 		
 		background: $color__primary;
-		padding:1em 1.5em;
+		padding:1.1em 1.5em;
 
 		.fi {
 			color:white;
@@ -161,13 +173,14 @@
 	#logo {
 		filter: invert(1);
 		width: 93px; 
+		margin-top: 1px;
 	}
 }
 
 
 
 .navbar-brand {
-	padding: 0 0 0 1.75em;
+	padding:0;
 	align-self: center;
 	transition: transform 0.5s;
 
@@ -177,6 +190,10 @@
 
 	.cls-2{
 		fill: #fff;
+	}
+
+	@media (min-width: 768px) {
+		padding: 0 0 0 1.75em;
 	}
 
 }

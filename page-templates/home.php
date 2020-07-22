@@ -56,6 +56,7 @@ get_header('home');
 							$img_profil = get_sub_field('image_profil'); 
 							$full_name = get_sub_field('full_name');
 							$review = get_sub_field('review');
+							$titre = get_field('title_home_testimonials');
 							?>
 							<div style="padding-bottom:1.5em;">
 		
@@ -90,6 +91,9 @@ get_header('home');
 					<h3>
 						<?php echo $titre; ?>
 					</h3>
+					<div id="sortlist_widget">
+						<a href="https://www.sortlist.fr/en/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
+					</div>
 					<?php endif; ?>
 				</div>
 			</div>

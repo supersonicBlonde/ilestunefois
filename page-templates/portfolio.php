@@ -103,6 +103,7 @@ get_header();
 					$id = "player".$count;
 					$video_id = get_field('video_id_portfolio_video');
 					$playerList[$count]["title"] = get_the_title();
+					$playerList[$count]["id"] = get_the_ID();
 					$playerList[$count]["paragraphe"] = get_field('paragraphe_portfolio_video');
 					$playerList[$count]['poster'] = get_field('poster_portfolio_video'); 
 					$playerList[$count]['cover'] = get_field('cover_video_portfolio_video');
@@ -139,7 +140,7 @@ get_header();
 										<p><?php echo $player['paragraphe']; ?></p>
 										<div class="post-cat">
 										<?php 
-											echo ilesunefois_echo_cpt_taxonomies(get_the_ID(), array('videos-category')); 
+											echo ilesunefois_echo_cpt_taxonomies($player['id'], array('videos-category')); 
 										?>
 										</div>
 									</div><!-- .video-item -->

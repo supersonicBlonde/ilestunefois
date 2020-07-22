@@ -38,7 +38,7 @@ get_header();
 							
 							<?php foreach($terms as $term): ?>
 
-								<li><a href=""><?php echo $term->name; ?></a></li>
+								<li><a href="/category/<?php echo $term->slug ;?>"><?php echo $term->name; ?></a></li>
 
 							<?php endforeach;  ?>
 

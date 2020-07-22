@@ -37,8 +37,17 @@
 						<?php get_template_part( 'template-parts/nav', 'navbar' ); ?>
 
 						<div class="header-content">
-							<?php if(!is_single()): ?>
+							<?php if(!is_single() && !is_tax() && !is_archive()): ?>
 								<h1 class="size-title"><?php the_title(); ?></h1>
+							<?php elseif(is_tax()): 
+								$term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') ); ?>
+								<h1 class="size-title"><?php echo $term->name; ?></h1>
+							<?php elseif(is_archive()): ?>
+								<?php 
+								$category = get_the_category();
+								$current_category = $category[0];
+ 							?>
+ 							<h1 class="size-title"><?php echo $category[0]->name; ?></h1>
 							<?php endif; ?>
 						</div><!-- .header-content -->
 						

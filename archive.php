@@ -1,60 +1,124 @@
-<?php /*
-
-@package ilestunefois
-
+<?php
+/**
+* Template Name: Blog
+*
+* @package ilestunefois
 */
 
-get_header(); ?>
+get_header();
+?>
+<div class="blog-content page-content">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<?php 
+	
 
-			<header class="archive-header text-center">
-				<?php the_archive_title('<h1 class="page-title">', '</h1>'); ?>
-			</header>
+	if(have_posts() ):
+	?>
 
-			<?php if( is_paged() ): ?>
+	<div class="posts-container section limitedext">
 
-				<div class="container text-center container-load-previous">
-					<!-- <a class="btn-sunset-load sunset-load-more" data-prev="1" data-archive="<?php echo sunset_grab_current_uri(); ?>" data-page="<?php echo sunset_check_paged(1); ?> " data-url="<?php echo admin_url('admin-ajax.php'); ?>">-->
-						<a class="btn-sunset-load sunset-load-more" data-prev="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-						<span class="sunset-icon sunset-loading"></span>
-						<span class="text">Load Previous</span>
-					</a>
-				</div><!-- .container -->
+		<div class="container-fluid">
 
-			<?php endif; ?>
+			<?php $terms = get_categories(); ?>
 
-			<div class="container sunset-posts-container">
+			<div id="cat-list">
+				<div class="row">
+					
+					<div class="col-12">
+						
+						<?php if(count($terms) > 0): ?>
 
-				<?php
+							<ul class="blog-categories">
+							
+							<?php foreach($terms as $term): ?>
 
-					if( have_posts() ):
+								<li><a href="<?php echo $term->slug ;?>"><?php echo $term->name; ?></a></li>
 
-						echo '<div class="page-limit" data-page="' . $_SERVER["REQUEST_URI"] . '">';
+							<?php endforeach;  ?>
 
-						while( have_posts() ): the_post();
+							</ul>
 
-							get_template_part( 'template-parts/content', get_post_format() );
+						<?php endif; ?>
 
-						endwhile;
+					</div><!-- .col-12 container-cat-list -->
 
-						echo '</div>';
+				</div>
+			</div>
+		
+			<?php while(have_posts()): the_post();  ?>
 
-					endif;
+				
+				<div class="row">
+					<div class="col-12">
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								
+						<?php if( ilestunefois_get_attachment() ): ?>
+							
+							<a class="standard-featured-link" href="<?php the_permalink(); ?>">
+								<div class="standard-featured background-image" style="background-image: url(<?php echo ilestunefois_get_attachment(); ?>);"></div>
+							</a>
+							
+						<?php endif; ?>
 
-				?>
+						<div class="post-single">
 
-			</div><!-- .container -->
+							<div class="post-cat">
+							<?php 
+								echo ilesunefois_echo_cpt_taxonomies(get_the_ID(), array('category')); 
+							?>
+							</div>
 
-			<div class="container text-center">
-				<a class="btn-sunset-load sunset-load-more" data-page="<?php echo sunset_check_paged(1); ?>" data-archive="<?php echo sunset_grab_current_uri(); ?>" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-					<span class="sunset-icon sunset-loading"></span>
-					<span class="text">Load More</span>
-				</a>
-			</div><!-- .container -->
+							<header class="entry-header">
+								
+								<?php the_title( '<h2 class="entry-title"><a href="'. esc_url( get_permalink() ) .'" rel="bookmark">', '</a></h2>'); ?>
+								
+							</header>
 
-		</main>
-	</div><!-- #primary -->
+							<div class="entry-content">	
+
+								<div class="entry-excerpt">
+									<?php the_excerpt(); ?>
+								</div>
+								<div class="button-container standard-read-more">
+									<a href="<?php the_permalink(); ?>"><?php _e( 'Read More' ); ?></a>
+								</div>
+
+							</div>
+						</div>
+							
+						</article>
+						
+					</div>
+
+				</div>
+
+			<?php endwhile; ?>
+
+		</div>
+
+		<div class="pagination">
+	    <?php 
+	       /* echo paginate_links( array(
+	            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+	            'total'        => $query->max_num_pages,
+	            'current'      => max( 1, get_query_var( 'paged' ) ),
+	            'format'       => '?paged=%#%',
+	            'show_all'     => false,
+	            'type'         => 'plain',
+	            'end_size'     => 2,
+	            'mid_size'     => 1,
+	            'prev_next'    => true,
+	            'prev_text'    => sprintf( '<i></i> %1$s', __( '', 'text-domain' ) ),
+	            'next_text'    => sprintf( '%1$s <i></i>', __( '', 'text-domain' ) ),
+	            'add_args'     => false,
+	            'add_fragment' => '',
+	        ) );*/
+	    ?>
+		</div><!-- .pagination -->
+
+	</div><!-- .posts-container -->
+
+	<?php endif; ?>
+
 
 <?php get_footer(); ?>
