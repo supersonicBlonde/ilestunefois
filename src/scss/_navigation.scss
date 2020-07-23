@@ -3,7 +3,7 @@
 .nav-item:last-child {
 	display: none;
 
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		display: block;
 	}
 }
@@ -12,7 +12,7 @@
 	color: #1b262c;
 
 
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		color: white;
 	}
 
@@ -157,7 +157,7 @@
 			color:white;
 		}
 
-		@media (min-width:768px) {
+		@media (min-width:992px) {
 			display: none;
 		}
 	}
@@ -192,7 +192,7 @@
 		fill: #fff;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		padding: 0 0 0 1.75em;
 	}
 
@@ -241,7 +241,7 @@
 
 	ul {
 		
-		@media (min-width: 768px) {
+		@media (min-width: 992px) {
 			margin-right: 5em;
 		}
 	}
@@ -267,7 +267,7 @@
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.navbar {
 
 		background: transparent;

@@ -44,7 +44,7 @@
         right: 0;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
          .slick-prev,.slick-next {
             top: 11em;
         }
@@ -87,7 +87,7 @@
             transform: scale(1); */
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 1200px) {
             left: -5em;
         }
     }
@@ -111,9 +111,9 @@
 } 
 
 
-#slider-logo-container .hideondesktop .slick-arrow {
+/* #slider-logo-container .hideondesktop .slick-arrow {
     top: 4em;
-}
+} */
 
 #slider-logo-container .hideondesktop .slick-next {
     right: -5em;

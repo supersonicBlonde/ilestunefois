@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top" id="navbarNav-container">
+<nav class="navbar navbar-expand-lg navbar-dark" id="navbarNav-container">
 	
 	<div class="connect-mobile"><i class="fi flaticon-send"></i></div>
 	

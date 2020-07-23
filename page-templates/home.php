@@ -19,7 +19,7 @@ get_header('home');
 	<div id="first-section" class="text-img-block section limited">
 		<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-6 col-12 column">
+					<div class="col-xl-6 col-12 column">
 						<?php if(!empty($titre)): ?>
 						<h3>
 							<?php echo $titre; ?>
@@ -36,7 +36,7 @@ get_header('home');
 						</div>
 						<?php endif; ?>
 					</div>
-					<div class="col-md-6 col-12 text-center position-relative column">
+					<div class="col-xl-6 col-12 text-center position-relative column">
 						<img  src="<?php echo get_template_directory_uri().'/img/illustr.png'; ?>">
 					</div>
 				</div>
@@ -104,11 +104,11 @@ get_header('home');
 		$paragraphe = get_field('p_home_logos_clients');
 		?>
 
-		<div id="logo-section" class="section limited">
+<div id="logo-section" class="section limited">
 	<div class="container-fluid">
 		<div class="section-container">
 			<div class="row">
-				<div class="col-md-6 col-12 column">
+				<div class="col-xl-6 col-12 column">
 						<div id="slider-logo-container">
 						<?php if(have_rows('logos_clients')): ?>
 							<?php 
@@ -172,7 +172,7 @@ get_header('home');
 					</div>
 					
 				</div>
-				<div class="col-md-6 col-12 position-relative column">
+				<div class="col-xl-6 col-12 position-relative column">
 					<div>
 						<?php if(!empty($titre)): ?>
 						<h3>

@@ -189,7 +189,29 @@ window.addEventListener("load", function() {
 	  mobileFirst:true,
 	  responsive: [
 	    {
-	      breakpoint: 768,
+	      breakpoint: 767,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 1,
+	      }
+	    },
+	    {
+	      breakpoint: 991,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1,
+	      }
+	    },
+	    {
+	      breakpoint: 1199,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 1,
+	        appendArrows: jQuery('.left-2')
+	      }
+	    },
+	    {
+	      breakpoint: 1919,
 	      settings: {
 	        slidesToShow: 3,
 	        slidesToScroll: 1,

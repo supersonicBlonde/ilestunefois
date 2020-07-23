@@ -10,7 +10,7 @@
 		font-size: 4em;
 		font-family: $font__title;
 
-		@media (min-width: 768px) {
+		@media (min-width: 1200px) {
     		font-size: 6.25em;
  		}
 	}
@@ -79,7 +79,7 @@
 	}
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1920px) {
 	.home {
 		.header-container {
 
@@ -113,7 +113,7 @@
 
 				}
 
-				/* @media (min-width: 768px) {
+				/* @media (min-width: 992px) {
 					    	width:50%;
 					 	} */
 			} 
@@ -134,7 +134,7 @@
 		text-align:center;
 
 
-		@media (min-width:768px) {
+		@media (min-width:992px) {
 			text-align:left;
 		}
 	}
@@ -151,7 +151,7 @@
 
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		height: 80vh;
 	}
 }
@@ -162,7 +162,7 @@
 	margin: 0 auto;
 
 
-	@media (min-width: 768px) {
+	@media (min-width: 992px) {
 		height: 49em;
 	}
 }
