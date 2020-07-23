@@ -456,14 +456,14 @@ body {
 
 #team-slider .column:first-child {
 	
-	@media (min-width: 992px) {
+	/* @media (min-width: 992px) {
 		padding-left:0;
-	}
+	} */
 }
 
-.team-slider .column:last-child {
+/* .team-slider .column:last-child {
 	padding-right:0;
-}
+} */
 
 .team_slider-single {
 
@@ -767,7 +767,7 @@ article:last-child {
 }
 
 .connect-content {
-	padding: 3.5rem 3.1rem;
+	
 
 	h2 {
 		color: #c77c98;

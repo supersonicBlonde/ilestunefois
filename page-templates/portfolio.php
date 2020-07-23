@@ -7,11 +7,8 @@
 
 get_header();
 ?>
-<div class="portfolio-content page-content limitmobile">
+<div class="portfolio-content">
 
-	<?php get_template_part('template-parts/content-subheader'); ?>
-
-	
 	<?php
 
 	// get the 6 videos of portfolio

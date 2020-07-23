@@ -7,6 +7,18 @@ input, textarea {
     color: #c77c98;
 }
 
+input:-ms-input-placeholder {
+    color: #c77c98;
+  }
+
+input::placeholder {
+    color: #c77c98;
+  }
+
+textarea::placeholder {
+    color: #c77c98;
+  }
+
 input[type=text], input[type=email] {
     padding: 1.6rem 1.1rem;
 }
@@ -22,6 +34,8 @@ button.btn-submit, button.btn-submit:hover {
     font-family: $font__primary;
     text-transform: uppercase;
 }
+
+
 
 
 textarea {

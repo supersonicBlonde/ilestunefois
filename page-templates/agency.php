@@ -19,7 +19,6 @@ get_header();
 
 					<div class="profils-container">
 
-						
 
 						    <?php while ( have_rows('profils_first_section_agency') ) : the_row(); ?>
 
@@ -27,14 +26,14 @@ get_header();
 
 						    	<div class="row">
 
-									<div class="col-md-6 col-12 column">
+									<div class="col-xl-6 col-12 column profile-video">
 								        <div class="profil-image">
 								        	<div class="embed-container">
 								        	 	<?php echo $video; ?>
 								        	</div>
 								        </div>
 							    	</div>
-							    	<div class="col-md-6 col-12 column-bg column">
+							    	<div class="col-xl-6 col-12 column-bg column">
 							    		<div class="profils-content">
 							    			<h4><?php the_sub_field('titre_first_section_agency'); ?></h4>
 							    			<p><?php the_sub_field('paragraphe_first_section_agency'); ?></p>
@@ -90,7 +89,7 @@ get_header();
 								<?php while($team->have_posts()): $team->the_post();  ?>
 
 									<?php $profil_image = get_field('image_team'); ?>
-									<div class="col-md-3 col-12 column">
+									<div class="col-xl-3 col-12 column">
 										<div class="team_slider-single">
 											<div>
 												<img src="<?php echo esc_url($profil_image['url']); ?>" alt="<?php echo esc_attr($profil_image['alt']); ?>" />

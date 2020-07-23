@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="row">	
 
-				<div class="col-12 hideonmobile">
+				<div class="col-12 form-intro">
 					<h2><?php the_field('intro_texte' , 'options'); ?></h2>
 
 				</div>

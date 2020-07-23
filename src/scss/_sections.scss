@@ -134,6 +134,16 @@ body {
 	}
 }
 
+#first-profiles .profile-video{
+	padding:0;
+}
+
+#team-slider .column {
+	@media (min-width:1200px) {
+		padding: 0;
+	} 
+}
+
 /******************************************************************
 // PADDING ON SPECIFIC SECTIONS 
 /******************************************************************/
@@ -531,11 +541,8 @@ body {
 }
 
 #ilestunefois-connect-form {
-	margin: 4em 0;
+	margin: 1em 0;
 
-	@media (min-width: 1200px) {
-		margin-top: 0;
-	}
 }
 
 /************************************
@@ -587,3 +594,12 @@ body {
 	}
 }
 
+
+.connect-content {
+	
+	padding: 4rem 0;
+
+	@media (min-width:992px) {
+		padding: 3.5rem 3.1rem;
+	}
+}
