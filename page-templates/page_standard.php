@@ -69,17 +69,31 @@ get_header();
 
 						<div class="row">
 
+						<?php	
 
-							<?php if(have_rows('colonne')): while(have_rows('colonne')): the_row();	 
+						$count = count(get_row('colonne')['colonne']);
+
+							 if(have_rows('colonne')): 
+
+								
+
+								
+
+								while(have_rows('colonne')): the_row();	 
 
 								$video = get_sub_field('video');
+								$image = get_sub_field('image');
 					            $title = get_sub_field('titre');
 					            $paragraphe = get_sub_field('paragraphe');
 					            ?>
 								
-								<div class="col column">
-										
-									<div class="embed-responsive embed-responsive-16by9"><?php echo $video ?></div>
+								<div class="col-12 <?php echo $count == 2?'col-md-6':'col-md-4'; ?>">
+									
+									<?php if((!empty($video) && empty($image)) || (!empty($video) && !empty($image))): ?>	
+										<div class="embed-responsive embed-responsive-16by9 mh"><?php echo $video ?></div>
+									<?php elseif(empty($video) && !empty($image)): ?>
+										<div style="text-align:center;" class="mh"><img style="max-height: 233px;" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
+									<?php endif; ?>
 									<div class="module-content">
 										<?php if(!empty($title)): ?>
 											<h3><?php echo $title; ?></h3>

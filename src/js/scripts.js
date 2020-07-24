@@ -3,6 +3,16 @@
     el: document.querySelector('[data-scroll-container]'),
     smooth: true
 });*/
+
+/**
+* jquery-match-height master by @liabru
+* http://brm.io/jquery-match-height/
+* License: MIT
+*/
+
+
+
+
 class Modal {
 
 	constructor(parent) {
@@ -16,12 +26,12 @@ class Modal {
 	} 
 
 	set_overlay(state) {
-		if(state === true) {
+		if(state === true) { 
 			this.overlay.classList.add('show');
 			this.overlay.classList.remove('hide');
 			this.scale.classList.add('scaleOut');
 			this.scale.classList.remove('scaleIn');
-		}
+		} 
 		else {
 			this.overlay.classList.remove('show');
 			this.overlay.classList.add('hide');
@@ -140,7 +150,7 @@ class Modal {
 		   },
 			error : function( response ) {
 				console.log('Error retrieving the information: ' + response.status + ' ' + response.statusText);
-				console.log( response );
+				//console.log( response );
 			}
 		});
 	}
@@ -159,12 +169,20 @@ function navbarAnimate(el) {
 	  // timing options
 	  duration:800,
 	  easing: 'ease-out',
-	  iterations: 1
+	  iterations: 1 
 	});
 }
 
+jQuery( document ).ready(function($) {
+  // Handler for .ready() called.
+  $('.mh').matchHeight(); 
+});
+
+
 
 window.addEventListener("load", function() {
+
+	
 
 	let toggler = document.querySelector('.navbar-toggler');
 	let collapse = document.getElementById('navbarNav');
@@ -262,11 +280,15 @@ window.addEventListener("load", function() {
 				}
 		    }, false);
 
-			 elem.addEventListener("mouseout", function(event) {
+			elem.addEventListener("mouseout", function(event) {
+			
 		       let video = event.target;
-
-					video.load();
+		       		
+					//video.load();
 					video.currentTime = 0;
+					video.pause();
+					//alert(video.currentTime);
+
 
 		    }, false);
 

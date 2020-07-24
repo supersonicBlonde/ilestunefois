@@ -603,3 +603,49 @@ body {
 		padding: 3.5rem 3.1rem;
 	}
 }
+
+.menu-footer {
+	width:100%; 
+	margin: 0 auto;
+
+	@media (min-width:768px) {
+		width:95%; 
+	}
+
+	@media (min-width:992px) {
+		width:90%; 
+	}
+
+	@media (min-width:1200px) {
+		width:83%; 
+	}
+
+	@media (min-width:1920px) {
+		width:80%; 
+	}
+}
+
+.footer-col-container {
+	
+	@media (min-width: 768px) {
+		display: flex;
+		justify-content: center;
+	}
+
+	.col-footer {
+
+		@media (min-width:768px) {
+			width: 100%;
+		}
+		@media (min-width:992px) {
+			width:20%;
+		}
+
+		@media (min-width:992px) {
+			width:20%;
+		}
+
+		
+	}
+
+}

@@ -27,12 +27,17 @@ footer {
 	ul {
 		text-align: center;
 		list-style-type: none;
-		text-align: left;
+		text-align: center;
 
-		li a {
-			text-decoration: none;
-			font-family: $font__title;
-			font-size: 1.25em;
+		li {
+
+			padding-bottom: .5em;
+			a {
+				text-decoration: none;
+				font-family: $font__title;
+				font-size: 1em;
+				
+			}
 
 
 		}
@@ -109,7 +114,7 @@ footer {
 		height: auto;
 	}
 
-	.row:before, .row:after {
+	&:before, &:after {
 		content: "";
 		background: #3D041E;
 		height:1px;

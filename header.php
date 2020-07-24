@@ -33,6 +33,12 @@
 					
 					<header class="header-pages header-container" style="background-color:<?php echo $bg_color; ?>" id="header-container">
 						
+						<?php if(!empty(get_field('video_header_standard'))): ?>
+							<video poster="<?php //echo $poster; ?>" id="bgvid" playsinline autoplay muted loop>
+								<source src="<?php the_field('video_header_standard') ?>" type="video/mp4">
+								I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+							</video>
+						<?php endif; ?>
 						
 						<?php get_template_part( 'template-parts/nav', 'navbar' ); ?>
 
