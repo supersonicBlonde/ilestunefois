@@ -37,6 +37,9 @@ get_header();
 							    		<div class="profils-content">
 							    			<h4><?php the_sub_field('titre_first_section_agency'); ?></h4>
 							    			<p><?php the_sub_field('paragraphe_first_section_agency'); ?></p>
+							    			<?php if(!empty(get_sub_field('linkedin'))): ?>
+							    				<div class="linkedin-link"><i class="fi flaticon-linkedin"></i><a href="<?php echo get_sub_field('linkedin'); ?>"><?php echo get_sub_field('linkedin') ?></a></div>
+							    			<?php endif; ?>
 							    		</div>
 							    	</div>
 

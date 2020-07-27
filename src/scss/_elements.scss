@@ -939,6 +939,31 @@ article:last-child {
 			}
 		}
 	}
-
 	
+}
+
+.linkedin-link {
+	color: $color__primary;
+	margin-top: 1em;
+	display: flex;
+	align-items: center;
+
+	&:hover {
+		color: white;
+	}
+
+	a {
+		color: $color__primary;
+		display: inline-block;
+		margin-top: 2px;
+
+		&:hover {
+			color: white;
+		}
+
+	}
+
+	i {
+		padding-right: .5em;
+	}
 }
