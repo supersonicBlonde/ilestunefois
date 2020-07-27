@@ -18,6 +18,14 @@
     src: url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"), url(https://assets.sendinblue.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff")
   } */
 
+  #error-message {
+    color: red
+  }
+
+  #success-message {
+    color: green;
+  }
+
   #sib-container {
     background: transparent; 
   }

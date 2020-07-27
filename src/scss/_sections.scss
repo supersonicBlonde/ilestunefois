@@ -195,6 +195,15 @@ body {
 }
 
 
+@media (min-width: 1200px) {
+	.module-testimonial {
+
+		.column:first-child {
+			padding: 2.8em 0 2.8em 2.8em!important;
+		}
+	}
+}
+
 
 
 

@@ -71,13 +71,10 @@ get_header();
 
 						<?php	
 
-						$count = count(get_row('colonne')['colonne']);
+							$count = count(get_row('colonne')['colonne']);
 
 							 if(have_rows('colonne')): 
 
-								
-
-								
 
 								while(have_rows('colonne')): the_row();	 
 
@@ -87,7 +84,7 @@ get_header();
 					            $paragraphe = get_sub_field('paragraphe');
 					            ?>
 								
-								<div class="col-12 <?php echo $count == 2?'col-md-6':'col-md-4'; ?>">
+								<div class="col-12 <?php echo $count == 2?'col-md-6':'col-xl-4'; ?> column">
 									
 									<?php if((!empty($video) && empty($image)) || (!empty($video) && !empty($image))): ?>	
 										<div class="embed-responsive embed-responsive-16by9 mh"><?php echo $video ?></div>
@@ -162,6 +159,41 @@ get_header();
 		        		</div>
 		        	</div>
 		        	
+		        </div>
+
+		        <?php
+				// Case: 3 colonnes
+		        elseif( get_row_layout() == 'testimonial' ): 
+		        	
+		        	$image = get_sub_field('image');
+		        	
+		        	$full_name = get_sub_field('full_name');
+		        	$job = get_sub_field('job');
+		        	$paragraphe = get_sub_field('paragraphe');
+		        ?>
+
+
+		        <div class="module-testimonial section limitedext module">
+		        	<div class="container-fluid">
+		        		<div class="row">
+		        			<div class="col-xl-3 col-lg-4 col-12 column">
+								<?php if(!empty($image)): ?>
+									<div class="image">
+										<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="rounded-circle">
+									</div>
+									<div class="name"><?php echo $full_name; ?></div>
+									<div class="job"><?php echo $job ?></div>
+								<?php endif; ?>
+		        			</div>
+		        			<div class="col-xl-9 col-lg-8 col-12 column">
+		        				<div class="quotes">
+		        					<p>"</p>
+		        					<p>"</p>
+		        				</div>
+		        				<p class="paragraphe"><?php echo $paragraphe; ?></p>
+		        			</div>
+		        		</div>
+		        	</div>
 		        </div>
 
 		       <?php endif;
