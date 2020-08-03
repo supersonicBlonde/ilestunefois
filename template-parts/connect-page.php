@@ -9,10 +9,10 @@
 				</div>
 			</div>
 			<div class="row">	
-				<div class="col-md-6 col-12">	
+				<div class="col-xl-6 col-12">	
 					<?php get_template_part('template-parts/connect' , 'form'); ?>
 				</div>
-				<div class="col-md-6 col-12">
+				<div class="col-xl-6 col-12">
 					<?php wp_nav_menu( array(
 						'menu'  => 'Social Connect',
 						'container'       => false,

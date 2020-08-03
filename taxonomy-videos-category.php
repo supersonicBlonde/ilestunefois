@@ -27,6 +27,8 @@ get_header();
 						<?php if(count($terms) > 0): ?>
 
 							<ul class="videos-categories">
+
+								<li><a href="/portfolio">Tous nos films</a></li>
 							
 							<?php foreach($terms as $term): ?>
 
@@ -190,9 +192,10 @@ get_header();
 
 					<div class="pagination">
 			    <?php 
-			       /* echo paginate_links( array(
+			    	global $wp_query;
+			       echo paginate_links( array(
 			            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-			            'total'        => $portfolio->max_num_pages,
+			            'total'        => $wp_query->max_num_pages,
 			            'current'      => max( 1, get_query_var( 'paged' ) ),
 			            'format'       => '?paged=%#%',
 			            'show_all'     => false,
@@ -204,7 +207,7 @@ get_header();
 			            'next_text'    => sprintf( '%1$s <i></i>', __( '', 'text-domain' ) ),
 			            'add_args'     => false,
 			            'add_fragment' => '',
-			        ) );*/
+			        ) );
 			    ?>
 				</div><!-- .pagination -->
 				</div><!-- .section -->

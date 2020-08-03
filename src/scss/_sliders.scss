@@ -86,6 +86,14 @@
             /* opacity: 1;
             transform: scale(1); */
         }
+        @media (min-width:768px) {
+            top: 53%;
+        }
+
+       @media (min-width:992px) {
+            top: 53%;
+            left: -2em;
+        } 
 
         @media (min-width: 1200px) {
             left: -5em;
@@ -95,6 +103,14 @@
     .slick-next {
         right: -5em;
         left: auto;
+
+         @media (min-width:992px) {
+          right: -2em;
+        } 
+
+        @media (min-width: 1200px) {
+          right: -5em;
+        } 
     }
 }
 

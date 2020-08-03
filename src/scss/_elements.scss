@@ -163,16 +163,29 @@ p {
 	text-align:center;
 	margin-top: 25px;
 
+	&:hover a {
+		color: $color__secondary;
+	}
+
+	&:hover a:after {
+		background-image: url(../../img/right-arrow-hover.svg);
+	}
+
 	a {
 		color: $color__primary;
 		font-family: $font__title;
 		font-size: 1.5em;
 		display: inline-block;
 		padding: 0 10px;
+		padding-bottom: 7px;
 		transition: color 0.5s;
 
+		@media (min-width: 992px) {
+			padding-bottom: 0;
+		}
 
-		&:hover {
+
+		&:hover, {
 			text-decoration: none;
 			color: $color__secondary;
 		}
@@ -185,8 +198,15 @@ p {
 			background-size:cover;
 			width:23px;
 			height: 19px;
+			vertical-align: -21%;
 			background-repeat: no-repeat;
 			transition: background-image 0.5s;
+
+			@media (min-width: 992px) {
+				vertical-align: inherit;
+			}
+
+
 		}
 
 		&:hover:after {
@@ -382,7 +402,7 @@ body {
 		justify-content: flex-end;
 
 		li {
-			margin-left: 7.6em;
+			margin-left: 3.6em;
 		}
 	}
 }
@@ -632,11 +652,50 @@ article:last-child {
 }
 
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color__primary; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color__secondary; 
+}
 
 /*******************************
 		CONNECT
 		************************/
+.simplebar-scrollbar::before {
+  background-color: red;
+}
+.modal-wrapper {
+   overflow-y: scroll;   /* Just apply overflow-y */
+  height: 100%;
+  width: 100%;
+  background: $color__primary;
 
+  &.animate {
+
+		animation-name: largeur100;
+
+		@media (min-width: 992px) {
+			animation-name: largeur60;
+		}
+
+		animation-duration: 1s;
+		animation-fill-mode: forwards;  
+	} 
+}
 .modal-connect {
 	background: $color__primary;
 	width:100%;
@@ -644,11 +703,12 @@ article:last-child {
 	right: 0;
 	top: 0;
 	position: fixed;
+	overflow: visible;
 	z-index: 9999;
 	transition: opacity 0.5s;
 
-
-	@media (min-width: 992px) {
+	
+	@media (min-width: 1920px) {
 		width: 60%;
 	}
 
@@ -663,7 +723,9 @@ article:last-child {
 
 		animation-duration: 1s;
 		animation-fill-mode: forwards;  
-	}
+	} 
+
+	
 }
 
 
@@ -681,7 +743,7 @@ article:last-child {
 	transform-origin: center right;
 	transition: opacity 0.5s;
 
-	@media (min-width: 992px) {
+	@media (min-width: 1920px) {
 		top: 2.3em;
 	}
 
@@ -689,7 +751,7 @@ article:last-child {
 
 		animation-name: slide_mobile;
 
-		@media (min-width:992px) {
+		@media (min-width:1920px) {
 			animation-name: slide;
 		}
 

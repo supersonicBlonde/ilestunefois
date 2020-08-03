@@ -86,6 +86,15 @@ function taxonomy_query($query){
 
 
 
+// Change the number of posts that show up on the taxonomy template for Portfolio taxonomy
+ function custom_tax_post_count ( $query ) {
+        if (($query->is_tax(array('videos-category')) ))      
+        $query->set( 'posts_per_page', '6' );
+    }
+     add_action( 'pre_get_posts', 'custom_tax_post_count' );
+
+
+
 // OPTIONS PAGE
 
 if( function_exists('acf_add_options_page') ) {

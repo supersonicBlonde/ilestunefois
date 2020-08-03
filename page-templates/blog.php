@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div class="blog-content page-content">
+<!-- <div class="pipedriveWebForms" data-pd-webforms="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708"><script src="https://cdn.eu-central-1.pipedriveassets.com/web-form-assets/webforms.min.js"></script></div> -->
 
 	<?php 
 	$args = array(
@@ -21,7 +21,7 @@ get_header();
 	if($query->have_posts() ):
 	?>
 
-	<div class="posts-container section limitedext">
+	<div class="posts-container page-content section limitedext">
 
 		<div class="container-fluid">
 

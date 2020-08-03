@@ -7,6 +7,7 @@
 
 get_header();
 ?>
+<div class="pipedriveWebForms" style="display:none;" data-pd-webforms="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708"><script src="https://cdn.eu-central-1.pipedriveassets.com/web-form-assets/webforms.min.js"></script></div>
 <div class="agence-content page-content">
 
 	<?php get_template_part('template-parts/content-subheader'); ?>
@@ -38,7 +39,7 @@ get_header();
 							    			<h4><?php the_sub_field('titre_first_section_agency'); ?></h4>
 							    			<p><?php the_sub_field('paragraphe_first_section_agency'); ?></p>
 							    			<?php if(!empty(get_sub_field('linkedin'))): ?>
-							    				<div class="linkedin-link"><i class="fi flaticon-linkedin"></i><a href="<?php echo get_sub_field('linkedin'); ?>"><?php echo get_sub_field('linkedin') ?></a></div>
+							    				<div class="linkedin-link"><a href="<?php echo get_sub_field('linkedin'); ?>" target="_blank"><i class="fi flaticon-linkedin"></i></a></div>
 							    			<?php endif; ?>
 							    		</div>
 							    	</div>

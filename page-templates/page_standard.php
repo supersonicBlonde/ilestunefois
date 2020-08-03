@@ -132,7 +132,7 @@ get_header();
 								 		<h4><?php echo $paragraphe; ?></h4>
 								<?php endif; ?>
 							<div class="read-more">
-								<a href="<?php echo $link;  ?>"><?php echo $text_btn; ?></a>
+								<a href="<?php echo $link;  ?>" class="cta-btn"><?php echo $text_btn; ?></a>
 							</div>	
 							</div>
 							

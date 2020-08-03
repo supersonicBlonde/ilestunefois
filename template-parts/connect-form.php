@@ -1,4 +1,4 @@
-<form id="ilestunefois-connect-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+<!-- <form id="ilestunefois-connect-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
 	<div class="field-container">
 		<input type="text" class="field-input" placeholder="<?php echo __('Full Name*' , 'ilestunefois'); ?>" id="name" name="name" required>
@@ -24,6 +24,8 @@
 		<small class="field-msg error js-form-error"><?php echo __('There was a problem with the Contact Form, please try again!' , 'ilestunefois'); ?></small>
 	</div>
 
-	<!-- <input type="hidden" name="action" value="submit_testimonial"> -->
-	<input type="hidden" name="nonce" value="<?php //echo wp_create_nonce("testimonial-nonce") ?>">
+	<input type="hidden" name="action" value="submit_testimonial">
+	<input type="hidden" name="nonce" value="<?php //echo wp_create_nonce("testimonial-nonce") ?>"> -->
+
+	<div class="pipedriveWebForms" data-pd-webforms="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708" data-script-id="id0yoy9g" id="idfggxeb"><script src="https://cdn.eu-central-1.pipedriveassets.com/web-form-assets/webforms.min.js"></script><script src="https://webforms.pipedrive.com/f/loader"></script><iframe src="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708?embeded=1&amp;uuid=idfggxeb" name="http://ilestunefois.localhost/news/-idfggxeb" scrolling="no" style="height: 757px;"></iframe></div>
 

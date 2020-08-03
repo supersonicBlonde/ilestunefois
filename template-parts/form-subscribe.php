@@ -21,16 +21,14 @@
     <div id="success-message" class="sib-form-message-panel" style="font-size:16px; text-align:left; color:green; max-width:630px;">
       <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
         <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-          <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"
-          />
+          <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"/>
         </svg>
         <span class="sib-form-message-panel__inner-text">
                           Votre inscription est confirmée.
                       </span>
       </div>
     </div>
-    <div></div>
-    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center;  max-width:630px; border-width:0px; ">>
+    <div id="sib-container" class="sib-container--large sib-container--vertical" style="text-align:center;  max-width:630px; border-width:0px; ">
       <form id="sib-form" method="POST" action="https://0abef3e1.sibforms.com/serve/MUIEAFLRTdIqBDl88yYCXUErkQE19Q5I0GPy7qwR_O1doHdKwP3GdOWdDNuGKQ-RBpXQzBdLSUpmeuDdAnXimHQUvSdb8dy4WEfoeAygYrUj0k1Bz6tgQkRRqJMz1psaujSnW6bYNnhNM5fG5XgAVBDHLpr9EbGiLHXZnqWw0iblH6N4H6cCcVaWmX2bhWMR5UXGGRO2Lj7pZeYC"
         data-type="subscription">
         <div class="row">

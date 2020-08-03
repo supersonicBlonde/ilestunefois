@@ -13,14 +13,10 @@
 
 
 
-
-
-
 class Modal {
 
 	constructor(parent) {
 		this.parent = document.getElementById('header-container');
-		this.modal_wrapper = document.createElement('div');
 		this.modal_container = document.createElement('div');
 		this.close_btn = document.createElement('div');
 		this.close_shape = document.createElement('div');
@@ -46,7 +42,7 @@ class Modal {
 
 
 	close() {
-		let parent = this.parentElement.parentElement;
+		let parent = this.parentElement;
 		document.getElementById("form-connect").classList.add('hide');
 		document.getElementById('overlay').classList.add('hide');
 		document.getElementById('overlay').classList.remove('show');
@@ -77,14 +73,11 @@ class Modal {
 	createElements() {
 
 		//this.parent.appendChild(this.modal_container);
-		document.body.appendChild(this.modal_wrapper);
-		this.modal_wrapper.appendChild(this.modal_container);
+		document.body.appendChild(this.modal_container);
 		this.modal_container.appendChild(this.close_btn);
 		this.close_btn.appendChild(this.close_shape);
 
-		this.modal_wrapper.classList.add('modal-connect');
-		this.modal_container.classList.add('modal-wrapper');
-		this.modal_wrapper.setAttribute('id', 'modal-wrapper');
+		this.modal_container.classList.add('modal-connect');
 		this.modal_container.setAttribute('id', 'modal-container');
 
 		this.close_btn.classList.add('close-btn');
@@ -92,11 +85,11 @@ class Modal {
 
 		this.close_shape.classList.add('close-shape');
 
-		this.overlay.setAttribute('id' , 'overlay'); 
+		this.overlay.setAttribute('id' , 'overlay');
 	}
+
 	animate() {
-		//this.modal_container.classList.add('animate');
-		this.modal_wrapper.classList.add('animate');
+		this.modal_container.classList.add('animate');
 		this.close_btn.classList.add('animate');
 		this.close_shape.classList.add('animate');
 	}
@@ -104,7 +97,7 @@ class Modal {
 	animate_mobile() {
 		this.modal_container.classList.add('animate');
 		//this.close_btn.classList.add('animate');
-		this.close_shape.classList.add('animate'); 
+		this.close_shape.classList.add('animate');
 	}
 
 	load_template() {
@@ -326,25 +319,9 @@ window.addEventListener("load", function() {
 			******************************************/
 
 	let connect_btn = document.querySelector('.menu-btn');
-	let cta_btn = document.querySelector('.cta-btn');
 	let connect_mobile = document.querySelector('.connect-mobile');
 
 	connect_btn.addEventListener('click' , function(event) {
-
-		console.log("ok");
-
-		event.preventDefault();
-		
-		let modal = new Modal();
-		modal.load_template();
-		modal.animate();
-		modal.set_overlay(true);
-		modal.close_btn.addEventListener('click', modal.close);
-	}); 
-
-	cta_btn.addEventListener('click' , function(event) {
-
-		console.log("cat");
 
 		event.preventDefault();
 		

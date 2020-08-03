@@ -25,9 +25,7 @@ footer {
 	}
 
 	ul {
-		text-align: center;
 		list-style-type: none;
-		text-align: center;
 
 		li {
 
@@ -41,10 +39,6 @@ footer {
 
 
 		}
-
-		@media (min-width: 992px) {
-			text-align:left;
-		}
 	}
 
 	.socials {
@@ -56,14 +50,42 @@ footer {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
+			flex-direction: column;
+			text-align: center;
 
-			a {
-				font-family: $font__title;
+			li {
+
+				padding-left: 0;
+
+				@media (min-width: 768px) {
+					padding-left: 4em;
+				}
+
+
+
+
+				a {
+					font-family: $font__title;
+				}
+			}
+
+			
+
+			@media (min-width: 768px) {
+				flex-direction: row;
+				justify-content: center;
 			}
 
 			@media (min-width: 992px) {
-				justify-content: space-between;
+				text-align: left;
 			}
+
+			@media (min-width: 1920px) {
+
+				justify-content: flex-end;
+			}
+
+
 
 
 		}
@@ -93,11 +115,7 @@ footer {
 
 .menu-footer {
 
-	text-align: center;
-
-	/* @media (min-width:992px) {
-		text-align:left;
-	} */
+	
 
 	color: white;
 	font-family: $font__title;
@@ -143,10 +161,14 @@ footer {
 }
 
 .socials li:before {
-	font-size: 30px;
+	font-size: 18px;
 	color: #3D041E;
 	padding-right: 15px;
 	vertical-align: middle;
+
+	@media (min-width: 768px) {
+		font-size: 30px;
+	}
 }
 
 .twitter {
@@ -175,6 +197,16 @@ footer {
     content: fa-content($fa-var-instagram);
   }
 }
+
+.youtube {
+  @extend %fa-icon;
+  @extend .fab;
+
+   &:before {
+    content: fa-content($fa-var-youtube);
+  }
+}
+
 
 .portfolio-content  footer, .blog-content footer, .single footer, .page-standard-content footer {
 	margin-top: 0;
