@@ -16,6 +16,22 @@ get_header('home');
 		$url = get_field('lien_bouton_home_first_section');
 	?>
 
+	<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
+		<div id="cta-home" class="section limited">
+			<div class="container-fluid background-primary">
+				<div class="row">
+					<div class="col-6">
+						<h3 class="white"><?php the_field('cta_home_title'); ?></h3>
+						<p class="white"><?php the_field('cta_home_paragraphe'); ?></p>
+					</div>
+					<div class="col-6">
+						<a href="<?php the_field('cta_home_link') ?>" class="button white"><?php the_field('cta_home_button_text'); ?></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<div id="first-section" class="text-img-block section limited">
 		<div class="container-fluid">
 				<div class="row">

@@ -2,7 +2,9 @@
 /***************************************************/
 
 
-
+.background-primary {
+	background-color: $color__primary;
+}
 
 ::-webkit-input-placeholder, :-ms-input-placeholder, ::placeholder { 
   color: #c77c98;
