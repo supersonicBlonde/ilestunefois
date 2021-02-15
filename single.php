@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Blog
+
 *
 * @package ilestunefois
 */
@@ -58,6 +58,28 @@ get_header();
 				</div><!-- .column -->
 
 			</div><!-- .row -->
+
+			
+			<?php if(!empty(get_field('text_cta_module'))): ?>
+			<div id="call_to_action" class="section limitedext module" style="margin:2em 0;">
+				<div class="row">
+					<div class="col-12 column">
+						<div>
+							<?php if(!empty(get_field('titre_cta'))): ?>
+							<h3><?php echo get_field('titre_cta'); ?></h3>
+							<?php endif; ?>
+							<?php if(!empty(get_field('paragraphe_cta'))): ?>
+							<h4><?php echo get_field('paragraphe_cta') ?></h4>
+							<?php endif; ?>
+							<div class="read-more">
+								<a href="#" class="cta-btn"><?php echo get_field('text_cta_module'); ?></a>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
+
 
 			<div class="row">
 				<div class="col-12">

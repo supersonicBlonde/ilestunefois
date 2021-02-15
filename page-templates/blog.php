@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<!-- <div class="pipedriveWebForms" data-pd-webforms="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708"><script src="https://cdn.eu-central-1.pipedriveassets.com/web-form-assets/webforms.min.js"></script></div> -->
+
 
 	<?php 
 	$args = array(
@@ -70,7 +70,7 @@ get_header();
 
 							<div class="post-cat">
 							<?php 
-								echo ilesunefois_echo_cpt_taxonomies(get_the_ID(), array('category')); 
+								echo ilesunefois_echo_cpt_taxonomies('category', get_the_ID(), array('category')); 
 							?>
 							</div>
 
@@ -86,7 +86,7 @@ get_header();
 									<?php the_excerpt(); ?>
 								</div>
 								<div class="button-container standard-read-more">
-									<a href="<?php the_permalink(); ?>"><?php _e( 'Read More' ); ?></a>
+									<a href="<?php the_permalink(); ?>"><?php _e( 'Lire' ); ?></a>
 								</div>
 
 							</div>

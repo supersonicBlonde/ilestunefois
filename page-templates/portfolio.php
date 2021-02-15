@@ -126,7 +126,7 @@ get_header();
 
 							foreach($playerList as $player): ?>
 
-								<?php if($count == 0 || $count == 3): ?><div class="col-md-6 col-12 column"><?php endif; ?>
+								<div class="col-md-6 col-12 column">
 				 	
 									<div class="video-item">
 										<div class="embed-container">
@@ -137,12 +137,12 @@ get_header();
 										<p><?php echo $player['paragraphe']; ?></p>
 										<div class="post-cat">
 										<?php 
-											echo ilesunefois_echo_cpt_taxonomies($player['id'], array('videos-category')); 
+											echo ilesunefois_echo_cpt_taxonomies('videos-category', $player['id'], array('videos-category')); 
 										?>
 										</div>
 									</div><!-- .video-item -->
 
-								<?php if($count == 2 || $count == 5): ?></div><!-- .column --><?php endif; ?>
+								</div><!-- .column -->
 			
 							<?php $count++; endforeach; 
 							/*************************************/
@@ -259,5 +259,26 @@ get_header();
 	</div><!-- #portfolio -->
 
 </div>
+
+<?php wp_reset_postdata(); ?>
+<?php if(!empty(get_field('text_cta_module'))): ?>
+	<div id="call_to_action" class="section limitedext module" style="margin:4em 0;">
+		<div class="row justify-content-center">
+			<div class="col-8 column">
+				<div>
+					<?php if(!empty(get_field('titre_cta'))): ?>
+					<h3><?php echo get_field('titre_cta'); ?></h3>
+					<?php endif; ?>
+					<?php if(!empty(get_field('paragraphe_cta'))): ?>
+					<h4><?php echo get_field('paragraphe_cta') ?></h4>
+					<?php endif; ?>
+					<div class="read-more">
+						<a href="#" class="cta-btn"><?php echo get_field('text_cta_module'); ?></a>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>
 
 <?php get_footer(); ?>

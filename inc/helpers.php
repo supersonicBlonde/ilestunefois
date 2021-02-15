@@ -9,7 +9,7 @@ function ilestunefois_get_cpt_taxonomies($post_id, $taxonomy) {
 	return $tax_ar;
 }
 
-function ilesunefois_echo_cpt_taxonomies($post_id, $taxonomy) {
+function ilesunefois_echo_cpt_taxonomies($tax, $post_id, $taxonomy) {
 	$ar = ilestunefois_get_cpt_taxonomies($post_id, $taxonomy);
 	
 	$start_str = "<ul>";
@@ -21,7 +21,7 @@ function ilesunefois_echo_cpt_taxonomies($post_id, $taxonomy) {
 		return;
 
 	foreach($ar as $k => $v) {
-		$str .= '<li><a href="'.$k.'">'.$v.'</a><li>';
+		$str .= '<li><a href="/'.$tax.'/'.$k.'">'.$v.'</a><li>';
 	}
 
 	return $start_str.$str.$end_str;

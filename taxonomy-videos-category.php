@@ -91,7 +91,7 @@ get_header();
 
 							foreach($playerList as $player): ?>
 
-								<?php if($count == 0 || $count == 3): ?><div class="col-md-6 col-12 column"><?php endif; ?>
+								<div class="col-md-6 col-12 column">
 				 	
 									<div class="video-item">
 										<div class="embed-container">
@@ -102,12 +102,12 @@ get_header();
 										<p><?php echo $player['paragraphe']; ?></p>
 										<div class="post-cat">
 										<?php 
-											echo ilesunefois_echo_cpt_taxonomies(get_the_ID(), array('videos-category')); 
+											echo ilesunefois_echo_cpt_taxonomies('videos-category' , get_the_ID(), array('videos-category')); 
 										?>
 										</div>
 									</div><!-- .video-item -->
 
-								<?php if($count == 2 || $count == 5): ?></div><!-- .column --><?php endif; ?>
+								</div><!-- .column -->
 			
 							<?php $count++; endforeach; 
 							/*************************************/

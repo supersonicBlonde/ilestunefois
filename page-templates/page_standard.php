@@ -34,7 +34,7 @@ get_header();
 							<div class="col-12">
 								
 								<?php if(!empty($bg) && empty($video)): ?>
-									<div class="bg" style="background: url(<?php echo $bg; ?>)"></div>
+									<div class="bg" style="background-image: url(<?php echo $bg; ?>)"></div>
 								<?php elseif(!empty($video)): ?>
 									<div class="bg embed-container">
 										<?php echo $video; ?>
@@ -221,6 +221,42 @@ get_header();
 					</div><!-- .row -->
 			</div>
 		</div>
+	</div>
+
+	<div class="section limited">
+
+		<div class="container-fluid">
+
+			<div class="row">
+
+				<div class="col-12">
+
+						<?php
+
+							/* Start the Loop */
+							while ( have_posts() ) :
+								the_post(); ?>
+
+								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					
+									<div class="entry-content">
+										<?php
+										the_content();
+										?>
+									</div><!-- .entry-content -->
+
+								</article><!-- #post-<?php the_ID(); ?> -->
+
+
+							<?php endwhile; // End of the loop.
+							?>
+
+				</div>
+				
+			</div>
+
+		</div>
+		
 	</div>
 
 

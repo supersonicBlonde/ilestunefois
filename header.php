@@ -10,8 +10,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<title><?php bloginfo('name'); wp_title(); ?></title>
-		<meta name="description" content="<?php bloginfo('description'); ?>">
+		<title><?php wp_title(); ?></title>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -19,6 +18,8 @@
 			<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php endif; ?>
 		<?php wp_head(); ?>
+	<meta name="ahrefs-site-verification" content="3913f6fb3b7d6c49b85abded2945714d940d8664f2ff554f16e11f6af94efee0">
+
 	</head>
 	
 

@@ -7,14 +7,37 @@
 
 get_header();
 ?>
-<div class="pipedriveWebForms" style="display:none;" data-pd-webforms="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708"><script src="https://cdn.eu-central-1.pipedriveassets.com/web-form-assets/webforms.min.js"></script></div>
+
+
 <div class="agence-content page-content">
 
 	<?php get_template_part('template-parts/content-subheader'); ?>
 
+
 		<div id="first-profiles" class="section limited">
 
+
 			<div class="container-fluid">
+
+				<?php if(!empty(get_field('text_cta_module'))): ?>
+				<div id="call_to_action" class="section limitedext module" style="margin:2em 0 8em 0;">
+					<div class="row justify-content-center">
+						<div class="col-8 column">
+							<div>
+								<?php if(!empty(get_field('titre_cta'))): ?>
+								<h3><?php echo get_field('titre_cta'); ?></h3>
+								<?php endif; ?>
+								<?php if(!empty(get_field('paragraphe_cta'))): ?>
+								<h4><?php echo get_field('paragraphe_cta') ?></h4>
+								<?php endif; ?>
+								<div class="read-more">
+									<a href="#" class="cta-btn"><?php echo get_field('text_cta_module'); ?></a>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
 
 				<?php if( have_rows('profils_first_section_agency') ): ?>
 
@@ -57,9 +80,24 @@ get_header();
 
 		</div><!-- .section limited -->
 
+		<div style="margin:3em;"></div>
 
 
-		<div id="team-slider">
+		<?php if(!empty(get_field('text_cta'))): ?>
+		<div id="call_to_action" class="section limitedext module">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 column">
+					<div class="read-more">
+						<a href="#" class="cta-btn"><?php echo get_field('text_cta'); ?></a>
+					</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php endif; ?>
+
+		<div id="team-slider" style="display:none">
 
 			<div class="section limited">
 				

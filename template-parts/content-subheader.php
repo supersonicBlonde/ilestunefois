@@ -18,10 +18,12 @@
 ?>
 
 	<div id="first-section" class="sub_header section limited background-image" style="<?php echo $style_bg; ?>">
-		<video poster="<?php echo $background_image; ?>" id="bgvid" playsinline autoplay muted loop>
-			<source src="<?php echo $video; ?>" type="video/mp4">
-			I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
-		</video>
+		<?php if(!empty($video)): ?>
+			<video poster="<?php echo $background_image; ?>" id="bgvid" playsinline autoplay muted loop>
+				<source src="<?php echo $video; ?>" type="video/mp4">
+				I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
+			</video>
+		<?php endif; ?>
 
 		<?php //if(empty($background_image)): ?>
 		<div class="sub_header_content">

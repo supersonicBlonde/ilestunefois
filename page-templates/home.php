@@ -36,8 +36,9 @@ get_header('home');
 						</div>
 						<?php endif; ?>
 					</div>
-					<div class="col-xl-6 col-12 text-center position-relative column">
-						<img  src="<?php echo get_template_directory_uri().'/img/illustr.png'; ?>">
+					<div class="col-xl-6 col-12 text-center mx-auto position-relative column">
+						<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+							<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_SqEf0A.json"  background="transparent"  speed="1"  id="home-lottie"  loop  autoplay></lottie-player>
 					</div>
 				</div>
 			</div>

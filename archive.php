@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Blog
+
 *
 * @package ilestunefois
 */
@@ -32,7 +32,7 @@ get_header();
 							
 							<?php foreach($terms as $term): ?>
 
-								<li><a href="<?php echo $term->slug ;?>"><?php echo $term->name; ?></a></li>
+								<li><a href="/category/<?php echo $term->slug ;?>"><?php echo $term->name; ?></a></li>
 
 							<?php endforeach;  ?>
 
@@ -64,7 +64,7 @@ get_header();
 
 							<div class="post-cat">
 							<?php 
-								echo ilesunefois_echo_cpt_taxonomies(get_the_ID(), array('category')); 
+								echo ilesunefois_echo_cpt_taxonomies('category', get_the_ID(), array('category')); 
 							?>
 							</div>
 
