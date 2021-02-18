@@ -24,7 +24,7 @@
 	
 
 <body <?php body_class(); ?>>
-	<div class="noise"></div>
+	<!-- <div class="noise"></div> -->
 	<div class="scale">
 		<div>
 			<div>

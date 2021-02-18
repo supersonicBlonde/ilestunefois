@@ -1,10 +1,13 @@
+This is the one from localhsot
+he real one is form the prod website
+
 // GENERICS
 /***************************************************/
+
 
 .background-primary {
 	background-color: $color__primary;
 }
-
 
 ::-webkit-input-placeholder, :-ms-input-placeholder, ::placeholder { 
   color: #c77c98;
@@ -154,6 +157,7 @@ p {
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
 }
+
 
 
 //    ELEMENTS
@@ -384,14 +388,8 @@ body {
 	list-style-type: none;
 	display:flex;
 	justify-content: space-around;
-	flex-wrap: wrap;
-
 
 	li {
-
-		width: 50%;
-		text-align:center;
-		margin-bottom: 2.5em;
 
 		a {
 			color: #1b262c;
@@ -410,8 +408,6 @@ body {
 
 		li {
 			margin-left: 3.6em;
-			width: auto;
-			text-align: left;
 		}
 	}
 }
@@ -533,9 +529,8 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	list-style-type: none;
-/* 	margin-bottom: 2.5em; */
+	margin-bottom: 2.5em;
 	justify-content: space-around;
-	
 
 	@media (min-width: 992px) {
 		justify-content: flex-start;
@@ -543,10 +538,7 @@ body {
 
 	li {
 		
-		width: 50%;
-		text-align: center;
-		margin-bottom:1em;
-		 
+		
 
 		a {
 			color: #FFF;
@@ -562,7 +554,6 @@ body {
 
 		@media (min-width: 992px) {
 			margin-right: 7.6em;
-			width: auto;
 		}
 	}
 }
@@ -667,32 +658,31 @@ article:last-child {
 
 
 /* width */
-::-webkit-scrollbar { 
- width: 10px;
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-
+/* Track */
 ::-webkit-scrollbar-track {
- background: #f1f1f1; 
+  background: #f1f1f1; 
 }
-
-
+ 
+/* Handle */
 ::-webkit-scrollbar-thumb {
- background: $color__primary; 
+  background: $color__primary; 
 }
 
-
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
- background: $color__secondary; 
-} 
-
+  background: $color__secondary; 
+}
 
 /*******************************
 		CONNECT
 		************************/
-/*  .simplebar-scrollbar::before {
- background-color: red;
-}  */
+.simplebar-scrollbar::before {
+  background-color: red;
+}
 .modal-wrapper {
    overflow-y: scroll;   /* Just apply overflow-y */
   height: 100%;
@@ -757,7 +747,6 @@ article:last-child {
 	align-items:center;
 	transform-origin: center right;
 	transition: opacity 0.5s;
-	cursor: pointer;
 
 	@media (min-width: 1920px) {
 		top: 2.3em;
@@ -1043,95 +1032,5 @@ article:last-child {
 
 	i {
 		padding-right: .5em;
-	}
-}
-
-
-#success-message {
-	margin-right: auto!important;
-	margin-left: auto!important;
-	text-align:center!important;
-	justify-content: center!important; 
-}
-
-
-@media (min-width: 1200px) {
-	#home-lottie {
-		position: absolute; 
-		width: 100%; max-width: 80%; right: 0; left: 0; margin: 0 auto; top: 50%;transform: translateY(-50%);
-	}
-}
-
-#credits {
-
-	color: white;
-
-	span {
-		opacity: 0.3;
-	}
-
-
-	a {
-		padding: 0 15px;
-		opacity: 0.3;
-		transition: opacity .5s;
-
-		&:hover {
-			opacity:1;
-		}
-	} 
-
-	&:before {
-	    content: "";
-	    background: #3D041E;
-	    height: 1px;
-	    width: 100%;
-	    display: block;
-	    margin: 4em 0; 
-	}
-
-    img {
-    	max-width: 50px;
-    }
-}
-
-
-#current-projects {
-	margin: 4.3em;
-	
-	.bg {
-		position: relative;
-		height: 510px;
-		background-size:cover;
-		background-position: center center;
-
-		.bottom {
-			position: absolute;
-			width: 80%;
-			bottom: 0;
-			left: 0;
-
-			.count {
-				font-size: 7.1em;
-				color: white;
-				font-family: $font__primary;
-				line-height: 0.6;
-			}
-
-			.content {
-				background: white;
-				padding: 2em;
-
-				h4 {
-					font-size: 1.75em;
-					line-height: 1.2;
-					text-transform:uppercase;
-				}
-
-				p {
-					font-size: 1rem;
-				}
-			}
-		}
 	}
 }

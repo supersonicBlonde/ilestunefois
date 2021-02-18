@@ -26,7 +26,7 @@ body {
 /************************************************************/
 
 
-#first-section .container-fluid {
+#first-section .container-fluid, #cta-home .container-fluid {
 	width: 90%;
 }
 
@@ -34,7 +34,7 @@ body {
 // On mobile containerèfluid is bootstrap size except for first section needs to be less tna 100% 
 @media (min-width:1920px) {
 
-	.section.limited .container-fluid, #first-section .container-fluid {
+	.section.limited .container-fluid, #first-section .container-fluid, #cta-home .container-fluid  {
 		width: 83%;
 	}
 
@@ -91,6 +91,24 @@ body {
 
 	
 
+}
+
+
+.home-content .bloc-padding {
+	padding: 4em 3.7em;
+}
+
+#cta-home {
+
+	h3 {
+		font-size: 2.5em;
+	}
+
+	p {
+		font-size: 1.5em;
+		font-family: $font__primary;
+		line-height: 1;
+	}
 }
 
 
@@ -374,7 +392,7 @@ body {
 	}
 
 	@media (min-width: 1200px) {
-		margin-top: -7.1em;
+		margin-top: 7em;
 
 		.row {
 			flex-direction: row;

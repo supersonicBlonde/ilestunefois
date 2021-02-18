@@ -96,3 +96,27 @@
 	}
 
 }
+
+.cta {
+	&.read-more:before, &.read-more:after {
+		border-color: white;
+	}
+
+	&.read-more {
+		a {
+			padding: .38rem 0 .38rem 0.38rem;
+			color: white;
+
+			@media (min-width: 768px) {
+				padding: .38rem 0 .38rem 3.1rem;
+			}	
+		}
+
+		a:after {
+		 margin-left: 2.5rem;
+		 margin-right: 0.9rem;
+		 background-image: url(../../img/right-arrow-white.svg);
+		}
+	}
+
+}

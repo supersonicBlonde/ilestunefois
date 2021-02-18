@@ -17,15 +17,17 @@ get_header('home');
 	?>
 
 	<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
-		<div id="cta-home" class="section limited">
-			<div class="container-fluid background-primary">
-				<div class="row">
-					<div class="col-6">
+		<div id="cta-home" class="section limited mb-5">
+			<div class="container-fluid background-primary bloc-padding">
+				<div class="row align-items-center text-center text-xl-left">
+					<div class="col-xl-6 col-12">
 						<h3 class="white"><?php the_field('cta_home_title'); ?></h3>
 						<p class="white"><?php the_field('cta_home_paragraphe'); ?></p>
 					</div>
-					<div class="col-6">
-						<a href="<?php the_field('cta_home_link') ?>" class="button white"><?php the_field('cta_home_button_text'); ?></a>
+					<div class="col-xl-6 col-12 text-center mt-3 mt-xl-0">
+						<div class="cta read-more">
+							<a href="<?php the_field('cta_home_link') ?>" class="cta-btn"><?php the_field('cta_home_button_text'); ?></a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -120,6 +122,38 @@ get_header('home');
 		$titre = get_field('title_home_logos_clients');
 		$paragraphe = get_field('p_home_logos_clients');
 		?>
+
+
+<?php 
+$args = array('post_type' => 'project' , 'posts_per_page' => -1);
+$projects =  new WP_Query($args); 
+if($projects->have_posts()):
+?>
+<div id="current-projects" class="section limited">
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 text-center">
+						<h3 class="mb-5">Projets récents</h3>
+				</div>
+			</div>
+			<div class="row">
+				<?php $count = 1; while($projects->have_posts()): $projects->the_post(); ?>
+					<div class="col-4">
+						<div class="bg" style="background-image:url(<?php echo ilestunefois_get_attachment(); ?>)">
+							<div class="bottom">
+								<div class="count"><?php echo "0".$count; ?></div>
+									<div class="content">
+										<h4 class="mb-1"><?php the_title(); ?></h4>
+										<p><?php the_field('paragraphe'); ?></p>
+									</div>
+								</div>
+						</div>
+					</div>
+				<?php $count++; endwhile; wp_reset_postdata(); ?>
+			</div>
+	</div>					
+</div>
+<?php endif; ?>
 
 <div id="logo-section" class="section limited">
 	<div class="container-fluid">

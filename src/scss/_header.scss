@@ -6,27 +6,40 @@
 
 	h1 {
 		color: #FFFFFF;
-		/* font-size: 8vw; */
-		font-size: 4em;
+		font-size: 8vw;
+		/* font-size: 4em; */
+		margin-bottom: 0.3em;
 		font-family: $font__title;
 
-		@media (min-width: 1200px) {
-    		font-size: 6.25em;
- 		}
+
+		
+
+		@media (min-width: 1920px) {
+		  font-size: 6vw;
+		}
 	}
 
 	h2 {
 		color: #FFFFFF;
-		font-size: 7vw;
+		font-size: 5vw;
 		margin: 10px 0 0 0;
 		font-family: $font__title;
 		line-height: 1.2;
 		padding: 0 1em;
 
 		span {
-			font-size:5vw;
+			font-size:3vw;
 			display: block;
-			padding-top: 1em;
+			padding-top: 0.3em;
+			@media (min-width: 1920px) {
+			  font-size: 1.5vw;
+			}
+		}
+
+		@media (min-width: 1920px) {
+		  font-size: 3vw;
+		  width:50%;
+		 margin: 0 auto;
 		}
 		
 	}
@@ -78,6 +91,10 @@
 		left: 0;
 		margin: 0 auto;
 
+		@media (min-width: 1920px) {
+			top: 41%;
+		}
+
 	} 
 }
 
@@ -88,32 +105,32 @@
 			/* overflow: auto; */
 			
 			video {
-				top: 0;
+				/* top: 0;
 				left: 0;
-				width: 100%;
-				/* z-index: -100; */
-				transform: none;
+				width: 100%; */
+							/* z-index: -100; */
+				/* transform: none;
 				min-height: 0;
-				height: auto;
+				height: auto; */
 			}
 
 			.header-content {
-				width: 65%;
+				/* width: 65%; */
 				/* margin: 8.2em auto 0 auto; */
 				
 
-				h1 {
+				/* h1 {
 					margin: 0;
+				} */
+
+			/* 	h2 {
+				font-size: 4.68em;
+			
+				span {
+					font-size: 0.5em;
 				}
-
-				h2 {
-					font-size: 4.68em;
-
-					span {
-						font-size: 0.5em;
-					}
-
-				}
+			
+			} */
 
 				/* @media (min-width: 992px) {
 					    	width:50%;

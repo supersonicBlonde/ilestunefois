@@ -112,3 +112,30 @@ function ilestunefois_team_tax() {
 
 	register_taxonomy( 'team-category', array( 'team' ), $args );
 }
+
+// CURRENT PROJECT
+add_action( 'init', 'ilestunefois_current_project' );
+
+function ilestunefois_current_project() {
+	$labels = array(
+		'name' 				=> 'Projets',
+		'singular_name' 	=> 'Projet',
+		'menu_name'			=> 'Projets',
+		'name_admin_bar'	=> 'Projets'
+	);
+	
+	$args = array(
+		'labels'			=> $labels,
+		'show_ui'			=> true,
+		'show_in_menu'		=> true,
+		'capability_type'	=> 'post',
+		'hierarchical'		=> true,
+		'has_archive'		=> true,
+		'menu_position'		=> 10,
+		'menu_icon'			=> 'dashicons-clipboard',
+		'supports'			=> array( 'title', 'author', 'thumbnail' )
+	);
+	
+	register_post_type( 'project', $args );
+	
+}
