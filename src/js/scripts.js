@@ -74,6 +74,8 @@ class Modal {
 	}
 
 
+
+
 	createElements() {
 
 		//this.parent.appendChild(this.modal_container);
@@ -106,6 +108,12 @@ class Modal {
 		//this.close_btn.classList.add('animate');
 		this.close_shape.classList.add('animate'); 
 	}
+
+	initContactForm() {
+		jQuery('.wpcf7 > form').each(function () {
+			wpcf7.init(jQuery(this)[0]);        
+			});
+	 }
 
 	load_template() {
 		
@@ -140,6 +148,7 @@ class Modal {
 			});
 		}*/
 
+		const thisClass = this;
 
 		jQuery.ajax({
 			url : ajax_js_obj.ajax_url,
@@ -151,9 +160,11 @@ class Modal {
 			
 			success : function( response ) { 
 				document.getElementById('form-connect').innerHTML =  response.data;
+				thisClass.initContactForm();
 			},
 			complete:function(data){
 		    	document.getElementById('preloader').classList.add('hide');
+				  
 		   },
 			error : function( response ) {
 				console.log('Error retrieving the information: ' + response.status + ' ' + response.statusText);
@@ -326,7 +337,8 @@ window.addEventListener("load", function() {
 			******************************************/
 
 	let connect_btn = document.querySelector('.menu-btn');
-	let cta_btn = document.querySelector('.cta-btn');
+	let cta_btn = document.querySelectorAll('.cta-btn');
+
 	let connect_mobile = document.querySelector('.connect-mobile');
 
 	connect_btn.addEventListener('click' , function(event) {
@@ -342,7 +354,22 @@ window.addEventListener("load", function() {
 		modal.close_btn.addEventListener('click', modal.close);
 	}); 
 
-	cta_btn.addEventListener('click' , function(event) {
+	cta_btn.forEach(function (elem) {
+	
+	elem.addEventListener("click", function(event) {
+
+			event.preventDefault();
+			
+			let modal = new Modal();
+			modal.load_template();
+			modal.animate();
+			modal.set_overlay(true);
+			modal.close_btn.addEventListener('click', modal.close);
+		}) 
+	
+	});
+
+/* 	cta_btn.EventListener('click' , function(event) {
 
 		console.log("cat");
 
@@ -353,7 +380,7 @@ window.addEventListener("load", function() {
 		modal.animate();
 		modal.set_overlay(true);
 		modal.close_btn.addEventListener('click', modal.close);
-	}); 
+	});  */
 
 	connect_mobile.addEventListener('touchstart' , function(event) {
 

@@ -23,7 +23,7 @@ input[type=text], input[type=email] {
     padding: 1.6rem 1.1rem;
 }
 
-button.btn-submit, button.btn-submit:hover {
+.btn.btn-submit, .btn.btn-submit:hover {
     background: #c77198;
     border: none;
     width: 100%;
@@ -73,7 +73,7 @@ textarea {
         }
     }
 
-    .error {
+    .error { 
         color: rgb(144, 19, 19);
     }
 

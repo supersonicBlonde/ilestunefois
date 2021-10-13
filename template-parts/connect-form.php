@@ -1,3 +1,5 @@
+<?php echo do_shortcode('[contact-form-7 html_id="ilestunefois-connect-form" title="Connect"]'); ?>
+
 <!-- <form id="ilestunefois-connect-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
 	<div class="field-container">
@@ -25,30 +27,4 @@
 	</div>
 
 	<input type="hidden" name="action" value="submit_testimonial">
-	<input type="hidden" name="nonce" value="<?php //echo wp_create_nonce("testimonial-nonce") ?>"> -->
-
-	<!-- <div class="pipedriveWebForms" data-pd-webforms="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708" data-script-id="id0yoy9g" id="idfggxeb"><script src="https://cdn.eu-central-1.pipedriveassets.com/web-form-assets/webforms.min.js"></script><script src="https://webforms.pipedrive.com/f/loader"></script><iframe src="https://pipedrivewebforms.com/form/18d5fb1e12f1aca782d531ea63b922ae7431708?embeded=1&amp;uuid=idfggxeb" name="http://ilestunefois.localhost/news/-idfggxeb" scrolling="no" style="height: 757px;"></iframe></div> -->
-
-	<style>
-		.calendly-button a {
-			background-image: url(../../img/calendly.png);
-			background-size: cover;
-			background-position: center center;
-			background-repeat: no-repeat;
-			width: 396px;
-			height: 497px;
-			display:inline-block;
-			text-indent: -9999px;
-			border:10px solid transparent;
-			border-radius: 5px;
-		}
-
-		.calendly-button a:hover {
-			border-color:rgb(141, 170, 157);
-		}
-	</style>
-	<div class="calendly-button">
-	<?php echo do_shortcode('[calendly type=3 url=https://calendly.com/dbaudry/20min text="Book us now" button_color=#444444 text_color=#000000 branding=false hide_details=false style_class=custom_form_style]'); ?>
-	</div>
-	
-
+	<input type="hidden" name="nonce" value="<?php //echo wp_create_nonce("testimonial-nonce") ?>">-->

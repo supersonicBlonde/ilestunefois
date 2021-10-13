@@ -1,10 +1,6 @@
 // GENERICS
 /***************************************************/
 
-.background-primary {
-	background-color: $color__primary;
-}
-
 
 ::-webkit-input-placeholder, :-ms-input-placeholder, ::placeholder { 
   color: #c77c98;
@@ -1097,19 +1093,36 @@ article:last-child {
 
 
 #current-projects {
-	margin: 4.3em;
-	
+	margin: 4.3em 0;
+
+
 	.bg {
 		position: relative;
 		height: 510px;
 		background-size:cover;
 		background-position: center center;
 
+		@media(min-width:2200px) {
+			height: 720px;
+		}
+
 		.bottom {
 			position: absolute;
 			width: 80%;
 			bottom: 0;
 			left: 0;
+
+			@media(min-width:768px) {
+				width: 60%;
+			}
+
+			@media(min-width:1024px) {
+				width: 50%;
+			}
+
+			@media(min-width:1200px) {
+				width: 80%;
+			}
 
 			.count {
 				font-size: 7.1em;
@@ -1135,3 +1148,262 @@ article:last-child {
 		}
 	}
 }
+
+#latest-posts {
+	margin-top: 4.3em;
+	padding-bottom: 2.3em;
+
+	a, a:hover, a:visited {
+		text-decoration:none;
+	}
+
+	.bg {
+		position: relative;
+		height: 250px;
+		background-size:cover;
+		background-position: center center;
+	} 
+
+	.content {
+		@include boxshadow;
+		background: white;
+		padding: 1.5em;
+
+		h4 {
+			font-size: 1.75em;
+			line-height: 1.2;
+			color: $color__primary;
+		}
+	}
+}
+
+#bg-back {
+	background-color: #F8EFEC;
+	height:380px;
+	width: 100%;
+	position: absolute;
+	bottom:0;
+}
+
+.service-bg {
+	
+	height: 356px;
+
+	@media(min-width: 992px) {
+		height: 487px;
+	}
+
+	@media(min-width: 1200px) {
+		height: 636px;
+	}
+	background-size: cover;
+  background-position: center center;
+}
+
+.service-item {
+	a, a:visited, a:focus {
+		div, h2 {
+			color: #1B262C;
+		}
+	}
+}
+
+#cta-home-bg {
+	background-color: $color__primary;
+}
+
+.landing-page {
+
+	h2 {
+		padding-bottom: 1.8rem;
+	}
+
+	#second-section {
+		padding: 6em 0;
+		background: #F8EFEC;
+
+		@media(min-width: 1200px) {
+			margin-top: -172px;
+			padding: 16em 0 4em 0;
+		}
+	
+	}
+
+	#third-section {
+		padding: 6em 0;
+		background: #EEDBDB;
+	}
+}
+
+#steps-section {
+	background: #F3F3F3;
+	
+	.steps {
+		list-style-type: none;
+		width: 100%;
+
+
+		li {
+
+			margin-bottom: 4em;
+
+			.count {
+				font-size: 21em;
+				color: $color__primary;
+				font-family: $font__main;
+				opacity: .05;
+				line-height: .6;
+			}
+
+			.step {
+				top: 0;
+			}
+
+			.title {
+				color: $color__primary;
+				font-size: 2.62em;
+				font-family: $font__title;
+				line-height: 1.2;
+			}
+
+			.paragraphe {
+				font-family: $font__main;
+				font-size: 1.1em;
+			}
+
+			&:not(:last-child):after {
+
+				content: none;
+				
+				/* @media(min-width: 1201px) {
+					content: url(../../img/step.svg);
+					margin-left: 5em;
+				}
+				 */
+			}
+			@media(min-width: 1200px) {
+				margin-bottom: 0;
+				width: 30%;
+			}
+		}
+	}
+}
+
+#section_deux_colonnes {
+	  padding: 1em 0;
+		background-image :url(../../img/bg.png);
+		background-repeat: no-repeat;
+		background-position: top right;
+		margin: 2rem 0;
+
+		@media(min-width: 992px) {
+			padding: 8em 0;
+			margin: 4rem 0;
+		}
+
+		h2 {
+			margin-bottom: 2.2rem;
+		}
+
+		p {
+			@media(min-width:992px) {
+				padding-left: 21rem;
+			}
+		}
+}
+
+#section_deux_colonnes_bouton {
+	margin-bottom: 3rem;
+}
+
+#section_liste {
+
+			background-image :url(../../img/bg_grey.png);
+			background-repeat: repeat-y;
+			background-position-x: -666px;
+
+		ul {
+			padding:5em 0;
+			list-style-type: none;
+
+			li {
+
+			font-size: 2.6em;
+			color: $color__primary;
+			font-weight: bold;
+			margin-bottom: 1.5rem;
+			
+
+			&:before {
+				content: url(../../img/list_bullet.png); 
+				margin-right: 50px; 
+			}
+		}
+	}
+}
+
+#last_section {
+	background-image :url(../../img/bg_wave.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size:cover;
+	padding-top: 100px;
+
+
+	@media(min-width:992px) {
+		padding-top: 323px;
+	}
+
+	h2 {
+		font-size: 2.6em;
+		margin-bottom: 2.2rem;
+	}
+
+	p {
+		column-count: 2;
+		column-gap: 75px;
+	}
+
+	.read-more {
+		margin-top:35px;
+		margin-bottom: 55px;
+
+		@media(min-width:992px) {
+			margin-top:85px;
+			margin-bottom: 110px;
+		}
+	}
+	.col {
+		padding: 2em 5em;
+
+		@media(min-width:992px) {
+			padding: 5em;
+		}
+	}
+	
+
+	.col:first-child {
+		background: white;
+	}
+
+	.col:last-child {
+		background: #F3F3F3;
+		padding: 25px 0 0 25px;
+
+		@media(min-width:992px) {
+			padding: 100px 0 0 100px;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+
+		li {
+			font-size: 2.6em;
+			color: $color__primary;
+			font-weight: bold;
+			margin-bottom: 2rem;
+		}
+	}
+}
+

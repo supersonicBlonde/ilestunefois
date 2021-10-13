@@ -30,33 +30,34 @@
 			<div>
 				<div>
 
-					<?php $bg_color = !empty(get_field('background_color_header_standard'))?get_field('background_color_header_standard'):"#8daa94"; ?>
+					<?php $bg_color = "#8daa94"; ?>
 					
 					<header class="header-pages header-container" style="background-color:<?php echo $bg_color; ?>" id="header-container">
 						
-						<?php if(!empty(get_field('video_header_standard'))): ?>
-							<video poster="<?php //echo $poster; ?>" id="bgvid" playsinline autoplay muted loop>
-								<source src="<?php the_field('video_header_standard') ?>" type="video/mp4">
-								I'm sorry; your browser doesn't support HTML5 video in WebM with VP8 or MP4 with H.264.
-							</video>
-						<?php endif; ?>
-						
 						<?php get_template_part( 'template-parts/nav', 'navbar' ); ?>
 
-						<div class="header-content">
-							<?php if(!is_single() && !is_tax() && !is_archive()): ?>
-								<h1 class="size-title"><?php the_title(); ?></h1>
-								<p class="sous-h1 d-none d-xl-block"><?php echo get_field('sub_h1'); ?></p>
-							<?php elseif(is_tax()): 
-								$term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') ); ?>
-								<h1 class="size-title"><?php echo $term->name; ?></h1>
-							<?php elseif(is_archive()): ?>
-								<?php 
-								$category = get_the_category();
-								$current_category = $category[0];
- 							?>
- 							<h1 class="size-title"><?php echo $category[0]->name; ?></h1>
-							<?php endif; ?>
+						<div class="header-content landing-page">
+								<div class="section limitedext">
+									<div class="container-fluid">
+										
+									<?php if(have_rows('header_landing_page')): while(have_rows('header_landing_page')): the_row(); ?>
+									
+										<div class="row">
+											<div class="col-12">
+												<h1><?php the_sub_field('titre'); ?></h1>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-12">
+												<div class="cta_white read-more">
+													<a href="#" class="cta-btn white"><?php the_sub_field("texte_bouton"); ?></a>
+												</div>
+											</div>
+										</div>
+
+									<?php endwhile; endif; ?>
+								</div>
+							</div>
 						</div><!-- .header-content -->
 						
 						<!-- <div class="mouse"></div> --><!-- .mouse -->

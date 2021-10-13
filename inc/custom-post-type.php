@@ -16,6 +16,8 @@
 add_action( 'init', 'ilestunefois_video' );
 add_action( 'init', 'ilestunefois_port_tax' );
 
+add_action( 'init', 'ilestunefois_service' );
+
 add_action( 'init', 'ilestunefois_team' );
 add_action( 'init', 'ilestunefois_team_tax' );
 
@@ -44,6 +46,32 @@ function ilestunefois_video() {
 	);
 	
 	register_post_type( 'portfoliovideo', $args );
+	
+}
+
+
+/* portfolio CPT */
+function ilestunefois_service() {
+	$labels = array(
+		'name' 				=> 'Services',
+		'singular_name' 	=> 'Service',
+		'menu_name'			=> 'Services',
+		'name_admin_bar'	=> 'Services'
+	);
+	
+	$args = array(
+		'labels'			=> $labels,
+		'show_ui'			=> true,
+		'show_in_menu'		=> true,
+		'capability_type'	=> 'post',
+		'hierarchical'		=> true,
+		'has_archive'		=> true,
+		'menu_position'		=> 10,
+		'menu_icon'			=> 'dashicons-lightbulb',
+		'supports'			=> array( 'title', 'author', 'thumbnail' )
+	);
+	
+	register_post_type( 'service', $args );
 	
 }
 
