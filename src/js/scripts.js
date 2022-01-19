@@ -260,6 +260,55 @@ window.addEventListener("load", function() {
 	 
 	});
 
+	jQuery('#slider-projects').slick({
+	  infinite: true,
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  mobileFirst:true,
+		responsive: [
+	    {
+	      breakpoint: 767,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 1,
+	      }
+	    },
+	    {
+	      breakpoint: 991,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1,
+	      }
+	    },
+	    {
+	      breakpoint: 1199,
+	      settings: {
+	        slidesToShow: 2,
+	        slidesToScroll: 1,
+	        appendArrows: jQuery('.left-2')
+	      }
+	    },
+	    {
+	      breakpoint: 1919,
+	      settings: {
+	        slidesToShow: 3,
+	        slidesToScroll: 1,
+	        appendArrows: jQuery('.left-2')
+	      }
+	    }
+	  ],
+	  cssEase: 'ease-out',
+	  useTransform: true,
+	});
+
+	jQuery('.poster-slider').slick({
+	  infinite: true,
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  mobileFirst:true,
+	  cssEase: 'ease-out',
+	});
+
 	jQuery('.slider-logos').slick({
 	  slidesToShow: 3,
 	  slidesToScroll: 3,

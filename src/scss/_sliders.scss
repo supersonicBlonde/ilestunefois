@@ -23,7 +23,7 @@
 // TESTIMONIAL SLIDER ARROWS
 //***********************************/
 
-#slider-section {
+#slider-section, #slider-projects {
     .slick-prev, .slick-next
     {
         top: 50%;
@@ -224,3 +224,16 @@
     
 }
 
+.poster-slider {
+	.slick-arrow {
+		top: 50%;
+		transform: scale(.8) translateY(-50%);
+		z-index: 999;
+	}
+	.slick-next {
+		right:-30px;
+	} 
+	.slick-prev {
+		left:-30px;
+	}
+}

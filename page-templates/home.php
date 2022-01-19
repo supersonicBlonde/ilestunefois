@@ -16,7 +16,7 @@ get_header('home');
 		$url = get_field('lien_bouton_home_first_section');
 	?>
 
-<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
+	<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
 		<div id="cta-home" class="section limited mb-5">
 			<div class="container-fluid bloc-padding" id="cta-home-bg" style="background-color: #750D37;">
 				<div class="row align-items-center text-center text-xl-left">
@@ -55,8 +55,9 @@ get_header('home');
 						<?php endif; ?>
 					</div><!-- .col -->
 					<div class="col-xl-6 col-12 text-center mx-auto position-relative column">
-						<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-							<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_SqEf0A.json"  background="transparent"  speed="1"  id="home-lottie"  loop  autoplay></lottie-player>
+						<img src="https://www.ilestunefois.com/wp-content/uploads/2021/06/IMAGE-HOME-SITE.png" alt="">
+					<!-- 	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+							<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_SqEf0A.json"  background="transparent"  speed="1"  id="home-lottie"  loop  autoplay></lottie-player> -->
 					</div><!-- .col -->
 				</div><!-- .row -->
 		</div><!-- .containr-fluid -->
@@ -117,12 +118,14 @@ get_header('home');
 		</div><!-- .flex -->
 	</div><!-- #slider-section --> 
 
-<?php 
+<?php
+
 $args = array('post_type' => 'project' , 'posts_per_page' => -1);
 $projects =  new WP_Query($args); 
 if($projects->have_posts()):
+	if(!wp_is_mobile()):
 ?>
-<div id="current-projects" class="section limited">
+ <div id="current-projects" class="section limited">
 	<div class="container-fluid">
 			<div class="row">
 				<div class="col-12">
@@ -152,7 +155,40 @@ if($projects->have_posts()):
 				</div>
 			</div>
 	</div>					
+</div> 
+<?php else: ?>
+	<div id="current-projects-mobile" class="section">
+		<div class="container-fluid">
+				<div class="row">
+					<div class="col-12">
+							<h3 class="mb-5 text-center"><?php the_field("titre_projet_recents"); ?></h3>
+					</div>
+				</div>
+		</div>
+	<div id="slider-projects">
+	<?php $count = 1; while($projects->have_posts()): $projects->the_post(); ?>
+		<div class="bg" style="margin:0 1em; background-image:url(<?php echo ilestunefois_get_attachment(); ?>)">
+			<div class="bottom">
+				<div class="count"><?php echo "0".$count; ?></div>
+					<div class="content">
+						<h4 class="mb-1"><?php the_title(); ?></h4>
+						<p><?php the_field('paragraphe'); ?></p>
+					</div>
+				</div>
+		</div>
+		<?php $count++; endwhile; wp_reset_postdata(); ?>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 text-center mb-2">
+				<div class="read-more">
+					<a href="/portfolio">Voir tous les projets</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+	<?php endif; ?>
 <?php endif; ?>
 
 <?php

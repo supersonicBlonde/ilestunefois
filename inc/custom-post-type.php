@@ -16,6 +16,9 @@
 add_action( 'init', 'ilestunefois_video' );
 add_action( 'init', 'ilestunefois_port_tax' );
 
+add_action( 'init', 'ilestunefois_photo' );
+add_action( 'init', 'ilestunefois_photo_tax' );
+
 add_action( 'init', 'ilestunefois_service' );
 
 add_action( 'init', 'ilestunefois_team' );
@@ -38,6 +41,7 @@ function ilestunefois_video() {
 		'show_ui'			=> true,
 		'show_in_menu'		=> true,
 		'capability_type'	=> 'post',
+		'exclude_from_search'	=> false,
 		'hierarchical'		=> true,
 		'has_archive'		=> true,
 		'menu_position'		=> 10,
@@ -46,6 +50,31 @@ function ilestunefois_video() {
 	);
 	
 	register_post_type( 'portfoliovideo', $args );
+	
+}
+
+function ilestunefois_photo() {
+	$labels = array(
+		'name' 				=> 'Photographies',
+		'singular_name' 	=> 'Photographie',
+		'menu_name'			=> 'Photographies',
+		'name_admin_bar'	=> 'Photographie'
+	);
+	
+	$args = array(
+		'labels'			=> $labels,
+		'show_ui'			=> true,
+		'show_in_menu'		=> true,
+		'exclude_from_search' => false,
+		'capability_type'	=> 'post',
+		'hierarchical'		=> true,
+		'has_archive'		=> true,
+		'menu_position'		=> 10,
+		'menu_icon'			=> 'dashicons-format-image',
+		'supports'			=> array( 'title', 'author', 'thumbnail' )
+	);
+	
+	register_post_type( 'portfoliophoto', $args );
 	
 }
 
@@ -117,6 +146,27 @@ function ilestunefois_port_tax() {
 	);
 
 	register_taxonomy( 'videos-category', array( 'portfoliovideo' ), $args );
+}
+
+
+function ilestunefois_photo_tax() {
+	
+	// Add new taxonomy, make it hierarchical (like categories)
+	$labels = array(
+		'name'              => __( 'Categories' ),
+		'singular_name'     => __( 'Categorie' ),
+		'menu_name'         => __( 'Catégorie'),
+	);
+
+	$args = array(
+		'hierarchical'      => false,
+		'public'			=> true,	
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+	);
+
+	register_taxonomy( 'photos-category', array( 'portfoliophoto' ), $args );
 }
 
 

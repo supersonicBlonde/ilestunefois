@@ -13,9 +13,6 @@ img:not(.single-post img) {
 }
 
 
-h1 {
-
-}
 
 h2, h1.entry-title {
 	font-family: $font__title;
@@ -1092,8 +1089,8 @@ article:last-child {
 }
 
 
-#current-projects {
-	margin: 4.3em 0;
+#current-projects, #current-projects-mobile {
+	
 
 
 	.bg {
@@ -1108,23 +1105,11 @@ article:last-child {
 
 		.bottom {
 			position: absolute;
-			width: 80%;
+		
 			bottom: 0;
 			left: 0;
 
-			@media(min-width:768px) {
-				width: 60%;
-			}
-
-			@media(min-width:1024px) {
-				width: 50%;
-			}
-
-			@media(min-width:1200px) {
-				width: 80%;
-			}
-
-			.count {
+					.count {
 				font-size: 7.1em;
 				color: white;
 				font-family: $font__primary;
@@ -1146,6 +1131,36 @@ article:last-child {
 				}
 			}
 		}
+	}
+}
+
+#current-projects {
+	margin: 4.3em 0;
+	.bottom {
+		width: 80%;
+
+		@media(min-width:768px) {
+			width: 60%;
+		}
+
+		@media(min-width:1024px) {
+			width: 50%;
+		}
+
+		@media(min-width:1200px) {
+			width: 80%;
+		}
+	}
+}
+
+#current-projects, #current-projects-mobile {
+	margin: 2em 0;
+	.bottom {
+		width: 100%;
+	}
+
+	.read-more {
+		margin-top: 0;
 	}
 }
 
@@ -1406,4 +1421,34 @@ article:last-child {
 		}
 	}
 }
+
+/*Removing some default CSS from our language switcher*/
+.wpml-floating-language-switcher .wpml-ls-statics-shortcode_actions {
+  margin-bottom: 0;
+}
+  
+.wpml-floating-language-switcher  .wpml-ls-statics-shortcode_actions a {
+  background-color: transparent !important;
+}
+  
+.wpml-floating-language-switcher .wpml-ls-legacy-list-horizontal a {
+  padding: 5px;
+}
+  
+  
+/*Customize this if you want*/
+.wpml-floating-language-switcher {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #f8f8f8; /*background color*/
+  border: 1px solid; /*border settings*/
+  border-color: #eee; /*color of the border*/
+  padding: 0px; /*padding of container*/
+  border-radius: 6px; /*rounded border*/
+  /*Box Shadow*/
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+} 
 
