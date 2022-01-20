@@ -448,7 +448,11 @@
 		#first-section.sub_header {
 			width: 83%;
 			 margin: 0 auto; 
-	
+			 transition : all 0.5s;
+			&.grow {
+				width: 100%;
+				transform: translateY(-100px);
+			}
 		}
 	}
 	

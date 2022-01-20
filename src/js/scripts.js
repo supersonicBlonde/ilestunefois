@@ -200,7 +200,8 @@ jQuery( document ).ready(function($) {
 
 window.addEventListener("load", function() {
 
-	
+
+
 
 	let toggler = document.querySelector('.navbar-toggler');
 	let collapse = document.getElementById('navbarNav');
@@ -471,5 +472,11 @@ window.addEventListener("load", function() {
 
 
 
+jQuery(window).bind('scroll', function () {
+    if (jQuery(this).scrollTop() > 200) {
 
-
+      jQuery('.page-template-chooseus .sub_header').addClass('grow');
+    } else {
+      jQuery('.page-template-chooseus .sub_header').removeClass('grow');
+    }
+});

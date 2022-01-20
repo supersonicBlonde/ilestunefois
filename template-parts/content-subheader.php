@@ -1,7 +1,7 @@
 <?php
 
 	$background_image =  get_field('background_image_header_standard');
-	$video = get_field('video_header_standard');
+	$video = get_field('video_sub_header');
 
 	// Image / video
 

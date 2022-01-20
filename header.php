@@ -45,7 +45,8 @@
 
 						<div class="header-content">
 							<?php if(!is_single() && !is_tax() && !is_archive()): ?>
-								<h1 class="size-title"><?php the_title(); ?></h1>
+								<?php  $underline = !get_field('soulignement_titre')==''?'underline':''; ?>
+								<h1 class="size-title <?php echo $underline; ?>"><?php the_title(); ?></h1>
 								<p class="sous-h1 d-none d-xl-block"><?php echo get_field('sub_h1'); ?></p>
 							<?php elseif(is_tax()): 
 								$term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') ); ?>
