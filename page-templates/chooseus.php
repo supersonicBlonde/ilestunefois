@@ -20,13 +20,13 @@ get_header();
           <div class="bloc-item position-relative" style="background-color:<?php the_sub_field("background_color"); ?>">
             <div class="bloc-item-content container position-relative">
               <div class="row bloc-item-content-flex no-gutters <?php echo $image_pos; ?>">
-                <div class="col-xl-6 col-12 d-flex align-items-center">
+                <div class="col-md-6 col-12 d-flex align-items-center">
                   <div class="bloc-text">
-                    <h2 class="pb-5"><?php the_sub_field('title') ?></h2>
+                    <h2 class="pb-xl-5 pb-2"><?php the_sub_field('title') ?></h2>
                     <p><?php the_sub_field('paragraph'); ?></p>
                   </div>
                 </div>
-                <div class="col-xl-6 col-12 " style="background-position: center center;background-image:url(<?php the_sub_field('image'); ?>);height: 550px;"></div>
+                <div class="col-md-6 col-12 background-image" style="background-position: center center;background-image:url(<?php the_sub_field('image'); ?>);"></div>
                <!--  <div><img src="<?php the_sub_field('image'); ?>)" style="width:650px; height: 550px;"></div> -->
                 <?php 
                   $icon_position = get_sub_field('position_icone'); 

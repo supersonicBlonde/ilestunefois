@@ -1460,12 +1460,37 @@ article:last-child {
 
 .bloc-item {
 
-	margin: 6em 0;
-	
-	padding: 83px 295px;
+	margin: 3em 0;
+	padding: 4em 1em;
+
+	@media(min-width:768px) {
+		margin: 6em 0;
+	  padding: 83px 40px;
+	}
+
+	@media(min-width:1600px) {
+		margin: 6em 0;
+	  padding: 83px 150px;
+	}
+
+	@media(min-width:1920px) {
+		margin: 6em 0;
+	  padding: 83px 295px;
+	}
+
+
 
 	.background-image {
-		width: 60%;
+
+		height: 300px;
+
+		@media(min-width:992px) {
+			height:443px;
+		}
+
+		@media(min-width:1200px) {
+			height:550px;
+		}
 	}
 
 	.bloc-item-content-flex {
@@ -1477,7 +1502,21 @@ article:last-child {
 
 
 	.bloc-text {
-		padding: 5em 6em;
+	
+		padding: 2.5em;
+	
+		
+		@media(min-width:768px) {
+			padding: 2.5em 3em;	
+			min-height: 200px;		
+		}
+		
+
+		@media(min-width:1200px) {
+			padding: 5em 6em;			
+			min-height: auto;	
+		}
+
 		width: 100%;
 		background: white;
 		h2 {
@@ -1494,38 +1533,52 @@ article:last-child {
 		background: white;
 		padding: 15px;
 		border-radius: 10px;
+
+		&.left, &.right, &.right.top {
+			bottom:0;
+			left: 50%;
+			transform: translate(-50%,25%);
+		}
+
+		@media(min-width: 768px) {
 	
-		&.left {
-			left: 0;
-		}
-		&.left.middle {
-			transform: translate(-30%, -50%);	
-			top: 50%;
-		}
-		&.left.top {
-			top: 25%;
-			transform: translate(-30%, -50%);
-		}
-		&.left.bottom {
-			bottom: 25%;
-			transform: translate(-30%, 50%);
-		}
-		&.right {
-			right: 0;
-			transform: translateX(30%);
-		}
-		&.right.middle {
-			transform: translate(30%, -50%);
-			top: 50%;
-		}
-		&.right.top {
-			top: 25%;
-			transform: translate(30%, -50%);
-		}
-		&.right.bottom {
-			bottom: 25%;
-			transform: translate(30%, 50%);
-		}
+			&.left {
+				left: 0;
+			}
+			&.left.middle {
+				transform: translate(-30%, -50%);	
+				top: 50%;
+			}
+			&.left.top {
+				top: 25%;
+				bottom: auto;
+				transform: translate(-30%, -50%);
+			}
+			&.left.bottom {
+				bottom: 25%;
+				transform: translate(-30%, 50%);
+			}
+			&.right {
+				right: 0;
+				transform: translateX(30%);
+			}
+			&.right.middle {
+				transform: translate(30%, -50%);
+				top: 50%;
+				bottom: auto;
+				left: auto;
+			}
+			&.right.top {
+				top: 25%;
+				left: auto;
+				bottom: auto;
+				transform: translate(30%, -50%);
+			}
+			&.right.bottom {
+				bottom: 25%;
+				transform: translate(30%, 50%);
+			}
+	}
 
 		svg {
 			width:50px;
