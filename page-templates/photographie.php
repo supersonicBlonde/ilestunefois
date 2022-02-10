@@ -118,7 +118,7 @@ get_header();
 
 							foreach($playerList as $player): ?>
 
-								<div class="col-md-6 col-12 column">
+								<div class="col-sm-6 col-12 column">
 				 	
 									<div class="video-item">
 									
@@ -127,7 +127,7 @@ get_header();
 									 	<div class="poster poster-slider">
 												<?php if($playerList[$count]['poster'] > 0):
 													foreach($playerList[$count]['poster'] as $poster): ?>
-													<img src="<?php echo $poster['portfolio_photo']; ?>" style="height:400px;">
+													<img src="<?php echo $poster['portfolio_photo']; ?>">
 													<?php endforeach; 
 																endif;
 													?>

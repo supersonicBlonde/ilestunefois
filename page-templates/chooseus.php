@@ -49,6 +49,31 @@ get_header();
       <?php endif; ?>
 		</div>
 
+    <?php if(have_rows('bloc_bas_de_page')): ?>
+        <?php while(have_rows('bloc_bas_de_page')): the_row(); ?>
+          <?php $image_pos = get_sub_field('image_position'); ?>
+          <div class="bloc-bottom position-relative">
+            <?php
+              $svg_file = file_get_contents(get_sub_field('icone'));
+              $find_string   = '<svg';
+              $position = strpos($svg_file, $find_string);
+              $svg_file_new = substr($svg_file, $position);
+              
+              ?>
+              <div class="icon">
+                <?php echo $svg_file_new; ?>
+              </div>
+            <div class="inner"><?php the_sub_field('paragraphe'); ?></div>
+          </div>
+          <div class="mt-lg-4 text-center w-100">
+            <div class="read-more">
+              <a href="#" class="cta-btn"><?php the_sub_field('texte_bouton'); ?></a>
+            </div>
+          </div>
+          <?php endwhile; ?>
+      <?php endif; ?>
+
+
 	</div>
 
 <?php get_footer(); ?>
