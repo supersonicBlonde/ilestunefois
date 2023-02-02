@@ -127,27 +127,6 @@ class Modal {
 		preloader.innerHTML = '<img src="/wp-content/themes/ilestunefois/img/preloader.svg">';
 		parent.appendChild(preloader);
 
-	/*	fetch(ajax_js_obj.ajax_url , {
-			method: "POST",
-			body: 'action=load_form&submitted_nonce='+ajax_js_obj.the_nonce
-		}).then(res => res.json())
-			.catch(error => {
-				console.log("error");
-			})
-			.then(response => {
-
-				if (response === 0 || response.status === 'error') {
-					console.log( response );
-					return;
-				}
-				let form = document.createElement('div');
-				console.log(form);
-				let parent = document.getElementById('modal-container');
-				parent.appendChild(form);
-				form.innerHTML =  response.data;
-			});
-		}*/
-
 		const thisClass = this;
 
 		jQuery.ajax({
@@ -201,7 +180,31 @@ jQuery( document ).ready(function($) {
 window.addEventListener("load", function() {
 
 
+	   /*  var desktopvideoEl = document.querySelectorAll('.i-delete-this-on-mobile');
+        var mobilevideoEl = document.querySelectorAll('.i-delete-this-on-desktop');
 
+        function displayImages(mobileSize2) {
+            if (mobileSize2.matches) { // if mobile
+                for (var i = 0; i < desktopvideoEl.length; i++) { //for each desktop video element
+                    desktopvideoEl[i].parentNode.removeChild(desktopvideoEl[i]); // remove desktop video element
+                    if (mobilevideoEl[i].children[0].getAttribute('video-src')) { //if mobile video element contains a child of video-src
+                        mobilevideoEl[i].children[0].setAttribute('src', mobilevideoEl[i].children[0].getAttribute('video-src')); //change mobile source video-src element to src 
+                        mobilevideoEl[i].children[0].removeAttribute('video-src'); //remove old video-src tag
+                    }
+                }
+            } else { //if desktop
+                for (var i = 0; i < mobilevideoEl.length; i++) { //for each mobilevideo element
+                    mobilevideoEl[i].parentNode.removeChild(mobilevideoEl[i]); // remove mobile video element
+                    if (desktopvideoEl[i].children[0].getAttribute('video-src')) { //if desktop video element contains a child of video-src
+                        desktopvideoEl[i].children[0].setAttribute('src', desktopvideoEl[i].children[0].getAttribute('video-src')); // change desktop source video-src to src
+                        desktopvideoEl[i].children[0].removeAttribute('video-src'); //remove old video-src tag
+                    }
+                }
+            }
+        }
+
+        var mobileSize2 = window.matchMedia("(max-width: 767px)");
+        displayImages(mobileSize2); */
 
 	let toggler = document.querySelector('.navbar-toggler');
 	let collapse = document.getElementById('navbarNav');
@@ -480,3 +483,10 @@ jQuery(window).bind('scroll', function () {
       jQuery('.page-template-chooseus .sub_header').removeClass('grow');
     }
 });
+
+
+// REDIRECT AFTER CONNECT FORM IS SUBMITTED
+document.addEventListener( 'wpcf7submit', function( event ) {
+	//jQuery('#modal-wrapper').hide();
+	//window.location.href = "/message-sent";
+}, false );

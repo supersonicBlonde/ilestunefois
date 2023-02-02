@@ -1,5 +1,5 @@
-<?php echo do_shortcode('[contact-form-7 html_id="ilestunefois-connect-form" title="Connect"]'); ?>
 
+<?php echo do_shortcode('[contact-form-7 id="3618" html_id="ilestunefois-connect-form" title="Connect" title="Connect"]'); ?>
 <!-- <form id="ilestunefois-connect-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 
 	<div class="field-container">
@@ -27,4 +27,24 @@
 	</div>
 
 	<input type="hidden" name="action" value="submit_testimonial">
-	<input type="hidden" name="nonce" value="<?php //echo wp_create_nonce("testimonial-nonce") ?>">-->
+	<input type="hidden" name="nonce" value="<?php //echo wp_create_nonce("testimonial-nonce") ?>"> -->
+<!-- 	<style>
+		.pipedriveWebForms iframe {
+			border: none!important;
+		}
+		.pipedriveWebForms div, .css-1tg4hf5 {
+			color: white!important;
+		}
+	</style>
+
+	<div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/1I392WAu5rvuDpEVUxvmmTI224XQrG9bwBQnwcteeQqtb6HrvKD1OReb6ECw0SCJB" data-script-id="id0yoy9g" id="idfggxeb"><script src="https://cdn.eu-central-1.pipedriveassets.com/web-form-assets/webforms.min.js"></script><script src="https://webforms.pipedrive.com/f/loader"></script><iframe src="https://webforms.pipedrive.com/f/1I392WAu5rvuDpEVUxvmmTI224XQrG9bwBQnwcteeQqtb6HrvKD1OReb6ECw0SCJB" name="http://ilestunefois.localhost/news/-idfggxeb" scrolling="no" style="width:425px;height: 757px;"></iframe></div> -->
+
+	<script>
+/* 	const app = document.getElementById("app");
+	const.querySelector("button").addEventListener('click' , function() {
+
+	}) */
+	</script>
+
+	
+

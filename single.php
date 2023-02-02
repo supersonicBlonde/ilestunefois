@@ -7,7 +7,8 @@
 
 get_header();
 ?>
-<div class="blog-content page-content">
+<?php $post_class = get_post_type() == 'post'?'post-type-post':''; ?>
+<div class="blog-content page-content <?php echo $post_class; ?>">
 
 	<div class="section limitedext">
 

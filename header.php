@@ -13,6 +13,8 @@
 		<title><?php wp_title(); ?></title>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 				<link rel="profile" href="http://gmpg.org/xfn/11">
 		<?php if( is_singular() && pings_open( get_queried_object() ) ): ?>
 			<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -31,8 +33,8 @@
 				<div>
 
 					<?php $bg_color = !empty(get_field('background_color_header_standard'))?get_field('background_color_header_standard'):"#8daa94"; ?>
-					
-					<header class="header-pages header-container" style="background-color:<?php echo $bg_color; ?>" id="header-container">
+					<?php $post_class = get_post_type() == 'post'?'post-type-post':''; ?>
+					<header class="header-pages header-container <?php echo $post_class; ?>" style="background-color:<?php echo $bg_color; ?>" id="header-container">
 						
 						<?php if(!empty(get_field('video_header_standard'))): ?>
 							<video poster="<?php //echo $poster; ?>" id="bgvid" playsinline autoplay muted loop>
@@ -69,4 +71,4 @@
 
 		</div><!-- .container-fluid -->
 
-		<div class="content-container">
+		<div class="content-container <?php echo $post_class; ?>">

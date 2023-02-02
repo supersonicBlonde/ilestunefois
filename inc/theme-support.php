@@ -9,6 +9,12 @@
 	========================
 */
 
+
+//IMAGE SIZES
+add_image_size( 'projects', 500, 500, true ); 
+add_image_size( 'photos', 500, 367, true ); 
+
+
 $options = get_option( 'post_formats' );
 $formats = array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' , 'post' );
 $output = array();

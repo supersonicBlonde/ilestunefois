@@ -6,7 +6,6 @@ get_header();
 
 	<?php
 
-
 	$playerList = [];
 
 	

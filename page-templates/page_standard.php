@@ -34,7 +34,7 @@ get_header();
 							<div class="col-12">
 								
 								<?php if(!empty($bg) && empty($video)): ?>
-									<div class="bg" style="background-image: url(<?php echo $bg; ?>)"></div>
+									<div class="bg" style="background-size:cover; background-image: url(<?php echo $bg; ?>)"></div>
 								<?php elseif(!empty($video)): ?>
 									<div class="bg embed-container">
 										<?php echo $video; ?>
@@ -201,10 +201,6 @@ get_header();
 		    // End loop.
 		    endwhile;
 
-		// No value.
-		else :
-			echo "no content";
-		    // Do something...
 		endif;
 	?>
 

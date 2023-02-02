@@ -45,8 +45,9 @@ get_header('landing');
 </div>
 <?php endif; ?>
 
-<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
-		<div id="cta-home" class="section limited my-5">
+<?php if(!empty(get_field('cta_home_button_text'))): ?>
+  <div id="section_cta" class="my-5">
+		<div id="cta-home" class="section limited mb-5">
 			<div class="container-fluid bloc-padding" id="cta-home-bg" style="background-color: #750D37;">
 				<div class="row align-items-center text-center text-xl-left">
 					<div class="col-xl-6 col-12">
@@ -61,7 +62,8 @@ get_header('landing');
 				</div><!-- .row -->
 			</div><!-- .container-fluid -->
 		</div><!-- #cta-home -->
-<?php endif; ?>
+  </div>
+	<?php endif; ?>
 
 <?php if(have_rows('steps')): ?>
 <div id="steps-section" class="p-5">

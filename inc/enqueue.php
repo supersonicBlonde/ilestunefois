@@ -18,7 +18,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 function ilestunefois_load_scripts(){
 
-	wp_enqueue_style( 'sendiblue', 'https://sibforms.com/forms/end-form/build/sib-styles.css', array(), '', 'all'); 
+	 wp_enqueue_style( 'sendiblue', get_template_directory_uri().'/dist/css/sibform.css', array(), '', 'all');  
 
 	wp_enqueue_style( 'lato-font', 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap', array(), '', 'all'); 
 	
@@ -32,6 +32,8 @@ function ilestunefois_load_scripts(){
 	
 	//wp_enqueue_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js', array('jquery'), '4.5.0', true );
 	wp_enqueue_script( 'slickjs', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '', true );
+
+	wp_enqueue_script( 'masonry', get_template_directory_uri().'/dist/js/masonry.js', array('jquery'), '', true );
 
 	wp_enqueue_script( 'matchheight', '//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js', array('jquery'), '', true );
 

@@ -15,3 +15,26 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 require get_template_directory() . '/inc/custom-post-type.php';
 require get_template_directory() . '/inc/form.php';
 require get_template_directory() . '/inc/widgets.php';
+
+/* function add_rel_preload($html, $handle, $href, $media) {
+    
+    if (is_admin())
+        return $html;
+
+     $html = <<<EOT
+<link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='$handle' href='$href' type='text/css' media='all' />
+EOT;
+    return $html;
+}
+add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 ); */
+
+//WPML - Add a floating language switcher to the footer
+add_action('wp_footer', 'wpml_floating_language_switcher'); 
+  
+function wpml_floating_language_switcher() { 
+   echo '<div class="wpml-floating-language-switcher">';
+       //PHP action to display the language switcher (see https://wpml.org/documentation/getting-started-guide/language-setup/language-switcher-options/#using-php-actions)
+       do_action('wpml_add_language_selector');
+   echo '</div>'; 
+}
+

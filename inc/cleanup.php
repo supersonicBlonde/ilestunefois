@@ -6,6 +6,8 @@
 
 /*
 
+
+
 /***********************************
 	REMOVE GENERATOR VERSIONS NUMBER
 	************************************/
@@ -38,3 +40,16 @@ add_filter('the_generator' , 'ilestunefois_remove_meta_version');
 
 // remove empty paragraphs
 remove_filter ('the_content', 'wpautop');
+
+/***********************************
+	DISABLE SELF PINGBACKS
+	************************************/
+
+
+function valtesse_disable_self_pingbacks( &$links ) {
+  foreach ( $links as $l => $link )
+        if ( 0 === strpos( $link, get_option( 'home' ) ) )
+            unset($links[$l]);
+}
+
+add_action( 'pre_ping', 'valtesse_disable_self_pingbacks' );

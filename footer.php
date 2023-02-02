@@ -74,7 +74,7 @@
 						<div id="credits">
 							<div class="row">
 								<div class="col-12 ">
-									<div class="text-center"><span>DESIGN </span><a href="http://cgwebdesign.org" target="_blank"><img src="<?php echo get_template_directory_uri()."/img/ciaran.svg" ?>"></a><span>CODE </span><a href="http://ninapresotto.com" target="_blank">ninapresotto.com</div>
+									<div class="text-center"><span>DESIGN </span><a href="http://cgwebdesign.org" target="_blank"><img src="<?php echo get_template_directory_uri()."/img/ciaran.svg" ?>"></a><span>CODE </span><a href="http://ninapresotto.com" target="_blank">ninapresotto.com</a></div>
 								</div>
 							</div>
 						</div>

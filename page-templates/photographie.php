@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<div class="portfolio-content">
+<div class="portfolio-content photo">
 
 	<?php
 
@@ -118,21 +118,39 @@ get_header();
 
 							foreach($playerList as $player): ?>
 
-								<div class="col-sm-6 col-12 column">
+								<div class="col-md-6 col-12 column">
 				 	
 									<div class="video-item">
 									
 											<div id="<?php echo "player".$count; ?>"></div>
 										
-									 	<div class="poster poster-slider">
+											<div class="poster poster-slider">
 												<?php if($playerList[$count]['poster'] > 0):
-													foreach($playerList[$count]['poster'] as $poster): ?>
+													foreach($playerList[$count]['poster'] as $poster): 
+													//var_dump($playerList[$count]['poster']);
+													?>
 													<img src="<?php echo $poster['portfolio_photo']; ?>">
 													<?php endforeach; 
 																endif;
 													?>
-                      </div>
-								
+                      </div> 
+								<!-- 	 	<div>
+												<?php if($playerList[$count]['poster'] > 0):
+												
+													?>
+													<?php echo wp_get_attachment_image( 
+															$playerList[$count]['poster'][0]['portfolio_photo'], 
+															'photos' , 
+															'false' ,  
+															array("class"  => "noresp" ) 
+													);
+															
+												?>
+													<?php 
+																endif;
+													?>
+                      </div> 
+								 -->
 										<h3><?php echo $player['title']; ?></h3>
 										<p><?php echo $player['paragraphe']; ?></p>
 										<div class="post-cat">

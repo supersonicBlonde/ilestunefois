@@ -6,11 +6,6 @@
   color: #c77c98;
 } 
 
-img:not(.single-post img) {
-	max-width:100%;
-	width: 100%;
-	height: auto;
-}
 
 h1.underline:after {
 	content: "";
@@ -1445,7 +1440,7 @@ article:last-child {
 /*Customize this if you want*/
 .wpml-floating-language-switcher {
   position: fixed;
-  bottom: 10px;
+  bottom: 100px;
   right: 10px;
   background: #f8f8f8; /*background color*/
   border: 1px solid; /*border settings*/
@@ -1674,3 +1669,6 @@ article:last-child {
 
 }
 
+.wpcf7-response-output {
+	color: white;
+}

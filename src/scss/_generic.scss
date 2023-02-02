@@ -46,6 +46,13 @@ img {
 	border-radius: 50%;
 }
 
+img:not(.single-post img):not(.noresp) { 
+	max-width:100%;
+	width: 100%;
+	height: auto;
+}
+
+
 img.noresp {
 	max-width: none;
 	width: auto;

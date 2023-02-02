@@ -119,8 +119,8 @@ get_header('home');
 	</div><!-- #slider-section --> 
 
 <?php
-
-$args = array('post_type' => 'project' , 'posts_per_page' => -1);
+$number_of_posts = wp_is_mobile()?3:-1;
+$args = array('post_type' => 'project' , 'posts_per_page' => $number_of_posts);
 $projects =  new WP_Query($args); 
 if($projects->have_posts()):
 	if(!wp_is_mobile()):
@@ -301,7 +301,7 @@ if($posts->have_posts()):
 				<?php $count = 1; while($posts->have_posts()): $posts->the_post(); ?>
 					<div class="col-12 col-xl-4 mb-4 mb-xl-0">
 						<a href="<?php the_permalink(); ?>">
-							<div class="bg" style="background-image:url(<?php echo ilestunefois_get_attachment(); ?>)"></div>
+							<div class="bg" style="background-image:url(<?php echo get_the_post_thumbnail_url( get_the_ID(), 'projects'); ?>)"></div>
 							<div class="content mh">
 								<h4 class="mb-1"><?php the_title(); ?></h4>
 							</div>

@@ -10,6 +10,15 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116585477-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116585477-1');
+</script>
 		<title><?php bloginfo('name'); wp_title(); ?></title>
 		<meta name="description" content="<?php bloginfo('description'); ?>"></meta>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -18,12 +27,16 @@
 		<?php if( is_singular() && pings_open( get_queried_object() ) ): ?>
 			<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php endif; ?>
+	
 		<?php wp_head(); ?>
 	</head>
 	
 
 <body <?php body_class(); ?>>
-	
+		    <!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKBWBX8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->  
 	<div class="container-fluid">
 
 		<div class="row">

@@ -1,0 +1,4 @@
+[06-Dec-2022 19:28:35 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home1/ilestune/public_html/wp-content/themes/ilestunefois/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home1/ilestune/public_html/wp-content/themes/ilestunefois/index.php on line 1

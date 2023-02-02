@@ -10,10 +10,21 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116585477-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116585477-1');
+</script>
 		<title><?php wp_title(); ?></title>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-				<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<?php if( is_singular() && pings_open( get_queried_object() ) ): ?>
 			<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php endif; ?>
@@ -24,7 +35,10 @@
 	
 
 <body <?php body_class(); ?>>
-	<!-- <div class="noise"></div> -->
+	    <!-- Google Tag Manager (noscript) -->
+			<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKBWBX8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->  
 	<div class="scale">
 		<div>
 			<div>
@@ -50,7 +64,7 @@
 										<div class="row">
 											<div class="col-12">
 												<div class="cta_white read-more">
-													<a href="#" class="cta-btn white"><?php the_sub_field("texte_bouton"); ?></a>
+													<a href="/connect" class="cta-btn white"><?php the_sub_field("texte_bouton"); ?></a>
 												</div>
 											</div>
 										</div>
