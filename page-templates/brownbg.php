@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Page Standard
+* Template Name: Client
 *
 * @package ilestunefois
 */
@@ -8,6 +8,8 @@
 get_header();
 ?>
 <div class="page-standard-content page-content" style="margin-top: 0;">
+
+  <?php get_template_part('template-parts/content-subheader'); ?>
 
 	<?php
 
@@ -25,14 +27,6 @@ get_header();
 		            $paragraphe = get_sub_field('paragraphe');
 
 		        ?>
-				
-				<div id="image_text_alignment_vertical" class="section limitedext module">
-
-					<div class="container-fluid">
-						
-						<div class="row">
-							<div class="col-12">
-								
 								
 								<div class="module-content">
 									<?php if(!empty($title)): ?>
