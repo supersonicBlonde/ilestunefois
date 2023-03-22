@@ -75,9 +75,9 @@ get_header();
 								<div class="col-12 <?php echo $count == 2?'col-md-6':'col-xl-4'; ?> column">
 									
 									<?php if((!empty($video) && empty($image)) || (!empty($video) && !empty($image))): ?>	
-										<div class="embed-responsive embed-responsive-16by9 mh"><?php echo $video ?></div>
+										<div class="embed-responsive embed-responsive-16by9"><?php echo $video ?></div>
 									<?php elseif(empty($video) && !empty($image)): ?>
-										<div style="text-align:center;"><img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
+										<div style="text-align:center;"><img style="object-fit:cover;height: auto;max-height: 300px; width: 100%;" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
 									<?php endif; ?>
 									<div class="module-content">
 										<?php if(!empty($title)): ?>
@@ -192,21 +192,6 @@ get_header();
 		endif;
 	?>
 
-	<div id="share">
-		<div class="section limited">
-			<div class="container-fluid">
-					<div class="row">
-						<div class="col-12">
-							<div class="share-container">
-								<div class="share"><?php echo __('Share' , 'ilestunefois'); ?></div>
-								<?php get_template_part('template-parts/template', 'sharing-box'); ?>
-							</div><!-- .share-container -->
-						</div><!-- .column -->
-					</div><!-- .row -->
-			</div>
-		</div>
-	</div>
-
 	<div class="section limited">
 
 		<div class="container-fluid">
@@ -241,6 +226,21 @@ get_header();
 
 		</div>
 		
+	</div>
+
+  <div id="share">
+		<div class="section limited">
+			<div class="container-fluid">
+					<div class="row">
+						<div class="col-12">
+							<div class="share-container">
+								<div class="share"><?php echo __('Share' , 'ilestunefois'); ?></div>
+								<?php get_template_part('template-parts/template', 'sharing-box'); ?>
+							</div><!-- .share-container -->
+						</div><!-- .column -->
+					</div><!-- .row -->
+			</div>
+		</div>
 	</div>
 
 
