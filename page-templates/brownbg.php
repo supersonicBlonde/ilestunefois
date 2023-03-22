@@ -77,7 +77,7 @@ get_header();
 									<?php if((!empty($video) && empty($image)) || (!empty($video) && !empty($image))): ?>	
 										<div class="embed-responsive embed-responsive-16by9"><?php echo $video ?></div>
 									<?php elseif(empty($video) && !empty($image)): ?>
-										<div style="text-align:center;"><img style="object-fit:cover;height: auto;max-height: 300px; width: 100%;" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
+										<div style="text-align:center;"><img style="object-fit:cover;height:auto;max-height:300px; width: 100%;" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
 									<?php endif; ?>
 									<div class="module-content">
 										<?php if(!empty($title)): ?>
