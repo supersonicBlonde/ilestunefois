@@ -7,7 +7,11 @@
 
 get_header();
 ?>
-<div class="page-standard-content page-content" style="margin-top: 0;">
+<?php $marginTop = !get_field('show_sub_header_block')?'':'mt-0' ?>
+<div class="page-standard-content page-content <?php echo $marginTop; ?>">
+
+	<?php get_template_part('template-parts/content-subheader'); ?>
+
 
 	<?php
 

@@ -1,5 +1,8 @@
 <?php
 
+if(!get_field('hide_sub_header_block')):
+
+
 	$background_image =  get_field('background_image_header_standard');
 	$video = get_field('video_sub_header');
 
@@ -15,6 +18,8 @@
 	$title = get_field('title_header_standard');
 	$sub_title = get_field('sous_titre_header_standard');
 	$paragraphe = get_field('paragraphe_header_standard');
+
+
 ?>
 
 	<div id="first-section" class="sub_header section limited background-image" style="<?php echo $style_bg; ?>">
@@ -47,3 +52,7 @@
 		<?php //endif; ?>
 
 	</div>
+<?php 
+
+endif;
+?>

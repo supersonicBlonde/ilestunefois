@@ -31,11 +31,9 @@
 		<div>
 			<div>
 				<div>
-
 					<?php $bg_color = !empty(get_field('background_color_header_standard'))?get_field('background_color_header_standard'):"#8daa94"; ?>
 					<?php $post_class = get_post_type() == 'post'?'post-type-post':''; ?>
 					<header class="header-pages header-container <?php echo $post_class; ?>" style="background-color:<?php echo $bg_color; ?>" id="header-container">
-						
 						<?php if(!empty(get_field('video_header_standard'))): ?>
 							<video poster="<?php //echo $poster; ?>" id="bgvid" playsinline autoplay muted loop>
 								<source src="<?php the_field('video_header_standard') ?>" type="video/mp4">
