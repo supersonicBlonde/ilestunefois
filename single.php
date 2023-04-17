@@ -93,15 +93,46 @@ get_header();
 		</div><!-- .container-fluid -->
 	</div><!-- .section -->
 
-	
-
+	<?php if(have_rows('related_posts')): ?>
+		<div id="related-posts">
+			<div class="bg-bottom"></div>
+				<div class="section limited">
+					<div class="container-fluid">
+						<div class="row">
+							<?php while(have_rows('related_posts')): the_row() ?>
+								<?php 
+									$featured_post = get_sub_field('article'); 
+									$permalink = get_permalink( $featured_post->ID );
+									$image = get_the_post_thumbnail_url( $featured_post->ID );
+								?>
+									<div class="col-md-6 col-12 column">
+												<div class="related-single">
+												<?php if( $image ): ?>
+														<a class="standard-featured-link" href="<?php echo $permalink; ?>">
+															<div class="related-bg standard-featured background-image" style="background-image: url(<?php echo $image ?>);"></div>
+														</a>
+													<?php endif; ?> 
+													<div class="related-content">
+													
+														<a class="standard-featured-link" href="<?php echo $permalink; ?>">
+															<h2 class="entry-title"><a href="<?php echo $permalink; ?>" rel="bookmark"><?php echo get_the_title( $featured_post->ID ); ?></a></h2>
+													</a>
+													</div>
+													<?php wp_reset_postdata(); ?>
+												</div>
+									</div>
+							<?php endwhile; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+	<?php else: ?>
 	<?php
 	global $post;
 	$current = $post->ID;
 	$args = array('posts_per_page' => 2, 'orderby' => 'rand', 'post__not_in' => array( $current));
 	$related = new WP_Query($args);
 	?>
-
 	<?php if($related->have_posts()): ?>
 	<div id="related-posts">
 		<div class="bg-bottom"></div>
@@ -109,7 +140,6 @@ get_header();
 			<div class="container-fluid">
 				<div class="row">
 					<?php
-					
 					while($related->have_posts()): $related->the_post(); ?>
 						<div class="col-md-6 col-12 column">
 							<div class="related-single">
@@ -130,7 +160,10 @@ get_header();
 			</div><!-- .container-fluid -->
 		</div><!-- .section -->
 	</div><!-- #related-posts -->
-<?php endif; ?>
+	<?php endif; ?>
+	<?php endif; ?>
+
+
 
 </div><!-- .page-content -->
 
