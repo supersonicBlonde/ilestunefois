@@ -1,21 +1,3 @@
-//import LocomotiveScroll from 'locomotive-scroll';
- /*const scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true
-});*/
-
-/**
-* jquery-match-height master by @liabru
-* http://brm.io/jquery-match-height/
-* License: MIT
-*/
-
-
-
-
-
-
-
 class Modal {
 
 	constructor(parent) {
@@ -179,33 +161,6 @@ jQuery( document ).ready(function($) {
 
 window.addEventListener("load", function() {
 
-
-	   /*  var desktopvideoEl = document.querySelectorAll('.i-delete-this-on-mobile');
-        var mobilevideoEl = document.querySelectorAll('.i-delete-this-on-desktop');
-
-        function displayImages(mobileSize2) {
-            if (mobileSize2.matches) { // if mobile
-                for (var i = 0; i < desktopvideoEl.length; i++) { //for each desktop video element
-                    desktopvideoEl[i].parentNode.removeChild(desktopvideoEl[i]); // remove desktop video element
-                    if (mobilevideoEl[i].children[0].getAttribute('video-src')) { //if mobile video element contains a child of video-src
-                        mobilevideoEl[i].children[0].setAttribute('src', mobilevideoEl[i].children[0].getAttribute('video-src')); //change mobile source video-src element to src 
-                        mobilevideoEl[i].children[0].removeAttribute('video-src'); //remove old video-src tag
-                    }
-                }
-            } else { //if desktop
-                for (var i = 0; i < mobilevideoEl.length; i++) { //for each mobilevideo element
-                    mobilevideoEl[i].parentNode.removeChild(mobilevideoEl[i]); // remove mobile video element
-                    if (desktopvideoEl[i].children[0].getAttribute('video-src')) { //if desktop video element contains a child of video-src
-                        desktopvideoEl[i].children[0].setAttribute('src', desktopvideoEl[i].children[0].getAttribute('video-src')); // change desktop source video-src to src
-                        desktopvideoEl[i].children[0].removeAttribute('video-src'); //remove old video-src tag
-                    }
-                }
-            }
-        }
-
-        var mobileSize2 = window.matchMedia("(max-width: 767px)");
-        displayImages(mobileSize2); */
-
 	let toggler = document.querySelector('.navbar-toggler');
 	let collapse = document.getElementById('navbarNav');
 
@@ -222,6 +177,7 @@ window.addEventListener("load", function() {
 		}
 	})
 
+if(jQuery('.testimonial-slider')) {
 	jQuery('.testimonial-slider').slick({
 	  infinite: true,
 	  slidesToShow: 1,
@@ -263,6 +219,7 @@ window.addEventListener("load", function() {
 	  useTransform: true,
 	 
 	});
+}
 
 	jQuery('#slider-projects').slick({
 	  infinite: true,

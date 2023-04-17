@@ -894,6 +894,25 @@ article:last-child {
 	}
 }
 
+
+.contact-email {
+	color: #fff;
+	font-size: 2em;
+	font-family: "gilroyextrabold",sans-serif;
+
+	&:hover {
+		color: #c77c98;
+	}
+}
+
+.label-email {
+	color: #c77c98;
+	font-size: 3.5em;
+	font-family: "gilroyextrabold",sans-serif;
+	line-height: .8;
+}
+
+
 #preloader {
 	position: absolute;
 	top: 50%;

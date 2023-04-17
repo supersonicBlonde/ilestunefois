@@ -34,7 +34,7 @@ get_header('home');
 		</div><!-- #cta-home -->
 	<?php endif; ?>
 
-	<div id="first-section" class="text-img-block section limited">
+<!-- 	<div id="first-section" class="text-img-block section limited">
 		<div class="container-fluid">
 				<div class="row">
 					<div class="col-xl-6 col-12 column">
@@ -53,70 +53,14 @@ get_header('home');
 							<a href="<?php echo $url;  ?>"><?php echo $texte_btn; ?></a>
 						</div>
 						<?php endif; ?>
-					</div><!-- .col -->
+					</div>
 					<div class="col-xl-6 col-12 text-center mx-auto position-relative column">
 						<img src="https://www.ilestunefois.com/wp-content/uploads/2021/06/IMAGE-HOME-SITE.png" alt="">
-					<!-- 	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-							<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_SqEf0A.json"  background="transparent"  speed="1"  id="home-lottie"  loop  autoplay></lottie-player> -->
-					</div><!-- .col -->
-				</div><!-- .row -->
-		</div><!-- .containr-fluid -->
-	</div><!-- #first-section -->
+					</div>
+				</div><
+		</div>
+	</div> -->
 
-	<div id="slider-section" class="section">
-		<div class="flex">
-			<div class="testimonial-slider-container ">
-				<?php if(have_rows('testimonial_slider')): ?>
-	
-				<div class="testimonial-slider">
-	
-	
-				<?php while(have_rows('testimonial_slider')): the_row(); ?>
-						<?php 
-						$img_profil = get_sub_field('image_profil'); 
-						$full_name = get_sub_field('full_name');
-						$review = get_sub_field('review');
-						$titre = get_field('title_home_testimonials');
-						?>
-						<div style="padding-bottom:1.5em;">
-	
-							<div class="testimonial-container">
-						
-								<?php if( !empty( $img_profil ) ): ?>    
-									<div class="testimonial-profil">
-											<img class="noresp circle-image" src="<?php echo esc_url($img_profil['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
-									</div>
-								<?php endif; ?>	
-	
-								<?php if( !empty( $full_name ) ): ?>    
-									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
-								<?php endif; ?>	
-	
-								<?php if( !empty( $review ) ): ?>    
-									<p class="testimonial-review"><?php echo $review; ?></p>
-								<?php endif; ?>	
-	
-							</div><!-- .testimonial-container -->
-	
-						</div>
-	
-					<?php endwhile; ?>
-
-				</div><!-- .testimonial-slider -->
-				<?php endif; ?>
-			</div><!-- .testimonial-slider-container -->
-			<div class="left-2 column">
-				<?php if(!empty($titre)): ?>
-				<h3>
-					<?php echo $titre; ?>
-				</h3>
-				<div id="sortlist_widget">
-					<a href="https://www.sortlist.fr/en/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
-				</div>
-				<?php endif; ?>
-			</div><!-- .column -->
-		</div><!-- .flex -->
-	</div><!-- #slider-section --> 
 
 <?php
 $number_of_posts = wp_is_mobile()?3:-1;
