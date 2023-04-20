@@ -63,6 +63,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						
 						<?php get_template_part( 'template-parts/nav', 'navbar' ); ?>
 
+
+
 						<div class="header-content">
 							<h1 class="size-title" style="margin-left: 0;font-size: 4em;padding:0 1em;"><?php echo __('La société de production audiovisuelle<br>qui engage votre audience' , 'ilestunefois'); ?></h1>
 							<!-- <h2 class="site-description data-scroll"><?php echo bloginfo('description');  ?><span><?php the_field('subdescription'); ?></span></h2> -->

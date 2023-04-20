@@ -43,6 +43,7 @@
 						
 						<?php get_template_part( 'template-parts/nav', 'navbar' ); ?>
 
+
 						<div class="header-content">
 							<?php if(!is_single() && !is_tax() && !is_archive()): ?>
 								<?php  $underline = !get_field('soulignement_titre')==''?'underline':''; ?>

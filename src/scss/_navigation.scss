@@ -1,10 +1,21 @@
 // COLORS & HOVERS
 /**********************************/
+.menu-btn {
+	align-items: center;
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+
+	.nav-link {
+		padding-top:0!important;
+		padding-bottom:0!important;
+	}
+}
+
 .nav-item:last-child {
 	display: none;
 
 	@media (min-width: 992px) {
-		display: block;
+		display: flex;
 	}
 }
 .navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .active>.nav-link {
@@ -81,7 +92,7 @@
 		&:hover {
 			background: $color__secondary;
 
-			a {
+			> a {
 				color: $color__primary!important;
 			}
 		}
@@ -109,7 +120,7 @@
 
 		&:hover {
 
-			a {
+			> a {
 				color: $color__secondary!important;
 			}
 		}
@@ -134,7 +145,7 @@
 
 		&:hover {
 
-			a {
+			> a {
 				color: $color__primary!important;
 			}
 		}
@@ -159,7 +170,7 @@
 
 		&:hover {
 
-			a {
+		>	a {
 				color: $color__secondary!important;
 			}
 		}

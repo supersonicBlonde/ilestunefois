@@ -161,6 +161,13 @@ jQuery( document ).ready(function($) {
 
 window.addEventListener("load", function() {
 
+	let mainMenu = document.getElementById('menu-main');
+	let contactHtml = '<li class="menu-btn menu-item nav-item"><div>';
+	contactHtml += '<div><a class="nav-link" href="mailto:contact@ilestunefois.com">EMAIL</a></div>';
+	contactHtml += '<div><a class="nav-link" href="https://calendly.com/dbaudry" target="_blank">VISIO</a></div>';
+	contactHtml += "</div></li>";
+	mainMenu.insertAdjacentHTML('beforeend', contactHtml);
+
 	let toggler = document.querySelector('.navbar-toggler');
 	let collapse = document.getElementById('navbarNav');
 
@@ -346,12 +353,12 @@ if(jQuery('.testimonial-slider')) {
 	         MODAL
 			******************************************/
 
-	let connect_btn = document.querySelector('.menu-btn');
 	let cta_btn = document.querySelectorAll('.cta-btn');
 
 	let connect_mobile = document.querySelector('.connect-mobile');
 
-	connect_btn.addEventListener('click' , function(event) {
+/* 	let connect_btn = document.querySelector('.menu-btn');
+		connect_btn.addEventListener('click' , function(event) {
 
 		console.log("ok");
 
@@ -362,7 +369,7 @@ if(jQuery('.testimonial-slider')) {
 		modal.animate();
 		modal.set_overlay(true);
 		modal.close_btn.addEventListener('click', modal.close);
-	}); 
+	});  */
 
 	cta_btn.forEach(function (elem) {
 	
@@ -379,18 +386,7 @@ if(jQuery('.testimonial-slider')) {
 	
 	});
 
-/* 	cta_btn.EventListener('click' , function(event) {
 
-		console.log("cat");
-
-		event.preventDefault();
-		
-		let modal = new Modal();
-		modal.load_template();
-		modal.animate();
-		modal.set_overlay(true);
-		modal.close_btn.addEventListener('click', modal.close);
-	});  */
 
 	connect_mobile.addEventListener('touchstart' , function(event) {
 

@@ -16,7 +16,6 @@ get_header();
 
 		<div id="first-profiles" class="section limited">
 
-
 			<div class="container-fluid">
 
 				<?php if(!empty(get_field('text_cta_module'))): ?>
@@ -157,6 +156,7 @@ get_header();
 			</div><!-- .section.limited -->
 
 		</div><!-- #team-slider -->
+		<?php get_template_part('template-parts/logo' , 'section'); ?>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12">
@@ -167,60 +167,7 @@ get_header();
 			</div>
 		</div>
 
-		<div id="slider-section" class="section">
-		<div class="flex">
-			<div class="testimonial-slider-container ">
-				<?php if(have_rows('testimonial_slider', 9)): ?>
-	
-				<div class="testimonial-slider">
-	
-	
-				<?php while(have_rows('testimonial_slider', 9)): the_row(); ?>
-						<?php 
-						$img_profil = get_sub_field('image_profil'); 
-						$full_name = get_sub_field('full_name');
-						$review = get_sub_field('review');
-						$titre = get_field('title_home_testimonials', 9);
-						?>
-						<div style="padding-bottom:1.5em;">
-	
-							<div class="testimonial-container">
-						
-								<?php if( !empty( $img_profil ) ): ?>    
-									<div class="testimonial-profil">
-											<img class="noresp circle-image" src="<?php echo esc_url($img_profil['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
-									</div>
-								<?php endif; ?>	
-	
-								<?php if( !empty( $full_name ) ): ?>    
-									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
-								<?php endif; ?>	
-	
-								<?php if( !empty( $review ) ): ?>    
-									<p class="testimonial-review"><?php echo $review; ?></p>
-								<?php endif; ?>	
-	
-							</div><!-- .testimonial-container -->
-	
-						</div>
-	
-					<?php endwhile; ?>
 
-				</div><!-- .testimonial-slider -->
-				<?php endif; ?>
-			</div><!-- .testimonial-slider-container -->
-			<div class="left-2 column">
-				<?php if(!empty($titre)): ?>
-				<h3>
-					<?php echo $titre; ?>
-				</h3>
-				<div id="sortlist_widget">
-					<a href="https://www.sortlist.fr/en/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
-				</div>
-				<?php endif; ?>
-			</div><!-- .column -->
-		</div><!-- .flex -->
-	</div>
 </div>
 
 
