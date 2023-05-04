@@ -6,6 +6,7 @@ $color__primary: #750D37;
 $color__secondary: #8dab9d;
 /* $color__background-screen: #f1f1f1; */
 $color__background-light-grey: #F3F3F3;
+$animationSpeed: 40s;
 
 /* $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -25,3 +26,9 @@ $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666; */
+
+@mixin white-gradient {
+	background: linear-gradient(to right,  #750D37 0%,rgba(255,255,255,0) 100%);
+}
+
+

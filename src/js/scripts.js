@@ -1,4 +1,4 @@
-class Modal {
+/* class Modal {
 
 	constructor(parent) {
 		this.parent = document.getElementById('header-container');
@@ -54,11 +54,11 @@ class Modal {
 			parent.remove();
 		}
 	}
+ */
 
 
 
-
-	createElements() {
+	/* createElements() {
 
 		//this.parent.appendChild(this.modal_container);
 		document.body.appendChild(this.modal_wrapper);
@@ -83,9 +83,9 @@ class Modal {
 		this.modal_wrapper.classList.add('animate');
 		this.close_btn.classList.add('animate');
 		this.close_shape.classList.add('animate');
-	}
+	} */
 
-	animate_mobile() {
+	/* animate_mobile() {
 		this.modal_container.classList.add('animate');
 		//this.close_btn.classList.add('animate');
 		this.close_shape.classList.add('animate'); 
@@ -134,7 +134,7 @@ class Modal {
 		});
 	}
 
-}
+} */
 
 
 function navbarAnimate(el) {
@@ -161,6 +161,8 @@ jQuery( document ).ready(function($) {
 
 window.addEventListener("load", function() {
 
+
+	
 	let mainMenu = document.getElementById('menu-main');
 	let contactHtml = '<li class="menu-btn menu-item nav-item"><div>';
 	contactHtml += '<div><a class="nav-link" href="mailto:contact@ilestunefois.com">EMAIL</a></div>';
@@ -275,8 +277,7 @@ if(jQuery('.testimonial-slider')) {
 	  slidesToScroll: 1,
 	  mobileFirst:true,
 	  cssEase: 'ease-out',
-	});
-
+	})
 	jQuery('.slider-logos').slick({
 	  slidesToShow: 3,
 	  slidesToScroll: 3,
@@ -296,7 +297,7 @@ if(jQuery('.testimonial-slider')) {
 	 //appendArrows: jQuery('.hideondesktop')
 	});
 
-	
+
 
 	/*********************************************************
 			VIDEO SYSTEM PORTFOLIO
@@ -436,10 +437,3 @@ jQuery(window).bind('scroll', function () {
       jQuery('.page-template-chooseus .sub_header').removeClass('grow');
     }
 });
-
-
-// REDIRECT AFTER CONNECT FORM IS SUBMITTED
-document.addEventListener( 'wpcf7submit', function( event ) {
-	//jQuery('#modal-wrapper').hide();
-	//window.location.href = "/message-sent";
-}, false );

@@ -124,8 +124,12 @@
 
 .header-container:not(.post-type-post) {
 
-	height: 100vh;
+	height: 93vh;
 	overflow: hidden;
+
+	@media(min-width: 992px) {
+		height: 95vh;
+	}
 
 	video {
 	    filter: brightness(70%);

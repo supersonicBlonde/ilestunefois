@@ -8,58 +8,65 @@
 get_header('home');
 ?>
 <div class="home-content page-content">
-
-	<?php
-		$titre = get_field('title_home_first_section');
-		$paragraphe = get_field('p_home_first_section');
-		$texte_btn = get_field('texte_bouton_home_first_section');
-		$url = get_field('lien_bouton_home_first_section');
-	?>
-
 	<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
-		<div id="cta-home" class="section limited mb-5">
+		<div id="cta-home">
 			<div class="container-fluid bloc-padding" id="cta-home-bg" style="background-color: #750D37;">
 				<div class="row align-items-center text-center text-xl-left">
-					<div class="col-xl-6 col-12">
+					<div class="col-xl-12 col-12 text-center">
 						<h3 class="white"><?php the_field('cta_home_title'); ?></h3>
 						<p class="white"><?php the_field('cta_home_paragraphe'); ?></p>
-					</div><!-- .col -->
-					<div class="col-xl-6 col-12 text-center mt-3 mt-xl-0">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<?php get_template_part('template-parts/slider' , 'logo'); ?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 text-center link">
 						<div class="cta read-more">
-							<a href="<?php the_field('cta_home_link') ?>" class="cta-btn"><?php the_field('cta_home_button_text'); ?></a>
-						</div><!-- .read-more -->
-					</div><!-- .col -->
-				</div><!-- .row -->
+							<a href="mailto:contact@ninapresotto.com" class="cta-btn"><?php the_field('cta_home_button_text'); ?></a>
+						</div>
+					</div>
+				</div>
 			</div><!-- .container-fluid -->
 		</div><!-- #cta-home -->
 	<?php endif; ?>
+	<div id="services-illustr">
+		<h2 class="mb-5">Services</h2>
+	</div>
+	<div id="home-services" class="section py-5">
+		<div class="section limited">
+			<div class="container-fluid">
+				<!-- <div class="row">
+					<div class="col-12 text-center">
+						<h2 class="mb-5">Services</h2>
+					</div>
+				</div> -->
+				<?php
+					$args = array(
+						'post_type' => 'service',
+						'posts_per_page' => -1,
+						'post_status' => 'publish'
+					);
 
-<!-- 	<div id="first-section" class="text-img-block section limited">
-		<div class="container-fluid">
-				<div class="row">
-					<div class="col-xl-6 col-12 column">
-						<?php if(!empty($titre)): ?>
-						<h3>
-							<?php echo $titre; ?>
-						</h3>
-						<?php endif; ?>
-						<?php if(!empty($paragraphe)): ?>
-						<p>
-						<?php echo $paragraphe; ?>
-						</p>
-						<?php endif; ?>
-						<?php if(!empty($texte_btn) && !empty($url)): ?>
-						<div class="read-more">
-							<a href="<?php echo $url;  ?>"><?php echo $texte_btn; ?></a>
+					$query = new WP_Query($args);
+
+					if($query->have_posts()): ?>
+						<div class="row justify-content-center">
+							<?php while($query->have_posts()): $query->the_post();  ?>
+							<div class="col-12 col-sm-6 col-lg-4 col-xl-3 text-center">
+								<div class="item">
+									<h3><a href="<?php the_field('lien'); ?>"><?php the_title(); ?></a></h3>
+								</div>
+							</div>
+							<?php endwhile; wp_reset_postdata(); ?>
 						</div>
-						<?php endif; ?>
-					</div>
-					<div class="col-xl-6 col-12 text-center mx-auto position-relative column">
-						<img src="https://www.ilestunefois.com/wp-content/uploads/2021/06/IMAGE-HOME-SITE.png" alt="">
-					</div>
-				</div>
+					<?php endif; ?>
+			</div>	
 		</div>
-	</div> -->
+	</div>
+	
 
 	<div id="slider-section" class="section">
 		<div class="flex">
@@ -108,10 +115,10 @@ get_header('home');
 				<h3>
 					<?php echo $titre; ?>
 				</h3>
-				<div id="sortlist_widget">
-					<a href="https://www.sortlist.fr/en/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
-				</div>
 				<?php endif; ?>
+					<div id="sortlist_widget">
+						<a href="https://www.sortlist.fr/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
+				</div>
 			</div><!-- .column -->
 		</div><!-- .flex -->
 	</div><!-- #slider-section --> 
