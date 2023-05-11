@@ -62,7 +62,7 @@
 										<li class="youtube"><a href="https://www.youtube.com/channel/UCkD08Da4V6vS1q_BC6-oHrA" target="_blank">Youtube</a></li>
 										<li class="instagram"><a href="https://www.instagram.com/ilestunefoisproduction/?hl=en" target="_blank">Instagram</a></li>
 										<li class="facebook"><a href="https://www.facebook.com/ilestunefois" target="_blank">Facebook</a></li>
-										<li class="twitter"><a href="https://twitter.com/davidbaudry?lang=en" target="_blank">Twitter</a></li>
+									<!-- 	<li class="twitter"><a href="https://twitter.com/davidbaudry?lang=en" target="_blank">Twitter</a></li> -->
 									</ul>
 								</div>
 							</div>
