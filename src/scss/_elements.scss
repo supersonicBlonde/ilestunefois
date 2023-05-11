@@ -1818,13 +1818,11 @@ article:last-child {
 }
 
 #home-services {
-	background: rgba(141, 171, 157, 0.5);
-
 	a {
 		transition: color 0.5s;
 	}
 
 	a:hover {
-			color: white;
+			color: $color__secondary;
 	}
 }
