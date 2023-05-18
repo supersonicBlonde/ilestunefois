@@ -25,7 +25,7 @@ get_header('home');
 				<div class="row">
 					<div class="col-12 text-center link">
 						<div class="cta read-more">
-							<a href="mailto:contact@ninapresotto.com" class="cta-btn"><?php the_field('cta_home_button_text'); ?></a>
+							<a href="mailto:contact@ilestunefois.com" class="cta-btn"><?php the_field('cta_home_button_text'); ?></a>
 						</div>
 					</div>
 				</div>

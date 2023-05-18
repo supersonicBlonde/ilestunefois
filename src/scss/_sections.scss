@@ -124,7 +124,7 @@
 	
 	
 	// CONTENT THAT HAS TO OVERLAY THE HEADER
-	.page-content:not(.post-type-post) {
+	.page-content:not(.post-type-post):not(.page-standard-content) {
 		position: relative;
 		margin-top: -7.8em;
 	}

@@ -10,6 +10,13 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
+		<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5Z2PTHS');</script>
+<!-- End Google Tag Manager -->
 		<title><?php wp_title(); ?></title>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,14 +33,20 @@
 	
 
 <body <?php body_class(); ?>>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z2PTHS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 	<!-- <div class="noise"></div> -->
 	<div class="scale">
 		<div>
 			<div>
 				<div>
+
 					<?php $bg_color = !empty(get_field('background_color_header_standard'))?get_field('background_color_header_standard'):"#8daa94"; ?>
 					<?php $post_class = get_post_type() == 'post'?'post-type-post':''; ?>
 					<header class="header-pages header-container <?php echo $post_class; ?>" style="background-color:<?php echo $bg_color; ?>" id="header-container">
+						
 						<?php if(!empty(get_field('video_header_standard'))): ?>
 							<video poster="<?php //echo $poster; ?>" id="bgvid" playsinline autoplay muted loop>
 								<source src="<?php the_field('video_header_standard') ?>" type="video/mp4">
@@ -42,7 +55,6 @@
 						<?php endif; ?>
 						
 						<?php get_template_part( 'template-parts/nav', 'navbar' ); ?>
-
 
 						<div class="header-content">
 							<?php if(!is_single() && !is_tax() && !is_archive()): ?>

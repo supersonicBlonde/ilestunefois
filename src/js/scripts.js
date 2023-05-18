@@ -165,8 +165,8 @@ window.addEventListener("load", function() {
 	
 	let mainMenu = document.getElementById('menu-main');
 	let contactHtml = '<li class="menu-btn menu-item nav-item"><div>';
-	contactHtml += '<div><a class="nav-link" href="mailto:contact@ilestunefois.com">EMAIL</a></div>';
-	contactHtml += '<div><a class="nav-link" href="https://calendly.com/dbaudry" target="_blank">VISIO</a></div>';
+	contactHtml += '<div><a class="nav-link contact" data-layer="clickform" id="contact"  href="mailto:contact@ilestunefois.com">CONTACT</a></div>';
+	//contactHtml += '<div><a class="nav-link" href="https://calendly.com/dbaudry" target="_blank">VISIO</a></div>';
 	contactHtml += "</div></li>";
 	mainMenu.insertAdjacentHTML('beforeend', contactHtml);
 
@@ -372,7 +372,7 @@ if(jQuery('.testimonial-slider')) {
 		modal.close_btn.addEventListener('click', modal.close);
 	});  */
 
-	cta_btn.forEach(function (elem) {
+/* 	cta_btn.forEach(function (elem) {
 	
 	elem.addEventListener("click", function(event) {
 
@@ -385,7 +385,7 @@ if(jQuery('.testimonial-slider')) {
 			modal.close_btn.addEventListener('click', modal.close);
 		}) 
 	
-	});
+	}); */
 
 
 

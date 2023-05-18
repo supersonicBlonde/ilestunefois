@@ -8,22 +8,6 @@
 	
 ?>
 			<footer class="section limited">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-12">
-							<div class="follow">
-							<h3><?php the_field('intro_texte_footer' , 'options'); ?></h3>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<div class="subscribe">
-								<?php get_template_part('template-parts/form' , 'subscribe'); ?>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="menu-footer">
 					<div>
 						<div class="footer-col-container">
@@ -59,9 +43,11 @@
 							<div class="col-12">
 								<div class="socials">
 									<ul>
-										<li class="youtube"><a href="https://www.youtube.com/channel/UCkD08Da4V6vS1q_BC6-oHrA" target="_blank">Youtube</a></li>
-										<li class="instagram"><a href="https://www.instagram.com/ilestunefoisproduction/?hl=en" target="_blank">Instagram</a></li>
-										<li class="facebook"><a href="https://www.facebook.com/ilestunefois" target="_blank">Facebook</a></li>
+										<a href="https://www.youtube.com/channel/UCkD08Da4V6vS1q_BC6-oHrA" target="_blank" class="text-center">
+										<li class="youtube">Youtube</li>
+										</a>
+										<a href="https://www.instagram.com/ilestunefoisproduction/?hl=en" target="_blank" class="text-center"><li class="instagram">Instagram</li></a>
+										<a href="https://www.facebook.com/ilestunefois" target="_blank" class="text-center"><li class="facebook">Facebook</li></a>
 									<!-- 	<li class="twitter"><a href="https://twitter.com/davidbaudry?lang=en" target="_blank">Twitter</a></li> -->
 									</ul>
 								</div>
@@ -73,8 +59,8 @@
 					<div class="container-fluid">
 						<div id="credits">
 							<div class="row">
-								<div class="col-12 ">
-									<div class="text-center"><span>DESIGN </span><a href="http://cgwebdesign.org" target="_blank"><img src="<?php echo get_template_directory_uri()."/img/ciaran.svg" ?>"></a><span>CODE </span><a href="http://ninapresotto.com" target="_blank">ninapresotto.com</a></div>
+								<div class="col-12 text-center">
+									<!-- <div class="text-center"><span>DESIGN </span><a href="http://cgwebdesign.org" target="_blank"><img src="<?php echo get_template_directory_uri()."/img/ciaran.svg" ?>"></a>--><span>CODE </span> <a href="http://ninapresotto.com" target="_blank">ninapresotto.com</a></div>
 								</div>
 							</div>
 						</div>
