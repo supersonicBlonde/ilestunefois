@@ -162,6 +162,7 @@ jQuery( document ).ready(function($) {
 window.addEventListener("load", function() {
 
 
+
 	
 	let mainMenu = document.getElementById('menu-main');
 	let contactHtml = '<li class="menu-btn menu-item nav-item"><div>';

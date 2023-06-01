@@ -74,8 +74,7 @@ get_header('home');
 				<?php if(have_rows('testimonial_slider')): ?>
 	
 				<div class="testimonial-slider">
-	
-	
+
 				<?php while(have_rows('testimonial_slider')): the_row(); ?>
 						<?php 
 						$img_profil = get_sub_field('image_profil'); 
@@ -89,16 +88,16 @@ get_header('home');
 						
 								<?php if( !empty( $img_profil ) ): ?>    
 									<div class="testimonial-profil">
-											<img class="noresp circle-image" src="<?php echo esc_url($img_profil['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
+										<img style="width:150px;margin:0 auto;" class="noresp circle-image" src="<?php echo esc_url($img_profil['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
 									</div>
-								<?php endif; ?>	
-	
-								<?php if( !empty( $full_name ) ): ?>    
-									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
 								<?php endif; ?>	
 	
 								<?php if( !empty( $review ) ): ?>    
 									<p class="testimonial-review"><?php echo $review; ?></p>
+								<?php endif; ?>	
+
+								<?php if( !empty( $full_name ) ): ?>    
+									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
 								<?php endif; ?>	
 	
 							</div><!-- .testimonial-container -->
@@ -233,8 +232,10 @@ if($posts->have_posts()):
 			</div>
 	</div>					
 </div>
-<?php endif; ?>
-
+<?php endif; wp_reset_postdata(); ?>
 </div>
+<?php if(have_rows('faq')): ?>
+	<?php get_template_part('template-parts/content' , 'faq'); ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>
