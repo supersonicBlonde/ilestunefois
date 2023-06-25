@@ -231,7 +231,7 @@ get_header();
 							while ( have_posts() ) :
 								the_post(); ?>
 
-								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="margin-bottom: 1em;">
 					
 									<div class="entry-content">
 										<?php
@@ -252,6 +252,9 @@ get_header();
 		</div>
 		
 	</div>
+	<?php if(have_rows('faq')): ?>
+			<?php get_template_part('template-parts/content' , 'faq'); ?>
+		<?php endif; ?>
 
 
 <?php get_footer(); ?>

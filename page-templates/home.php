@@ -32,40 +32,32 @@ get_header('home');
 			</div><!-- .container-fluid -->
 		</div><!-- #cta-home -->
 	<?php endif; ?>
-	<div id="services-illustr">
-		<h2 class="mb-5">Services</h2>
-	</div>
-	<div id="home-services" class="section py-5">
-		<div class="section limited">
-			<div class="container-fluid">
-				<!-- <div class="row">
-					<div class="col-12 text-center">
-						<h2 class="mb-5">Services</h2>
+
+	<?php if(have_rows('service_section')): 
+		 while(have_rows('service_section')): the_row(); ?>
+				<div class="services-illustr" style="background-image:url(<?php echo get_sub_field('illustration'); ?>);">
+					<h2 class="mb-5"><?php the_sub_field('title_section'); ?></h2>
+				</div>
+				<div class="home-services section py-5">
+					<div class="section limited">
+						<div class="container-fluid">
+									<div class="row justify-content-center">
+									<?php while(have_rows('service_list')): the_row(); ?>
+										<?php $service = get_sub_field('service'); ?>
+										<div class="col-12 col-sm-6 col-lg-4 col-xl-3 text-center">
+											<div class="item">
+											<?php if($service): ?>
+													<h3><a href="/<?php echo $service->post_name; ?>"><?php echo esc_html( $service->post_title ); ?></a></h3>
+											<?php endif; ?>
+											</div>
+										</div>
+										<?php endwhile; ?>
+									</div>
+						</div>	
 					</div>
-				</div> -->
-				<?php
-					$args = array(
-						'post_type' => 'service',
-						'posts_per_page' => -1,
-						'post_status' => 'publish'
-					);
-
-					$query = new WP_Query($args);
-
-					if($query->have_posts()): ?>
-						<div class="row justify-content-center">
-							<?php while($query->have_posts()): $query->the_post();  ?>
-							<div class="col-12 col-sm-6 col-lg-4 col-xl-3 text-center">
-								<div class="item">
-									<h3><a href="<?php the_field('lien'); ?>"><?php the_title(); ?></a></h3>
-								</div>
-							</div>
-							<?php endwhile; wp_reset_postdata(); ?>
-						</div>
-					<?php endif; ?>
-			</div>	
-		</div>
-	</div>
+				</div>
+		<?php endwhile; ?>
+	<?php endif; ?>
 	
 
 	<div id="slider-section" class="section">
@@ -115,8 +107,11 @@ get_header('home');
 					<?php echo $titre; ?>
 				</h3>
 				<?php endif; ?>
+					<?php echo do_shortcode( '[grw id="7587"]' ); ?>
 					<div id="sortlist_widget">
 						<a href="https://www.sortlist.fr/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
+				</div>
+				<div>
 				</div>
 			</div><!-- .column -->
 		</div><!-- .flex -->
