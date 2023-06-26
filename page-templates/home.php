@@ -47,7 +47,7 @@ get_header('home');
 										<div class="col-12 col-sm-6 col-lg-4 col-xl-3 text-center">
 											<div class="item">
 											<?php if($service): ?>
-													<h3><a href="/<?php echo $service->post_name; ?>"><?php echo esc_html( $service->post_title ); ?></a></h3>
+													<h3 class="py-2 py-md-0"><a href="/<?php echo $service->post_name; ?>"><?php echo esc_html( $service->post_title ); ?></a></h3>
 											<?php endif; ?>
 											</div>
 										</div>
@@ -107,8 +107,8 @@ get_header('home');
 					<?php echo $titre; ?>
 				</h3>
 				<?php endif; ?>
-					<?php echo do_shortcode( '[grw id="7587"]' ); ?>
 					<div id="sortlist_widget">
+						<?php echo do_shortcode( '[grw id="7587"]' ); ?>
 						<a href="https://www.sortlist.fr/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
 				</div>
 				<div>

@@ -1770,19 +1770,18 @@ article:last-child {
 	h2 {
 		color: white;
 		color: white;
-		font-size: 8.5em;
+		font-size: 3.5em;
 		background: transparent;
+		text-align: center;
 		text-shadow: 2px 8px 6px rgba(0,0,0,0.2), 0px -5px 35px rgba(255,255,255,0.3);
-		
-		@media(min-width: 992px) {
-			font-size: 3.5em;
-		}
+
 	}
 }
 
 .home-services {
 	a {
 		transition: color 0.5s;
+		text-transform: capitalize;
 	}
 
 	a:hover {
