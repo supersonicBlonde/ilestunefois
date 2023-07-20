@@ -47,7 +47,7 @@ get_header('home');
 										<div class="col-12 col-sm-6 col-lg-4 col-xl-3 text-center">
 											<div class="item">
 											<?php if($service): ?>
-													<h3 class="py-2 py-md-0"><a href="/<?php echo $service->post_name; ?>"><?php echo esc_html( $service->post_title ); ?></a></h3>
+													<h3 class="py-2"><a href="/<?php echo $service->post_name; ?>"><?php echo esc_html( $service->post_title ); ?></a></h3>
 											<?php endif; ?>
 											</div>
 										</div>

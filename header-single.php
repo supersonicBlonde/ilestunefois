@@ -29,6 +29,7 @@
 		<?php endif; ?>
 	
 		<?php wp_head(); ?>
+		<meta name="google-site-verification" content="_EDB06er9X8jXLNQL31UeKi0P9va4dIR6R4ZDvUifX0" />
 	</head>
 	
 
