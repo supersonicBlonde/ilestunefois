@@ -164,7 +164,7 @@ window.addEventListener("load", function() {
 
 
 	
-	let mainMenu = document.getElementById('menu-main');
+	let mainMenu = document.querySelector('.menu-main');
 	let contactHtml = '<li class="menu-btn menu-item nav-item"><div>';
 	contactHtml += '<div><a class="nav-link contact" data-layer="clickform" id="contact"  href="mailto:contact@ilestunefois.com">CONTACT</a></div>';
 	//contactHtml += '<div><a class="nav-link" href="https://calendly.com/dbaudry" target="_blank">VISIO</a></div>';

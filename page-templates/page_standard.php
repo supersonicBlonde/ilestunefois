@@ -69,20 +69,20 @@ get_header();
 
 						<?php	
 
-							$count = count(get_row('colonne')['colonne']);
 
 							 if(have_rows('colonne')): 
-
+								
+								
 
 								while(have_rows('colonne')): the_row();	 
-
+							
 								$video = get_sub_field('video');
 								$image = get_sub_field('image');
 					            $title = get_sub_field('titre');
 					            $paragraphe = get_sub_field('paragraphe');
 					            ?>
 								
-								<div class="col-12 <?php echo $count == 2?'col-md-6':'col-xl-4'; ?> column">
+								<div class="col-12 col-xl-4 column">
 									
 									<?php if((!empty($video) && empty($image)) || (!empty($video) && !empty($image))): ?>	
 										<div class="embed-responsive embed-responsive-16by9 mh"><?php echo $video ?></div>
