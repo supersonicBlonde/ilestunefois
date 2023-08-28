@@ -11,6 +11,16 @@
 	}
 }
 
+.footer-btn {
+	margin-top: 15px;
+	a {
+		text-transform: uppercase;
+		padding: 8px;
+		color: white;
+		border: 2px solid white;
+	}
+}
+
 .nav-item:last-child {
 	display: none;
 

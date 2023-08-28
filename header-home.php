@@ -64,8 +64,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 						<div class="header-content">
 							<h1 class="size-title" style="margin-left: 0;font-size: 4em;padding:0 1em;"><?php echo __('La société de production audiovisuelle<br>qui engage votre audience' , 'ilestunefois'); ?></h1>
-							<!-- <h2 class="site-description data-scroll"><?php echo bloginfo('description');  ?><span><?php the_field('subdescription'); ?></span></h2> -->
-							<h2 class="site-description data-scroll" style="font-size: 2.5em;color: #8dab9d;"><?php echo __('Video - Motion Design - Live' , 'ilestunefois'); ?></span></h2>
+							<h2 class="site-description data-scroll" style="font-size: 2.5em;color: #8dab9d;"><?php echo __('Video - Motion Design - Live' , 'ilestunefois'); ?></h2>
 						
 						</div><!-- .header-content -->
 						

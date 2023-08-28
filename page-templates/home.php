@@ -11,6 +11,11 @@ get_header('home');
 	<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
 		<div id="cta-home">
 			<div class="container-fluid bloc-padding" id="cta-home-bg" style="background-color: #750D37;">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center">
+				<p style="font-weight:normal; color: white;font-family: Lato;line-height:1.3; margin-bottom: 30px; font-size: 1.2em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, nulla ac ultrices sagittis, eros risus commodo neque, eu tempus tellus turpis sit amet mauris. Cras et accumsan purus. Donec gravida sapien eget odio vestibulum lobortis. Nulla ut orci sed nisi posuere maximus.</p>
+				</div>
+			</div>
 				<div class="row align-items-center text-center text-xl-left">
 					<div class="col-xl-12 col-12 text-center">
 						<h3 class="white"><?php the_field('cta_home_title'); ?></h3>
