@@ -6,7 +6,7 @@
         <div class="row bloc-item-content-flex no-gutters <?php echo $image_pos; ?>">
           <div class="col-md-6 col-12 d-flex align-items-center">
             <div class="bloc-text">
-              <h2 class="pb-xl-5 pb-2"><?php the_sub_field('title') ?></h2>
+              <h2 class="pb-xl-5 pb-2 color-accent"><?php the_sub_field('title') ?></h2>
               <p><?php the_sub_field('paragraph'); ?></p>
             </div>
           </div>

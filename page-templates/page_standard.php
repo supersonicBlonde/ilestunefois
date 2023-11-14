@@ -194,6 +194,14 @@ get_header();
 		        	</div>
 		        </div>
 
+						 <?php
+						// Case: profils collaborateurs
+		        elseif( get_row_layout() == 'profils' ): 
+						?>
+						<div id="first-profiles">
+							<?php get_template_part('template-parts/content' , 'collaborateurs'); ?>		
+						</div>
+
 		       <?php endif;
 
 		    // End loop.
@@ -201,6 +209,7 @@ get_header();
 
 		endif;
 	?>
+	
 
 	<div id="share">
 		<div class="section limited">
@@ -216,6 +225,7 @@ get_header();
 			</div>
 		</div>
 	</div>
+	
 
 	<div class="section limited">
 
@@ -252,6 +262,8 @@ get_header();
 		</div>
 		
 	</div>
+
+
 	<?php if(have_rows('faq')): ?>
 			<?php get_template_part('template-parts/content' , 'faq'); ?>
 		<?php endif; ?>

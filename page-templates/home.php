@@ -11,11 +11,6 @@ get_header('home');
 	<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
 		<div id="cta-home">
 			<div class="container-fluid bloc-padding" id="cta-home-bg" style="background-color: #750D37;">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center">
-				<p style="font-weight:normal; color: white;font-family: Lato;line-height:1.3; margin-bottom: 30px; font-size: 1.2em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, nulla ac ultrices sagittis, eros risus commodo neque, eu tempus tellus turpis sit amet mauris. Cras et accumsan purus. Donec gravida sapien eget odio vestibulum lobortis. Nulla ut orci sed nisi posuere maximus.</p>
-				</div>
-			</div>
 				<div class="row align-items-center text-center text-xl-left">
 					<div class="col-xl-12 col-12 text-center">
 						<h3 class="white"><?php the_field('cta_home_title'); ?></h3>
@@ -38,31 +33,25 @@ get_header('home');
 		</div><!-- #cta-home -->
 	<?php endif; ?>
 
-	<?php if(have_rows('service_section')): 
-		 while(have_rows('service_section')): the_row(); ?>
-				<div class="services-illustr" style="background-image:url(<?php echo get_sub_field('illustration'); ?>);">
-					<h2 class="mb-5"><?php the_sub_field('title_section'); ?></h2>
-				</div>
-				<div class="home-services section py-5">
+	<?php if(have_rows('bloc_video')): 
+		 while(have_rows('bloc_video')): the_row(); ?>
+				<div class="py-5">
 					<div class="section limited">
-						<div class="container-fluid">
+						<div class="container">
 									<div class="row justify-content-center">
-									<?php while(have_rows('service_list')): the_row(); ?>
-										<?php $service = get_sub_field('service'); ?>
-										<div class="col-12 col-sm-6 col-lg-4 col-xl-3 text-center">
-											<div class="item">
-											<?php if($service): ?>
-													<h3 class="py-2"><a href="/<?php echo $service->post_name; ?>"><?php echo esc_html( $service->post_title ); ?></a></h3>
-											<?php endif; ?>
+										<div class="col-8">
+											<div class="embed-responsive embed-responsive-16by9">
+												<?php the_sub_field('video'); ?>
 											</div>
 										</div>
-										<?php endwhile; ?>
 									</div>
 						</div>	
 					</div>
 				</div>
 		<?php endwhile; ?>
 	<?php endif; ?>
+
+	<?php get_template_part('template-parts/content' , 'servicesList'); ?>
 	
 
 	<div id="slider-section" class="section">
@@ -78,10 +67,13 @@ get_header('home');
 						$full_name = get_sub_field('full_name');
 						$review = get_sub_field('review');
 						$titre = get_field('title_home_testimonials');
+						$video = get_sub_field('video');
+						$thumbnail = get_sub_field('thumbnail');
+						$videoId = get_sub_field('video_id');
 						?>
 						<div style="padding-bottom:1.5em;">
 	
-							<div class="testimonial-container">
+							<div class="testimonial-container" style="display:flex; flex-direction: column; height: 100%;">
 						
 								<?php if( !empty( $img_profil ) ): ?>    
 									<div class="testimonial-profil">
@@ -95,6 +87,13 @@ get_header('home');
 
 								<?php if( !empty( $full_name ) ): ?>    
 									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
+								<?php endif; ?>	
+
+								<?php if( !empty( $videoId ) && !empty( $thumbnail ) ): ?>    
+									<div class="video-slide" style="margin-top: auto;">
+										<img src="<?php echo $thumbnail; ?>" alt="Video Thumbnail">
+										<button class="play-button" data-video-id="<?php echo $videoId; ?>">PLAY</button>
+									</div>
 								<?php endif; ?>	
 	
 							</div><!-- .testimonial-container -->

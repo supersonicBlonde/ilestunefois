@@ -237,3 +237,20 @@
 		left:-30px;
 	}
 }
+
+.testimonial-slider {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;  
+
+    /* .slick-slide {
+        display: flex;
+        align-items: flex-end;  
+
+        .review-video {
+           position: absolute;
+           bottom:0;
+        }
+    } */
+    
+}

@@ -161,7 +161,29 @@ jQuery( document ).ready(function($) {
 
 window.addEventListener("load", function() {
 
+	 // Get all .menu-item-has-children elements
+	 let menuItems = document.querySelectorAll('.menu-item-has-children');
+	 
+	 /* menuItems.forEach(function(menuItem) {
+			let dropdown = menuItem.querySelector('.dropdown-menu');
+			if(dropdown) {
+			 // When hovering over the <a> inside .menu-item-has-children
+			 menuItem.querySelector('a').addEventListener('mouseover', function() {
+					 var dropdown = menuItem.querySelector('.dropdown-menu');
+					 if (dropdown) {
+							 dropdown.style.display = 'block';
+					 }
+			 });
 
+			 // When the mouse leaves the .menu-item-has-children container
+			 menuItem.addEventListener('mouseleave', function() {
+					 var dropdown = menuItem.querySelector('.dropdown-menu');
+					 if (dropdown) {
+							 dropdown.style.display = 'none';
+					 }
+			 });
+			}
+	 }); */
 
 	
 	let mainMenu = document.querySelector('.menu-main');
@@ -188,6 +210,19 @@ window.addEventListener("load", function() {
 	})
 
 if(jQuery('.testimonial-slider')) {
+	jQuery('.testimonial-slider').on('init', function(event, slick){
+		jQuery(this).css({
+				'opacity': '1',
+				'visibility': 'visible'
+		});
+	}); 
+
+	jQuery('.play-button').on('click', function() {
+    var videoID = jQuery(this).data('video-id');
+    var embedCode = ' <div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '?autoplay=1" frameborder="0" allowfullscreen></iframe></div>';
+    jQuery(this).parent('.video-slide').html(embedCode);
+	});
+
 	jQuery('.testimonial-slider').slick({
 	  infinite: true,
 	  slidesToShow: 1,

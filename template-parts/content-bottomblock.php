@@ -26,7 +26,7 @@
     ?>
       <div class="mt-lg-4 text-center w-100">
         <div class="read-more">
-          <a href="#" class="cta-btn"><?php echo $text_btn; ?></a>
+          <a href="mailto:contact@ilestunefois.com?subject=Demande de devis" class="cta-btn"><?php echo $text_btn; ?></a>
         </div>
       </div>
     <?php endif; ?>

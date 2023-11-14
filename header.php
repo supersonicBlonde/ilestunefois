@@ -72,6 +72,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  							?>
  							<h1 class="size-title"><?php echo $category[0]->name; ?></h1>
 							<?php endif; ?>
+
 						</div><!-- .header-content -->
 						
 						<!-- <div class="mouse"></div> --><!-- .mouse -->
