@@ -34,24 +34,27 @@ get_header('home');
 	<?php endif; ?>
 
 	<?php if(have_rows('bloc_video')): 
-		 while(have_rows('bloc_video')): the_row(); ?>
+		 while(have_rows('bloc_video')): the_row(); 
+		 $video = get_sub_field('video');
+		 	if(!empty($video)):  ?>
 				<div class="py-5">
 					<div class="section limited">
 						<div class="container">
 									<div class="row justify-content-center">
 										<div class="col-8">
 											<div class="embed-responsive embed-responsive-16by9">
-												<?php the_sub_field('video'); ?>
+												<?php echo $video; ?>
 											</div>
 										</div>
 									</div>
 						</div>	
 					</div>
 				</div>
+				<?php endif; ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
 
-	<?php get_template_part('template-parts/content' , 'servicesList'); ?>
+	<?php //get_template_part('template-parts/content' , 'servicesList'); ?>
 	
 
 	<div id="slider-section" class="section">
@@ -68,13 +71,11 @@ get_header('home');
 						$review = get_sub_field('review');
 						$titre = get_field('title_home_testimonials');
 						$video = get_sub_field('video');
-						$thumbnail = get_sub_field('thumbnail');
-						$videoId = get_sub_field('video_id');
 						?>
 						<div style="padding-bottom:1.5em;">
 	
-							<div class="testimonial-container position-relative justify-content-between" style="display:flex; flex-direction: column; height: 100%;">
-								<div>
+							<div class="testimonial-container">
+						
 								<?php if( !empty( $img_profil ) ): ?>    
 									<div class="testimonial-profil">
 										<img style="width:150px;margin:0 auto;" class="noresp circle-image" src="<?php echo esc_url($img_profil['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
@@ -88,15 +89,13 @@ get_header('home');
 								<?php if( !empty( $full_name ) ): ?>    
 									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
 								<?php endif; ?>	
-								</div>
-							
-								<?php if( !empty( $videoId ) && !empty( $thumbnail ) ): ?>  	
-								
-									<div class="video-slide position-relative" style="margin-top: auto;" data-video-id="<?php echo $videoId; ?>">
-										<img src="<?php echo $thumbnail; ?>" alt="Video Thumbnail">
-										<img class="youtube-logo" src="<?php echo get_template_directory_uri(); ?>/img/youtube-icon.svg" alt="">
-									</div>
-									
+
+								<?php if( !empty( $video ) ): ?>    
+										<div class="review-video">
+											<div class="embed-responsive embed-responsive-16by9">
+												<?php echo $video;  ?>
+											</div>
+										</div>
 								<?php endif; ?>	
 	
 							</div><!-- .testimonial-container -->

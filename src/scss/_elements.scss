@@ -1905,3 +1905,16 @@ article:last-child {
 
 	}
 }
+
+.video-slide:hover {
+	opacity:0.8;
+}
+
+.youtube-logo {
+	position: absolute;
+	top: 50%;   /* Center vertically */
+	left: 50%;  /* Center horizontally */
+	width: 100px!important; /* Width of the logo */
+	height: 70px!important; /* Height of the logo */
+	transform: translate(-50%, -50%); /* Adjust to truly center based on its own size */
+}

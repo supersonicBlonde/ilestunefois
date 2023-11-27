@@ -217,10 +217,10 @@ if(jQuery('.testimonial-slider')) {
 		});
 	}); 
 
-	jQuery('.play-button').on('click', function() {
+	jQuery('.video-slide').on('click', function() {
     var videoID = jQuery(this).data('video-id');
-    var embedCode = ' <div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '?autoplay=1" frameborder="0" allowfullscreen></iframe></div>';
-    jQuery(this).parent('.video-slide').html(embedCode);
+    var embedCode = '<div></div><div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/'+videoID+'?autoplay=1" frameborder="0" allowfullscreen></iframe></div></div>';
+    jQuery(this).replaceWith(embedCode);
 	});
 
 	jQuery('.testimonial-slider').slick({

@@ -73,10 +73,34 @@ get_header();
 							 if(have_rows('colonne')): 
 								
 								
-
+								
 								while(have_rows('colonne')): the_row();	 
-							
+								
 								$video = get_sub_field('video');
+							
+								if(!empty($video)) {
+									preg_match('/src="(.+?)"/', $video, $matches);
+									if(isset($matches[1])) {
+											$src = $matches[1];
+											// Add extra parameters to src and replace HTML.
+											$params = array(
+													'controls'  => 0,
+													'hd'        => 1,
+													'autohide'  => 1
+											);
+    								$new_src = add_query_arg($params, $src);
+
+										// Directly modifying the src attribute for lazy loading
+										$video = str_replace('src="', 'src="' . $new_src . '" loading="lazy"', $video);
+
+										// Add extra attributes to iframe HTML.
+										$attributes = 'frameborder="0"'; // Removed loading="lazy" since it's already added
+										$video = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $video);
+								}
+							} 
+								
+								
+								
 								$image = get_sub_field('image');
 					            $title = get_sub_field('titre');
 					            $paragraphe = get_sub_field('paragraphe');
@@ -202,7 +226,21 @@ get_header();
 							<?php get_template_part('template-parts/content' , 'collaborateurs'); ?>		
 						</div>
 
+						<?php elseif( get_row_layout() == 'bloc_fin_de_page' ): ?>
+
+						<div>
+							<?php get_template_part('template-parts/content' , 'bottomblock');  ?>
+						</div>
+
+						<?php elseif( get_row_layout() == 'section_logo' ): ?>
+
+						<div>
+							<?php  get_template_part('template-parts/logo' , 'section'); ?>
+						</div>
+
 		       <?php endif;
+
+					 
 
 		    // End loop.
 		    endwhile;
