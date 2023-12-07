@@ -15,7 +15,7 @@
 		<?php wp_nav_menu( array(
 		'theme_location'  => 'primary',
 		'container'       => false,
-		'menu_class'      => 'navbar-nav ml-auto menu-main',
+		'menu_class'      => 'navbar-nav ml-lg-auto menu-main',
 		'walker'          => new wp_bootstrap_navwalker(),
 		) ); ?>
 	</div>

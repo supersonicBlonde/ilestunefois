@@ -35,17 +35,9 @@ get_header('home');
 
 	<?php if(have_rows('bloc_video')): 
 		 while(have_rows('bloc_video')): the_row(); ?>
-				<div class="py-5">
-					<div class="section limited">
-						<div class="container">
-									<div class="row justify-content-center">
-										<div class="col-8">
-											<div class="embed-responsive embed-responsive-16by9">
-												<?php the_sub_field('video'); ?>
-											</div>
-										</div>
-									</div>
-						</div>	
+				<div class="py-5 video-demo">
+					<div class="embed-responsive embed-responsive-16by9">
+						<?php the_sub_field('video'); ?>
 					</div>
 				</div>
 		<?php endwhile; ?>
@@ -54,75 +46,6 @@ get_header('home');
 	<?php get_template_part('template-parts/content' , 'servicesList'); ?>
 	
 
-	<div id="slider-section" class="section">
-		<div class="flex">
-			<div class="testimonial-slider-container ">
-				<?php if(have_rows('testimonial_slider')): ?>
-	
-				<div class="testimonial-slider">
-
-				<?php while(have_rows('testimonial_slider')): the_row(); ?>
-						<?php 
-						$img_profil = get_sub_field('image_profil'); 
-						$full_name = get_sub_field('full_name');
-						$review = get_sub_field('review');
-						$titre = get_field('title_home_testimonials');
-						$video = get_sub_field('video');
-						$thumbnail = get_sub_field('thumbnail');
-						$videoId = get_sub_field('video_id');
-						?>
-						<div style="padding-bottom:1.5em;">
-	
-							<div class="testimonial-container position-relative justify-content-between" style="display:flex; flex-direction: column; height: 100%;">
-								<div>
-								<?php if( !empty( $img_profil ) ): ?>    
-									<div class="testimonial-profil">
-										<img style="width:150px;margin:0 auto;" class="noresp circle-image" src="<?php echo esc_url($img_profil['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($img_profil['alt']); ?>" />
-									</div>
-								<?php endif; ?>	
-	
-								<?php if( !empty( $review ) ): ?>    
-									<p class="testimonial-review"><?php echo $review; ?></p>
-								<?php endif; ?>	
-
-								<?php if( !empty( $full_name ) ): ?>    
-									<div class="testimonial-fullname"><?php echo $full_name; ?></div>
-								<?php endif; ?>	
-								</div>
-							
-								<?php if( !empty( $videoId ) && !empty( $thumbnail ) ): ?>  	
-								
-									<div class="video-slide position-relative" style="margin-top: auto;" data-video-id="<?php echo $videoId; ?>">
-										<img src="<?php echo $thumbnail; ?>" alt="Video Thumbnail">
-										<img class="youtube-logo" src="<?php echo get_template_directory_uri(); ?>/img/youtube-icon.svg" alt="">
-									</div>
-									
-								<?php endif; ?>	
-	
-							</div><!-- .testimonial-container -->
-	
-						</div>
-	
-					<?php endwhile; ?>
-
-				</div><!-- .testimonial-slider -->
-				<?php endif; ?>
-			</div><!-- .testimonial-slider-container -->
-			<div class="left-2 column">
-				<?php if(!empty($titre)): ?>
-				<h3>
-					<?php echo $titre; ?>
-				</h3>
-				<?php endif; ?>
-					<div id="sortlist_widget">
-						<?php echo do_shortcode( '[grw id="7587"]' ); ?>
-						<a href="https://www.sortlist.fr/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
-				</div>
-				<div>
-				</div>
-			</div><!-- .column -->
-		</div><!-- .flex -->
-	</div><!-- #slider-section --> 
 
 <?php
 $number_of_posts = wp_is_mobile()?3:-1;

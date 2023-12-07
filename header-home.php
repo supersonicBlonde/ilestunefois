@@ -44,7 +44,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						$poster = get_field('poster_header_video');
 					?>
 
-					<header class="header-container text-center background-image" id="header-container">
+					<header class="header-container background-image" id="header-container">
 						
 						<?php if(!empty(get_field('video_mp4_header_video'))): ?>
 						<video class="i-delete-this-on-mobile" poster="<?php echo $poster; ?>" id="bgvid" playsinline autoplay muted loop>

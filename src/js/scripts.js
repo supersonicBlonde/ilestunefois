@@ -161,6 +161,36 @@ jQuery( document ).ready(function($) {
 
 window.addEventListener("load", function() {
 
+	 /********************************************** */
+  /***  make menu dropdown hover work on mobile ***/
+  /************************************************/
+var dropdowns = document.querySelectorAll('.dropdown');
+if(dropdowns) {
+  dropdowns.forEach(function(element) {
+    element.addEventListener('touchstart', function(event) {
+      event.preventDefault();
+      let menu = element.querySelector('.dropdown-menu'); 
+      let els = document.querySelectorAll('.dropdown-menu');
+      els.forEach(function(element) { 
+        if(element.style.display == 'block') {
+          element.style.display = 'none';
+          element.style.opacity = 0;
+        }
+      });
+     
+     // menu.style.display = "block";
+      if (menu.style.display == 'block') {
+       
+        menu.style.display = "none";
+        menu.style.opacity = 0;
+      } else {
+        menu.style.display = "block";
+        menu.style.opacity = 1;
+      } 
+    });
+  })
+}
+
 	 // Get all .menu-item-has-children elements
 	 let menuItems = document.querySelectorAll('.menu-item-has-children');
 	 
@@ -186,12 +216,11 @@ window.addEventListener("load", function() {
 	 }); */
 
 	
-	let mainMenu = document.querySelector('.menu-main');
+	/* let mainMenu = document.querySelector('.menu-main');
 	let contactHtml = '<li class="menu-btn menu-item nav-item"><div>';
 	contactHtml += '<div><a class="nav-link contact" data-layer="clickform" id="contact"  href="mailto:contact@ilestunefois.com">DEMANDER UN DEVIS</a></div>';
-	//contactHtml += '<div><a class="nav-link" href="https://calendly.com/dbaudry" target="_blank">VISIO</a></div>';
 	contactHtml += "</div></li>";
-	mainMenu.insertAdjacentHTML('beforeend', contactHtml);
+	mainMenu.insertAdjacentHTML('beforeend', contactHtml);   */
 
 	let toggler = document.querySelector('.navbar-toggler');
 	let collapse = document.getElementById('navbarNav');
@@ -207,7 +236,7 @@ window.addEventListener("load", function() {
 			document.getElementById('header-container').classList.add('open');
 			navbarAnimate(collapse);
 		}
-	})
+	}) 
 
 if(jQuery('.testimonial-slider')) {
 	jQuery('.testimonial-slider').on('init', function(event, slick){

@@ -38,8 +38,8 @@ var styleURL     = './dist/css/';
 var mapURL       = './';
 
 var jsSRC        = './src/js/';
-var jsAdmin		 = 'scripts.js';
-var jsConnect      = 'connect.js';
+var jsAdmin		   = 'scripts.js';
+var jsConnect    = 'connect.js';
 /*var jsSlider     = 'slider.js';
 var jsAuth       = 'auth.js';*/
 var jsFiles      = [  jsAdmin, jsConnect];

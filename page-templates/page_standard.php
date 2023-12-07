@@ -84,9 +84,9 @@ get_header();
 											$src = $matches[1];
 											// Add extra parameters to src and replace HTML.
 											$params = array(
-													'controls'  => 0,
-													'hd'        => 1,
-													'autohide'  => 1
+													'controls'  => 1,
+													'hd'        => 1
+													
 											);
     								$new_src = add_query_arg($params, $src);
 

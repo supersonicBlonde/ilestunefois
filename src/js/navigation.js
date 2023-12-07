@@ -4,8 +4,9 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
+
 ( function() {
-	var container, button, menu, links, i, len;
+	var container, button, menu, links, i, len; 
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {

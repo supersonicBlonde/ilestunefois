@@ -1,7 +1,6 @@
 <?php
-$titre = get_sub_field('title_home_logos_clients');
-$paragraphe = get_sub_field('p_home_logos_clients');	
-$my_fields = get_sub_field_object('logos_clients');
+		$titre = get_field('title_home_logos_clients', 9);
+		$paragraphe = get_field('p_home_logos_clients', 9);
 ?>
 <div id="logo-section" class="section limited mb-5">
 	<div class="container-fluid">
@@ -10,13 +9,13 @@ $my_fields = get_sub_field_object('logos_clients');
 				<div class="col-xl-6 col-12 column">
 						<div id="slider-logo-container">
               
-						<?php if(have_rows('logos_clients')): ?>
+						<?php if(have_rows('logos_clients', 9)): ?>
 							<?php 
-							
-						   	$totalItem = (count($my_fields['value'])); 
+								$my_fields = get_field_object('logos_clients', 9);
+						   		$totalItem = (count($my_fields['value'])); 
 								$totalItemPerLine = 8;
 
-								while(have_rows('logos_clients')):the_row(); 
+								while(have_rows('logos_clients', 9)):the_row(); 
 									$img_logo = get_sub_field('image_logo'); 
 									$logos_ar[] = $img_logo;
 									$html = $html_desk = "";

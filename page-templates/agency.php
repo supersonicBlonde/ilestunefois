@@ -76,7 +76,7 @@ get_header();
 		</div>
 		<?php endif; ?>
 
-		<?php  get_template_part('template-parts/logo' , 'section'); ?>
+		<?php  get_template_part('template-parts/logo' , 'sectionhome'); ?>
 
 		<?php get_template_part('template-parts/content' , 'bottomblock') ?>
 
