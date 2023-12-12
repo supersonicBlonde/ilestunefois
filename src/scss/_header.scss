@@ -170,12 +170,12 @@
 	}
 
 	ul {
-		text-align:center;
+		/* text-align:center; */ 
 
 
 		@media (min-width:992px) {
 			text-align:left;
-		}
+		} 
 	}
 
 

@@ -164,32 +164,39 @@ window.addEventListener("load", function() {
 	 /********************************************** */
   /***  make menu dropdown hover work on mobile ***/
   /************************************************/
-var dropdowns = document.querySelectorAll('.dropdown');
-if(dropdowns) {
-  dropdowns.forEach(function(element) {
-    element.addEventListener('touchstart', function(event) {
-      event.preventDefault();
-      let menu = element.querySelector('.dropdown-menu'); 
-      let els = document.querySelectorAll('.dropdown-menu');
-      els.forEach(function(element) { 
-        if(element.style.display == 'block') {
-          element.style.display = 'none';
-          element.style.opacity = 0;
+	document.querySelectorAll('.dropdown').forEach(function(dropdown) {
+		
+    dropdown.addEventListener('touchstart', function(event) {
+        // Check if the clicked element is a link in a nested dropdown
+        if(event.target.matches('.dropdown .dropdown .dropdown-menu a')) {
+            // Do nothing, let the default link behavior occur
+           console.log('ok');
+					 return;
         }
-      });
-     
-     // menu.style.display = "block";
-      if (menu.style.display == 'block') {
-       
-        menu.style.display = "none";
-        menu.style.opacity = 0;
-      } else {
-        menu.style.display = "block";
-        menu.style.opacity = 1;
-      } 
-    });
-  })
-}
+
+        // Prevent the event from propagating up to parent elements
+        event.stopPropagation();
+
+        // Find the direct child .dropdown-menu of the clicked .dropdown
+        var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+        
+        // Toggle display of the dropdownMenu
+        toggleDisplay(dropdownMenu);
+		})
+	});
+
+		 function toggleDisplay(element) {
+			if (!element) return; // Check if the element exists
+	
+			if (element.style.display === "none" || element.style.display === "") {
+					element.style.display = "block";
+					element.style.opacity = 1;
+			} else {
+					element.style.display = "none";
+					element.style.opacity = 0;
+			}
+	}
+
 
 	 // Get all .menu-item-has-children elements
 	 let menuItems = document.querySelectorAll('.menu-item-has-children');

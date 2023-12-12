@@ -21,15 +21,27 @@
 	}
 }
 
-
-
-/* .nav-item:last-child {
-	display: none;
-
-	@media (min-width: 992px) {
-		display: flex;
+@media(max-width: 992px) {
+	#navbarNav {
+		padding: 1.5em;
+		
+		> ul  li {
+			margin:10px 0;
+			a {
+				font-size: 14px,
+			}
+		}
+		.mega-menu {
+ 			.dropdown-menu {
+				li {
+					margin: 5px;
+					padding: 0
+				}
+			} 
+		}
 	}
-} */
+}
+
 
 .navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .active>.nav-link {
 	transition: color 0.5s;
@@ -65,9 +77,9 @@
 	color: white;
 }
 
-.home .sub-logo {
+/* .home .sub-logo {
 	margin-left: -17px;
-}
+} */ 
 
 .page-template-services {
 	.navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .active>.nav-link {
@@ -212,19 +224,19 @@
 	
 	&.show {
 		transition: all 1s;
-	/* 	height: 80vh; */
-		display: flex; 
+	/* 	height: 80vh; 
+		display: flex; */
 
 		ul {
 			/* margin-right: auto; */
 
 			li {
 
-				margin: 1em 0;
+			/* 	margin: 1em 0; */
 
-				a {
+				/* a {
 					font-size: 2em;
-				}
+				} */
 			}
 		}
 	}
@@ -240,7 +252,7 @@
 
 .navbar {
 	padding: 0;
-	z-index: 1;
+	z-index: 1; 
 	background: white;
 	flex-direction: row-reverse; 
 	/* position: fixed;
@@ -343,6 +355,19 @@
 	padding: initial !important;
 }
 
+.menu-item-has-children > a:after {
+	content: "\f0d7";
+	font-size: 14px;
+	margin-left: 5px;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	color: $color__primary;
+	display: inline-block;
+}
+
+.mega-menu .dropdown-menu .menu-item-has-children > a:after {
+	content: none;
+}
 
 .dropdown-menu {
 	background: white!important;
@@ -353,8 +378,10 @@
 	li {
 		line-height: 1.2;
 	}
-	.nav-item {
-		padding: 5px 15px;
+	@media(min-width: 992px) {
+		.nav-item {
+			padding: 5px 15px;
+		}
 	}
 }
 
@@ -375,7 +402,8 @@
 		transition: opacity .3s;
 		
 		.dropdown-menu {
-			display: block;
+			display: none;
+			opacity: 0;
 			position: relative;
 			top: 0;
 
@@ -398,24 +426,29 @@
 
 
 
-.dropdown:not(.mega-menu) {
-	&:hover { 
-	  .dropdown-menu {
+@media(min-width: 992px) {
+	.dropdown:not(.mega-menu) {
+		&:hover { 
+			.dropdown-menu {
+				opacity: 1!important;
+				display:block;
+			
+			}
+		 }
+	} 
+
+	.mega-menu:hover {
+		> .dropdown-menu {
 			opacity: 1!important;
-			display:block;
+			display: block;
+			@media(min-width: 992px) {
+					display:flex!important;
+			}
 		
-		}
- 	}
-} 
-
-.mega-menu:hover {
-	> .dropdown-menu {
-		opacity: 1!important;
-		display:flex!important;
-		
-
-		.dropdown-menu {
-			opacity: 1;
+			.dropdown-menu {
+				display: block;
+				opacity: 1;
+			}
 		}
 	}
 }
