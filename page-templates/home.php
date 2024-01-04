@@ -8,7 +8,6 @@
 get_header('home');
 ?>
 <div class="home-content page-content">
-	<?php if(!empty(get_field('cta_home_link')) && !empty(get_field('cta_home_button_text'))): ?>
 		<div id="cta-home">
 			<div class="container-fluid bloc-padding" id="cta-home-bg" style="background-color: #750D37;">
 				<div class="row align-items-center text-center text-xl-left">
@@ -22,26 +21,47 @@ get_header('home');
 						<?php get_template_part('template-parts/slider' , 'logo'); ?>
 					</div>
 				</div>
-				<div class="row">
+				<?php // if(!empty(get_field('cta_home_button_text'))): ?>
+			<!-- 	<div class="row">
 					<div class="col-12 text-center link">
 						<div class="cta read-more">
 							<a href="mailto:contact@ilestunefois.com" class="cta-btn"><?php the_field('cta_home_button_text'); ?></a>
 						</div>
 					</div>
-				</div>
+				</div> -->
+				<?php // endif; ?>
 			</div><!-- .container-fluid -->
 		</div><!-- #cta-home -->
-	<?php endif; ?>
 
-	<?php if(have_rows('bloc_video')): 
-		 while(have_rows('bloc_video')): the_row(); ?>
-				<div class="py-5 video-demo">
+	<?php if(have_rows('bloc_video')): ?>
+		<?php while(have_rows('bloc_video')): the_row(); ?>
+		<div class="container-fluid" id="bloc_video">
+	
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-7">
+				<div class="video-demo">
 					<div class="embed-responsive embed-responsive-16by9">
 						<?php the_sub_field('video'); ?>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>	
+	<?php if(!empty(get_sub_field('texte_cta')) && !empty(get_sub_field('lien_cta'))): ?>
+		<div class="container-fluid py-3 mt-3" style="background-color: #750D37;">
+			<div class="row align-items-center text-center text-xl-left">
+				<div class="col-xl-12 col-12 text-center">
+					<div class="cta read-more my-0">
+						<a href="<?php the_sub_field('lien_cta'); ?>"><?php the_sub_field('texte_cta'); ?></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php endif; ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
+
+	<?php get_template_part('template-parts/content' , 'agencyList'); ?>
 
 	<?php get_template_part('template-parts/content' , 'servicesList'); ?>
 	
