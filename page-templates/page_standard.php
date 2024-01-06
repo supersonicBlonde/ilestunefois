@@ -30,7 +30,7 @@ get_header();
 
 		        ?>
 				
-				<div id="image_text_alignment_vertical" class="section limitedext module">
+				<div id="image_text_alignment_vertical" class="section limitedext">
 
 					<div class="container-fluid">
 						
@@ -61,7 +61,7 @@ get_header();
 
 		        ?>
 		            
-				<div class="three_col_element section limited module">
+				<div class="three_col_element section limited">
 
 					<div class="container-fluid">
 
@@ -77,9 +77,8 @@ get_header();
 								while(have_rows('colonne')): the_row();	 
 								
 								$video = get_sub_field('video');
-							
-								if(!empty($video)) {
-									preg_match('/src="(.+?)"/', $video, $matches);
+								if(!empty($video)):
+								preg_match('/src="(.+?)"/', $video, $matches);
 									if(isset($matches[1])) {
 											$src = $matches[1];
 											// Add extra parameters to src and replace HTML.
@@ -97,7 +96,7 @@ get_header();
 										$attributes = 'frameborder="0"'; // Removed loading="lazy" since it's already added
 										$video = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $video);
 								}
-							} 
+							
 								
 								
 								
@@ -106,10 +105,10 @@ get_header();
 					            $paragraphe = get_sub_field('paragraphe');
 					            ?>
 								
-								<div class="col-12 col-xl-4 column">
+								<div class="col-12 col-lg column">
 									
 									<?php if((!empty($video) && empty($image)) || (!empty($video) && !empty($image))): ?>	
-										<div class="embed-responsive embed-responsive-16by9 mh"><?php echo $video ?></div>
+								<div class="embed-responsive embed-responsive-16by9 mh" style="max-width:640px;margin:0 auto;"><?php echo $video ?></div>
 									<?php elseif(empty($video) && !empty($image)): ?>
 										<div style="text-align:center;"><img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
 									<?php endif; ?>
@@ -123,6 +122,7 @@ get_header();
 								 	</div>
 
 								</div>
+								<?php endif; ?>
 
 							<?php endwhile; endif; ?>
 
@@ -171,7 +171,7 @@ get_header();
 		        	$paragraphe = get_sub_field('texte');
 		        ?>
 
-		        <div id="bloc_texte_simple" class="section limitedext module">
+		        <div id="bloc_texte_simple" class="section limitedext">
 
 		        	<div class="container-fluid">
 		        		<div class="row">

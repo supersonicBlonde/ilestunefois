@@ -48,10 +48,10 @@ get_header('home');
 		</div>
 	</div>	
 	<?php if(!empty(get_sub_field('texte_cta')) && !empty(get_sub_field('lien_cta'))): ?>
-		<div class="container-fluid py-3 mt-3" style="background-color: #750D37;">
+		<div class="container-fluid py-3 mt-lg-n5" style="background-color: #750D37;">
 			<div class="row align-items-center text-center text-xl-left">
 				<div class="col-xl-12 col-12 text-center">
-					<div class="cta read-more my-0">
+					<div class="cta read-more my-0 pt-lg-5">
 						<a href="<?php the_sub_field('lien_cta'); ?>"><?php the_sub_field('texte_cta'); ?></a>
 					</div>
 				</div>
