@@ -1,7 +1,8 @@
 <?php wp_reset_postdata(); ?>
-<?php if(have_rows('agence_liste')): 
-		 while(have_rows('agence_liste')): the_row(); ?>
-			<div class="container my-5" id="agences-home">
+<?php if(have_rows('agence_liste')): ?>
+  <div class="section limited" id="agences-home">
+	<?php	 while(have_rows('agence_liste')): the_row(); ?>
+     <div class="container-fluid my-5" >
 				<div class="row">
 					<div class="col-12 text-center">
 						<h3><?php the_sub_field('titre') ?></h3>
@@ -32,5 +33,5 @@
         <?php endif; ?>  
     </div>
 		<?php endwhile; ?>
-   
+   </div>
 	<?php endif; ?>

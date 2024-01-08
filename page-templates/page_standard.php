@@ -73,7 +73,6 @@ get_header();
 							 if(have_rows('colonne')): 
 								
 								
-								
 								while(have_rows('colonne')): the_row();	 
 								
 								$video = get_sub_field('video');
