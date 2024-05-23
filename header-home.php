@@ -63,7 +63,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<?php get_template_part( 'template-parts/nav', 'navbar' ); ?>
 
 						<div class="header-content text-center">
-							<h1 class="size-title" style="margin-left: 0;font-size: 4em;padding:0 1em;"><?php echo __('L’agence video qui engage votre audience' , 'ilestunefois'); ?></h1>
+							<h1 class="size-title" style="margin-left: 0;font-size: 4em;padding:0 1em;"><?php echo __('L’agence qui engage votre audience' , 'ilestunefois'); ?></h1>
 							<h2 class="site-description data-scroll" style="font-size: 2.5em;color: #8dab9d;"><?php echo __('Video - Motion Design - Live' , 'ilestunefois'); ?></h2>
 							<?php if(!empty(get_field('subdescription'))): ?>
 								<div class="sous-description mt-3">
