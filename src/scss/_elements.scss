@@ -952,7 +952,11 @@ article:last-child {
 		}
 
 		.job {
-			font-size: 1em;
+			font-size: 1.5em;
+
+			@media(min-width:1200px) {
+				font-size: 1em;
+			}
 		}
 	}
 

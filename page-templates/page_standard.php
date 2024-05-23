@@ -197,20 +197,20 @@ get_header();
 		        <div class="module-testimonial standard section limitedext module">
 		        	<div class="container-fluid">
 		        		<div class="row">
-		        			<div class="col-xl-3 col-lg-4 col-12 column">
+		        			<div class="col-xl-3  col-12 column">
 								<?php if(!empty($image)): ?>
-									<div class="d-flex d-md-block align-items-center justify-content-around">
+									<div class="d-flex d-xl-block align-items-center justify-content-around">
 										<div class="image">
 											<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="rounded-circle">
 										</div>
-										<div>
+										<div >
 											<div class="name"><?php echo $full_name; ?></div>
-											<div class="job"><?php echo $job ?></div>
+											<div class="job mx-5 mx-xl-0"><?php echo $job ?></div>
 										</div>
 									</div>
 								<?php endif; ?>
 		        			</div>
-		        			<div class="col-xl-9 col-lg-8 col-12 column pt-0">
+		        			<div class="col-xl-9 col-12 column pt-0 ">
 		        				<div class="quotes">
 		        					<p>"</p>
 		        					<p>"</p>

@@ -934,11 +934,14 @@
 
 .module-testimonial.standard {
 	.image {
-		width: 50%;
-
-		@media(min-width: 520px) {
-			width: 25%;
+		flex-shrink: 1;
+		@media(min-width: 1200px) {
+			width:75%;
+			margin: 0 auto;
+			text-align:center;
+			margin-bottom: 1em;
 		}
 	}
+
 }
 
