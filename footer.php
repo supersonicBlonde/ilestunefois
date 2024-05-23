@@ -37,7 +37,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="section limitedext">
+				<div class="section limitedext mt-3">
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-12">

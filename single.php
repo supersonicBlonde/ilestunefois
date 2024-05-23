@@ -93,6 +93,7 @@ get_header();
 		</div><!-- .container-fluid -->
 	</div><!-- .section -->
 
+	
 	<?php if(have_rows('related_posts')): ?>
 		<div id="related-posts">
 			<div class="bg-bottom"></div>
@@ -162,7 +163,6 @@ get_header();
 	</div><!-- #related-posts -->
 	<?php endif; ?>
 	<?php endif; ?>
-
 
 
 </div><!-- .page-content -->

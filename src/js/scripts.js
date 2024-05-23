@@ -159,7 +159,26 @@ jQuery( document ).ready(function($) {
 
 
 
-window.addEventListener("load", function() {
+document.addEventListener("DOMContentLoaded", function() {
+
+	function initializeSlick() {
+		if (window.innerWidth <= 768) {
+			jQuery('#slider-projects').not('.slick-initialized').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				dots: true,
+				arrows: false,
+				autoplay: true,
+				autoplaySpeed: 2000,
+			});
+		} else if (jQuery('#slider-projects').hasClass('slick-initialized')) {
+			jQuery('#slider-projects').slick('unslick');
+		}
+	}
+	if(document.getElementById('#slider-projects')) {
+		initializeSlick();
+		window.addEventListener('resize', initializeSlick);
+	}
 
 	 /********************************************** */
   /***  make menu dropdown hover work on mobile ***/

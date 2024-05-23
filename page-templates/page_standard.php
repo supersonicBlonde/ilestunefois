@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<?php $marginTop = !get_field('show_sub_header_block')?'':'mt-0' ?>
+<?php $marginTop = !get_field('show_sub_header_block') ? '' : 'mt-0' ?>
 <div class="page-standard-content page-content <?php echo $marginTop; ?>">
 
 	<?php get_template_part('template-parts/content-subheader'); ?>
@@ -15,20 +15,20 @@ get_header();
 
 	<?php
 
-		if( have_rows('standard_layout') ):
+        if(have_rows('standard_layout')):
 
-		    // Loop through rows.
-		    while ( have_rows('standard_layout') ) : the_row();
+            // Loop through rows.
+            while (have_rows('standard_layout')) : the_row();
 
-		        // Case: Image text alignment vertical
-		        if( get_row_layout() == 'image_text_alignment_vertical' ):
-		            $bg = get_sub_field('image');
-		            $video = get_sub_field('video');
-		            $title = get_sub_field('title');
-		            $link = empty(get_sub_field('link'))?"#":get_sub_field('link');
-		            $paragraphe = get_sub_field('paragraphe');
+                // Case: Image text alignment vertical
+                if(get_row_layout() == 'image_text_alignment_vertical'):
+                    $bg = get_sub_field('image');
+                    $video = get_sub_field('video');
+                    $title = get_sub_field('title');
+                    $link = empty(get_sub_field('link')) ? "#" : get_sub_field('link');
+                    $paragraphe = get_sub_field('paragraphe');
 
-		        ?>
+                    ?>
 				
 				<div id="image_text_alignment_vertical" class="section limitedext">
 
@@ -53,13 +53,13 @@ get_header();
 				</div>
 
 		        
-		        <?php 
+		        <?php
 
 
-		        // Case: 3 colonnes
-		        elseif( get_row_layout() == 'three_col_element' ): 
+                    // Case: 3 colonnes
+                elseif(get_row_layout() == 'three_col_element'):
 
-		        ?>
+                    ?>
 		            
 				<div class="three_col_element section limited">
 
@@ -67,42 +67,42 @@ get_header();
 
 						<div class="row">
 
-						<?php	
+						<?php
 
 
-							 if(have_rows('colonne')): 
-								
-								
-								while(have_rows('colonne')): the_row();	 
-								
-								$video = get_sub_field('video');
-								if(!empty($video)):
-								preg_match('/src="(.+?)"/', $video, $matches);
-									if(isset($matches[1])) {
-											$src = $matches[1];
-											// Add extra parameters to src and replace HTML.
-											$params = array(
-													'controls'  => 1,
-													'hd'        => 1
-													
-											);
-    								$new_src = add_query_arg($params, $src);
+                                 if(have_rows('colonne')):
 
-										// Directly modifying the src attribute for lazy loading
-										$video = str_replace('src="', 'src="' . $new_src . '" loading="lazy"', $video);
 
-										// Add extra attributes to iframe HTML.
-										$attributes = 'frameborder="0"'; // Removed loading="lazy" since it's already added
-										$video = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $video);
-								}
-							
-								
-								
-								
-								$image = get_sub_field('image');
-					            $title = get_sub_field('titre');
-					            $paragraphe = get_sub_field('paragraphe');
-					            ?>
+                                     while(have_rows('colonne')): the_row();
+
+                                         $video = get_sub_field('video');
+                                         if(!empty($video)):
+                                             preg_match('/src="(.+?)"/', $video, $matches);
+                                             if(isset($matches[1])) {
+                                                 $src = $matches[1];
+                                                 // Add extra parameters to src and replace HTML.
+                                                 $params = array(
+                                                         'controls'  => 1,
+                                                         'hd'        => 1
+
+                                                 );
+                                                 $new_src = add_query_arg($params, $src);
+
+                                                 // Directly modifying the src attribute for lazy loading
+                                                 $video = str_replace('src="', 'src="' . $new_src . '" loading="lazy"', $video);
+
+                                                 // Add extra attributes to iframe HTML.
+                                                 $attributes = 'frameborder="0"'; // Removed loading="lazy" since it's already added
+                                                 $video = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $video);
+                                             }
+
+
+
+                                         endif;
+                                         $image = get_sub_field('image');
+                                         $title = get_sub_field('titre');
+                                         $paragraphe = get_sub_field('paragraphe');
+                                         ?>
 								
 								<div class="col-12 col-lg column">
 									
@@ -121,7 +121,7 @@ get_header();
 								 	</div>
 
 								</div>
-								<?php endif; ?>
+							
 
 							<?php endwhile; endif; ?>
 
@@ -131,13 +131,13 @@ get_header();
 				</div>
 
 				<?php
-				// Case: 3 colonnes
-		        elseif( get_row_layout() == 'call_to_action' ): 
-		        	$title = get_sub_field('titre');
-		        	$paragraphe = get_sub_field('paragraphe');
-		        	$link = get_sub_field('lien');
-		        	$text_btn = get_sub_field('text_btn');
-		        ?>
+                // Case: 3 colonnes
+                elseif(get_row_layout() == 'call_to_action'):
+                    $title = get_sub_field('titre');
+                    $paragraphe = get_sub_field('paragraphe');
+                    $link = get_sub_field('lien');
+                    $text_btn = get_sub_field('text_btn');
+                    ?>
 		            
 				<div id="call_to_action" class="section limitedext module">
 
@@ -164,11 +164,11 @@ get_header();
 				</div>
 
 				<?php
-				// Case: 3 colonnes
-		        elseif( get_row_layout() == 'bloc_texte_simple' ): 
-		        	
-		        	$paragraphe = get_sub_field('texte');
-		        ?>
+                    // Case: 3 colonnes
+                    elseif(get_row_layout() == 'bloc_texte_simple'):
+
+                        $paragraphe = get_sub_field('texte');
+                        ?>
 
 		        <div id="bloc_texte_simple" class="section limitedext">
 
@@ -183,30 +183,34 @@ get_header();
 		        </div>
 
 		        <?php
-				// Case: 3 colonnes
-		        elseif( get_row_layout() == 'testimonial' ): 
-		        	
-		        	$image = get_sub_field('image');
-		        	
-		        	$full_name = get_sub_field('full_name');
-		        	$job = get_sub_field('job');
-		        	$paragraphe = get_sub_field('paragraphe');
-		        ?>
+                        // Case: 3 colonnes
+                    elseif(get_row_layout() == 'testimonial'):
+
+                        $image = get_sub_field('image');
+
+                        $full_name = get_sub_field('full_name');
+                        $job = get_sub_field('job');
+                        $paragraphe = get_sub_field('paragraphe');
+                        ?>
 
 
-		        <div class="module-testimonial section limitedext module">
+		        <div class="module-testimonial standard section limitedext module">
 		        	<div class="container-fluid">
 		        		<div class="row">
 		        			<div class="col-xl-3 col-lg-4 col-12 column">
 								<?php if(!empty($image)): ?>
-									<div class="image">
-										<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="rounded-circle">
+									<div class="d-flex d-md-block align-items-center justify-content-around">
+										<div class="image">
+											<img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" class="rounded-circle">
+										</div>
+										<div>
+											<div class="name"><?php echo $full_name; ?></div>
+											<div class="job"><?php echo $job ?></div>
+										</div>
 									</div>
-									<div class="name"><?php echo $full_name; ?></div>
-									<div class="job"><?php echo $job ?></div>
 								<?php endif; ?>
 		        			</div>
-		        			<div class="col-xl-9 col-lg-8 col-12 column">
+		        			<div class="col-xl-9 col-lg-8 col-12 column pt-0">
 		        				<div class="quotes">
 		        					<p>"</p>
 		        					<p>"</p>
@@ -218,34 +222,50 @@ get_header();
 		        </div>
 
 						 <?php
-						// Case: profils collaborateurs
-		        elseif( get_row_layout() == 'profils' ): 
-						?>
+                                // Case: profils collaborateurs
+                        elseif(get_row_layout() == 'profils'):
+                            ?>
 						<div id="first-profiles">
-							<?php get_template_part('template-parts/content' , 'collaborateurs'); ?>		
+							<?php get_template_part('template-parts/content', 'collaborateurs'); ?>		
 						</div>
 
-						<?php elseif( get_row_layout() == 'bloc_fin_de_page' ): ?>
+						<?php elseif(get_row_layout() == 'bloc_fin_de_page'): ?>
 
 						<div>
-							<?php get_template_part('template-parts/content' , 'bottomblock');  ?>
+							<?php get_template_part('template-parts/content', 'bottomblock');  ?>
 						</div>
 
-						<?php elseif( get_row_layout() == 'section_logo' ): ?>
+						<?php elseif(get_row_layout() == 'section_logo'): ?>
 
 						<div>
-							<?php  get_template_part('template-parts/logo' , 'section'); ?>
+							<?php  get_template_part('template-parts/logo', 'section'); ?>
 						</div>
 
-		       <?php endif;
+		       <?php
 
-					 
+						elseif(get_row_layout() == 'module_video_centered'): ?>
 
-		    // End loop.
-		    endwhile;
+						<div class="container-fluid my-5">
+							<div class="row justify-content-center">
+								<div class="col-12 col-lg-7">
+									<div class="video-demo">
+										<div class="embed-responsive embed-responsive-16by9">
+											<?php the_sub_field('video'); ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					<?php endif;
 
-		endif;
-	?>
+
+
+                // End loop.
+            endwhile;
+
+endif;
+?>
 	
 
 	<div id="share">
@@ -254,7 +274,7 @@ get_header();
 					<div class="row">
 						<div class="col-12">
 							<div class="share-container">
-								<div class="share"><?php echo __('Share' , 'ilestunefois'); ?></div>
+								<div class="share"><?php echo __('Share', 'ilestunefois'); ?></div>
 								<?php get_template_part('template-parts/template', 'sharing-box'); ?>
 							</div><!-- .share-container -->
 						</div><!-- .column -->
@@ -274,23 +294,23 @@ get_header();
 
 						<?php
 
-							/* Start the Loop */
-							while ( have_posts() ) :
-								the_post(); ?>
+                        /* Start the Loop */
+                        while (have_posts()) :
+                            the_post(); ?>
 
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="margin-bottom: 1em;">
 					
 									<div class="entry-content">
 										<?php
-										the_content();
-										?>
+                                    the_content();
+                            ?>
 									</div><!-- .entry-content -->
 
 								</article><!-- #post-<?php the_ID(); ?> -->
 
 
 							<?php endwhile; // End of the loop.
-							?>
+?>
 
 				</div>
 				
@@ -302,7 +322,7 @@ get_header();
 
 
 	<?php if(have_rows('faq')): ?>
-			<?php get_template_part('template-parts/content' , 'faq'); ?>
+			<?php get_template_part('template-parts/content', 'faq'); ?>
 		<?php endif; ?>
 
 

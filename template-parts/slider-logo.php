@@ -38,5 +38,10 @@ if(have_rows('logos')):
       <?php	endforeach; ?>
     </div>
   </div>
+<!--   <div>
+  <div id="sortlist_widget">
+					<a href="https://www.sortlist.fr/en/agency/david-baudry?ref=review-widget-1" title="Accueil" target="_blank"><img  src="https://www.sortlist.com/widget/david-baudry/review?ref=review-widget-1" alt="Click here to view the agency's profile on Sortlist" /></a>
+				</div>
+  </div> -->
 </div>
 <?php endif; ?>
