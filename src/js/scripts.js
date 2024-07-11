@@ -156,13 +156,27 @@ jQuery( document ).ready(function($) {
   // Handler for .ready() called.
   $('.mh').matchHeight(); 
 });
-
+ 
 
 
 document.addEventListener("DOMContentLoaded", function() {
 
+	faq = document.getElementById('accordion-faq');
+	console.log(faq); 
+
+	if(faq) { 
+	document.querySelectorAll('.tab-label').forEach(label => {
+		label.addEventListener('click', function() {
+		  const input = document.getElementById(this.getAttribute('for'));
+		  if (input) {
+			input.checked = true;
+		  }
+		});
+	  });
+	}
+
 	function initializeSlick() {
-		if (window.innerWidth <= 768) {
+		if (window.innerWidth <= 768) { 
 			jQuery('#slider-projects').not('.slick-initialized').slick({
 				slidesToShow: 1,
 				slidesToScroll: 1,

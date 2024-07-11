@@ -15,7 +15,7 @@
                   <?php $count = 0; while(have_rows('faq')): the_row(); ?>
                   <div class="tab">
                     <input type="radio" id="rd<?php echo $count; ?>" name="rd">
-                    <label class="tab-label" for="rd<?php echo $count; ?>"><?php the_sub_field('question'); ?></label>
+                    <h3 class="tab-label" for="rd<?php echo $count; ?>"><?php the_sub_field('question'); ?></h3>
                     <div class="tab-content">
                       <?php the_sub_field('reponse'); ?>
                     </div>

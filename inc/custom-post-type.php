@@ -217,3 +217,30 @@ function ilestunefois_current_project() {
 	register_post_type( 'project', $args );
 	
 }
+
+// TESTIMONIALS
+add_action( 'init', 'ilestunefois_testimonials' );
+
+function ilestunefois_testimonials() {
+	$labels = array(
+		'name' 				=> 'Testimonials',
+		'singular_name' 	=> 'Testimonial',
+		'menu_name'			=> 'Testimonials',
+		'name_admin_bar'	=> 'Testimonial'
+	);
+	
+	$args = array(
+		'labels'			=> $labels,
+		'show_ui'			=> true,
+		'show_in_menu'		=> true,
+		'capability_type'	=> 'post',
+		'hierarchical'		=> true,
+		'has_archive'		=> true,
+		'menu_position'		=> 10,
+		'menu_icon'			=> 'dashicons-testimonial',
+		'supports'			=> array( 'title', 'thumbnail' )
+	);
+	
+	register_post_type( 'testimonial', $args );
+	
+}

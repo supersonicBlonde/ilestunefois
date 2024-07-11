@@ -1820,11 +1820,16 @@ article:last-child {
 			justify-content: space-between;
 			padding: 1em;
 			background: $color__primary;
+			color:white;
+			font-size:16px;
 			font-weight: bold;
+			line-height: inherit;
+			margin-bottom: 8px;
 			cursor: pointer;
 			/* Icon */
 			&:hover {
 				background: $color__secondary;
+				color:white;
 			}
 			&::after {
 				content: "\276F";

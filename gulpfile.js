@@ -1,63 +1,48 @@
-// Load Gulp...of course
 const { src, dest, task, watch, series, parallel } = require('gulp');
 
 // CSS related plugins
-var sass         = require( 'gulp-sass' );
-var autoprefixer = require( 'gulp-autoprefixer' );
-var minifycss    = require( 'gulp-uglifycss' );
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const cleanCSS = require('gulp-clean-css');
 
 // JS related plugins
-var concat       = require( 'gulp-concat' );
-var uglify       = require( 'gulp-uglify' );
-var babelify     = require( 'babelify' );
-var browserify   = require( 'browserify' );
-var source       = require( 'vinyl-source-stream' );
-var buffer       = require( 'vinyl-buffer' );
-var stripDebug   = require( 'gulp-strip-debug' );
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const babelify = require('babelify');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const stripDebug = require('gulp-strip-debug');
 
 // Utility plugins
-var rename       = require( 'gulp-rename' );
-var sourcemaps   = require( 'gulp-sourcemaps' );
-var notify       = require( 'gulp-notify' );
-var plumber      = require( 'gulp-plumber' );
-var options      = require( 'gulp-options' );
-var gulpif       = require( 'gulp-if' );
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
+const options = require('gulp-options');
+const gulpif = require('gulp-if');
 
-// Browers related plugins
-var browserSync  = require( 'browser-sync' ).create();
-var reload       = browserSync.reload;
+// Browser related plugins
+const browserSync = require('browser-sync').create();
 
 // Project related variables
-var projectURL   = 'http://ilestunefois.localhost';
+const projectURL = 'http://ilestunefois.localhost';
 
-var styleSRC     = './src/scss/styles.scss';
-/*var styleForm     = './src/scss/form.scss';
-var styleSlider     = './src/scss/slider.scss';
-var styleAuth       = './src/scss/auth.scss';*/
-var styleURL     = './dist/css/';
-var mapURL       = './';
+const styleSRC = './src/scss/styles.scss';
+const styleURL = './dist/css/';
+const mapURL = './';
 
-var jsSRC        = './src/js/';
-var jsAdmin		 = 'scripts.js';
-var jsConnect      = 'connect.js';
-/*var jsSlider     = 'slider.js';
-var jsAuth       = 'auth.js';*/
-var jsFiles      = [  jsAdmin, jsConnect];
-var jsURL        = './dist/js/';
+const jsSRC = './src/js/';
+const jsAdmin = 'scripts.js';
+const jsConnect = 'connect.js';
+const jsFiles = [jsAdmin, jsConnect];
+const jsURL = './dist/js/';
 
+const styleWatch = './src/scss/**/*.scss';
+const jsWatch = './src/js/**/*.js';
 
-var styleWatch   = './src/scss/**/*.scss';
-var jsWatch      = './src/js/**/*.js';
-//var phpWatch     = './**/*.php';
-
-// Tasks
-// Tasks
+// BrowserSync task
 function browser_sync() {
-	browserSync.init({
-		server: {
-			baseDir: './dist/'
-		}
-	});
 	browserSync.init({
 		proxy: projectURL,
 		injectChanges: true,
@@ -65,69 +50,55 @@ function browser_sync() {
 	});
 }
 
+// CSS task to compile, autoprefix, minify, and rename
+function css() {
+	return src(styleSRC)
+		.pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
+		.pipe(sourcemaps.init())
+		.pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+		.pipe(autoprefixer({ overrideBrowserslist: ['last 2 versions'] }))
+		.pipe(cleanCSS())
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(sourcemaps.write(mapURL))
+		.pipe(dest(styleURL))
+		.pipe(browserSync.stream());
+}
+
+// JS task to concatenate, strip debug, uglify, and write sourcemaps
+function js(done) {
+	jsFiles.map(function(entry) {
+		return browserify({ entries: [jsSRC + entry] })
+			.transform(babelify, { presets: ['@babel/preset-env'] })
+			.bundle()
+			.pipe(source(entry))
+			.pipe(rename({ extname: '.min.js' }))
+			.pipe(buffer())
+			.pipe(gulpif(options.has('production'), stripDebug()))
+			.pipe(sourcemaps.init({ loadMaps: true }))
+			.pipe(uglify())
+			.pipe(sourcemaps.write('.'))
+			.pipe(dest(jsURL))
+			.pipe(browserSync.stream());
+	});
+	done();
+}
+
+// Watch files for changes
+function watch_files() {
+	watch(styleWatch, series(css, reload));
+	watch(jsWatch, series(js, reload));
+	src(jsURL + 'scripts.min.js')
+		.pipe(notify({ message: 'Gulp is Watching, Happy Coding!' }));
+}
+
+// Gulp tasks
+task('css', css);
+task('js', js);
+task('default', parallel(css, js));
+task('watch', parallel(watch_files, browser_sync));
+
+// Reload function for BrowserSync
 function reload(done) {
 	browserSync.reload();
 	done();
 }
-
-function css(done) {
-	//src( [ styleSRC, styleForm, styleSlider, styleAuth ] )
-	  src( [ styleSRC ] )
-		.pipe( sourcemaps.init() )
-		.pipe( sass({
-			errLogToConsole: true,
-			outputStyle: 'compressed'
-		}) )
-		.on( 'error', console.error.bind( console ) )
-		.pipe( autoprefixer({ browsersList: [ 'last 2 versions' ] }) )
-		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( sourcemaps.write( mapURL ) )
-		.pipe( dest( styleURL ) )
-		/*.pipe( browserSync.stream() );*/
-	done();
-};
-
-function js(done) {
-	jsFiles.map( function( entry ) {
-		return browserify({
-			entries: [jsSRC + entry]
-		})
-		.transform( babelify, { presets: [ '@babel/preset-env' ] } )
-		.bundle()
-		.pipe( source( entry ) )
-		.pipe( rename( {
-			extname: '.min.js'
-        } ) )
-		.pipe( buffer() )
-		.pipe( gulpif( options.has( 'production' ), stripDebug() ) )
-		.pipe( sourcemaps.init({ loadMaps: true }) )
-		.pipe( uglify() )
-		.pipe( sourcemaps.write( '.' ) )
-		.pipe( dest( jsURL ) )   
-		//.pipe( browserSync.stream() );
-	});
-	done();
-};
-
-
-
-function triggerPlumber( src_file, dest_file ) {
-	return src( src_file )
-		.pipe( plumber() )
-		.pipe( dest( dest_file ) );
-}
-
-function watch_files() {
-	/*watch(styleWatch, series(css , reload));
-	watch(jsWatch, series(js , reload));*/
-	watch(styleWatch, series(css));
-	watch(jsWatch, series(js));
-	src(jsURL + 'scripts.min.js')
-		.pipe( notify({ message: 'Gulp is Watching, Happy Coding!' }) );
-}
-
-task("css", css);
-task("js", js);
-task("default", parallel(css, js));
-//task("watch", parallel(browser_sync, watch_files));
-task("watch", parallel(watch_files));

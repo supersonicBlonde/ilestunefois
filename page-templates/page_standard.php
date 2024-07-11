@@ -246,19 +246,7 @@ get_header();
 						elseif(get_row_layout() == 'module_video_centered'): ?>
 
 						<div class="container-fluid my-5">
-<<<<<<< HEAD
-							<div class="row justify-content-center">
-								<div class="col-12 col-lg-7">
-									<div class="video-demo">
-										<div class="embed-responsive embed-responsive-16by9">
-											<?php the_sub_field('video'); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-=======
 							<?php get_template_part('template-parts/content' , 'video'); ?>
->>>>>>> b12ac9f5cf3b1243c1db26022f676ca9f79a38b0
 						</div>
 					
 					<?php endif;
